@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="assets/images/favicon.ico">
+	<title>Hệ thống học phụ âm</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+		integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
+	<link href="assets/css/theme.css" rel="stylesheet">
+	<link href="assets/css/theme1.css" rel="stylesheet">
+	
+	<!-- Begin tracking codes here, including ShareThis/Analytics -->
+	
+    <style>
+        
+        /* CSS cho grid container */
+        .container1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Hai cột bằng nhau */
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        /* CSS cho cột trái */
+        .left-column {
+
+            /*background-color: #f2f2f2;*/ /* Màu của cột trái */
+           /* padding: 20px;*/
+		   flex: 1;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.7); /* Màu nền khung hiển thị */
+			border-radius: 10px;
+			margin: 20px;
+			border: 2px solid #333; /* Đường viền khung */
+			background-color: #f1e8e8;
+        }
+
+        /* CSS cho cột phải */
+        .right-column {
+            background-color: #ddd; /* Màu của cột phải */
+            padding: 20px;
+        }
+
+        /* Sử dụng media query cho điện thoại di động */
+        @media screen and (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr; /* Một cột duy nhất trên điện thoại di động */
+            }
+        }
+		/* CSS cho hinh tron 5 chu cai*/
+		.circle {
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 26px;
+			font-weight: bold;
+            color: #fff;
+            margin: 10px;
+            cursor: pointer;
+        }
+		/* CSS cho khung hiển thị ví dụ */
+		.example-container {
+			flex: 1;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.7); /* Màu nền khung hiển thị */
+			border-radius: 10px;
+			margin: 20px;
+			border: 2px solid #333; /* Đường viền khung */
+			background-color: #e29e9e;
+		}
+		.example-content {
+    		text-align: center;
+		}
+		element.style{
+			display: block;
+		}
+		p {
+			position: unset;
+			margin-block-start: 1em;
+			margin-block-end: 1em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			text-align: left;
+			font-size: large;
+			font-weight: bolder;
+			}
+		.close {
+    		float: right;
+   			 cursor: pointer;
+			}
+    </style>
+	<!-- End tracking codes here, including ShareThis/Analytics -->
+</head>
+
+<body id="body-layout" class="layout-default">
+
+	<div class="site-content">
+		<!-- Home Jumbotron
+    ================================================== -->
+        <div id="banner">
+            <img src="assets/images/banner1.png"/>
+        
+		</div>
+
+		<!-- Noi dung hoc phu am-->
+        <div class="container">
+			<div class="row">
+				<!-- Cột trái -->
+				<div class="left-column">
+					<h2 style="font-size: 30px;color: #333;font-weight: bolder;">Phụ âm </h2>
+					<div class="row">
+						<div class="circle" onclick="showExample(1,'ក', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ក</div>
+						<div class="circle" onclick="showExample(2,'ខ', 'ខ្មែរជាភាសាប្រចាំក្រុមនៅទីប្រឆាំងតូចក្រុងភ្នំពេញ')">ខ</div>
+						<div class="circle" onclick="showExample(3,'គ', 'គោរពបក្សត្រីវិល')">គ</div>
+						<div class="circle" onclick="showExample(4,'ឃ', 'ឃុំជាតិ')">ឃ</div>
+						<div class="circle" onclick="showExample(5,'ង', 'ងកិលត្រារាំង')">ង</div>
+					</div> 
+					<img src="assets/images/bangchucai/1.png"/>
+				</div>
+				<!-- Cột phải -->
+				<!-- Khung hiển thị ví dụ -->
+				<div class="example-container" id="exampleContainer">
+					<span class="close" onclick="hideExample()">&times;</span>
+					<h2 style="font-size: 30px;color: #333;font-weight: bolder;">Hướng dẫn</h2>
+					<p id="exampleText">Chọn một phụ âm để xem ví dụ.</p>
+					<p>Cách đọc</p>
+					<audio id="exampleAudio" controls></audio>
+					<p>Cách viết</p>
+					<img id="exampleImage" src="assets/images/cachvietphuam/pa1.png" alt="pa1" style="display: none;">
+					
+				</div>
+			</div>
+		</div>
+    </div>
+
+<!--Begin footer-->
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="footer-widget">
+					<a href="index.html">
+						<img src="assets/images/logo-footer.png" alt="logo footer">
+					</a>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="footer-widget">
+					<h5 class="title">Hệ thống học ngôn ngữ Khmer</h5>
+					<ul>
+						<li><a target="_blank" href="#PhongTrungBay1">Học cơ bản</a></li>
+						<li><a target="_blank"
+							href="#PhongTrungBay2">Học PP tương tác, trải nghiệm</a>
+						</li>
+						<li><a target="_blank"
+							href="#PhongTrungBay3">Hệ thống luyện tập</a></li>
+						<li><a target="_blank" href="#PhongTrungBay4">Hệ thống kiểm tra</a>
+						</li>
+						<li><a target="_blank" href="#PhongTrungBay5">Từ điển</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="footer-widget">
+					<h5 class="title">Nhóm tác giả</h5>
+					<ul>
+						<li><a href="#aboutUs">Hồ Việt Thuân Phú</a></li>
+						<li><a href="#aboutUs">Sơn Nguyễn Kỳ Duyên</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="footer-widget textwidget">
+					<h5 class="title">Liên hệ với chúng tôi</h5>
+					<div class="text-right footersocial" style="display:flex; flex-direction:row;">
+						<i class="fa fa-facebook"></i>
+						<i class="fa fa-twitter"></i>
+						<i class="fa fa-google"></i>
+						<i class="fa fa-pinterest"></i>
+						<i class="fa fa-github"></i>
+					</div>
+					<div class="dropdown padding-top-20">
+						<a class="dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe" aria-hidden="true"></i>Tiếng Việt</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown01">
+							<a class="dropdown-item" href="#pageKhmer">ភាសាខ្មែរ</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</footer>
+<!-- End Footer
+================================================== -->
+</div>
+</section>
+
+<!-- JavaScript
+================================================== -->
+<script>
+	// Mảng chứa đường dẫn tới các tệp audio và nội dung ví dụ tương ứng
+  
+	const audioFiles = [
+	  { audio: 'audio/1.mp3'},
+	  { audio: 'audio/2.mp3'},
+	  { audio: 'audio/3.mp3'},
+	  { audio: 'audio/4.mp3'},
+	  { audio: 'audio/5.mp3'},
+	  // Thêm các đường dẫn và nội dung ví dụ cho các phụ âm Khmer khác vào đây
+  ];
+  const imageFiles = [
+	  { Image: 'assets/images/cachvietphuam/pa1.png'},
+	  { Image: 'assets/images/cachvietphuam/pa2.png'},
+	  // Thêm các đường dẫn và nội dung hình ảnh cho các phụ âm Khmer khác vào đây
+  ];
+  const videoFiles = [
+	  { video: 'assets/images/cachvietphuam/v1.mp4'},
+	  { video: 'assets/images/cachvietphuam/v2.mp4'},
+	  // Thêm các đường dẫn và nội dung hình ảnh cho các phụ âm Khmer khác vào đây
+  ];
+    let currentAudioIndex = 0;
+  	let currentImageIndex = 0;
+	let currentVideoIndex = 0;
+  // JavaScript để xử lý sự kiện khi nhấn vào hình tròn và hiển thị ví dụ
+  function showExample(id,character, example) {
+	  const exampleText = document.getElementById('exampleText');
+	  const exampleAudio = document.getElementById('exampleAudio');
+	  const exampleImage = document.getElementById('exampleImage'); // Lấy tham chiếu đến thẻ <img>
+
+	  const selectedAudio = audioFiles[id - 1]; // -1 vì id bắt đầu từ 1
+	  const selecteImages = imageFiles[id - 1]; // -1 vì id bắt đầu từ 1
+	 
+	  exampleText.textContent = `Ví dụ cho phụ âm "${character}": ${example}`;
+	  //exampleAudio.src = 'audio/1.mp3'; // Thay đổi đường dẫn audio tương ứng
+	  exampleAudio.src = selectedAudio.audio;
+	 
+	  // Hiển thị hình ảnh hiện tại và tăng chỉ số hình ảnh
+	  exampleImage.src = selecteImages.Image;
+    	
+	  
+	  exampleText.style.display = 'block';
+	  exampleAudio.style.display = 'block';
+	  exampleImage.style.display = 'block'; // Hiển thị hình ảnh 
+  }
+
+  function hideExample() {
+	  const exampleText = document.getElementById('exampleText');
+	  const exampleAudio = document.getElementById('exampleAudio');
+	  const exampleImage = document.getElementById('exampleImage'); //Hình ảnh
+	  
+	  exampleText.style.display = 'none';
+	  exampleAudio.style.display = 'none';
+	  exampleImage.style.display = 'none'; // Ẩn hình ảnh khi đóng ví dụ
+  }
+</script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+crossorigin="anonymous"></script>
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="assets/js/masonry.pkgd.min.js"></script>
+<script src="assets/js/theme.js"></script>
+<script src="assets/js/theme1.js"></script>   
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/favicon.ico">
+	<title>Hệ thống học phụ âm</title>
+    <style>
+        /* CSS cho hình tròn và nền */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(./assets/images/background-phuam.png); /* Đặt hình nền */
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .container {
+            max-width: auto;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7); /* Màu nền khung hiển thị */
+            border-radius: 10px;
+            flex: 1; /* Để nó lấp đầy phần còn lại của trang */
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: #007bff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            color: #fff;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        /* CSS cho khung hiển thị ví dụ */
+        .example-container {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* Màu nền khung hiển thị */
+    border-radius: 10px;
+    margin: 20px;
+    border: 2px solid #333; /* Đường viền khung */
+    background-color: #e29e9e;
+}
+
+.example-content {
+    text-align: center;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    
+    <!--Học phụ âm cơ bản-->
+    <div class="container">
+        <div class="row">
+            <div class="circle" onclick="showExample(1,'ក', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ក</div>
+            <div class="circle" onclick="showExample(2,'ខ', 'ខ្មែរជាភាសាប្រចាំក្រុមនៅទីប្រឆាំងតូចក្រុងភ្នំពេញ')">ខ</div>
+            <div class="circle" onclick="showExample(3,'គ', 'គោរពបក្សត្រីវិល')">គ</div>
+            <div class="circle" onclick="showExample(4,'ឃ', 'ឃុំជាតិ')">ឃ</div>
+            <div class="circle" onclick="showExample(5,'ង', 'ងកិលត្រារាំង')">ង</div>
+        </div> 
+        <div class="row">
+            <div class="circle" onclick="showExample('ច', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ច</div>
+            <div class="circle" onclick="showExample('ឆ', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ឆ</div>
+            <div class="circle" onclick="showExample('ជ', 'ខ្មែរជាភាសាប្រចាំក្រុមនៅទីប្រឆាំងតូចក្រុងភ្នំពេញ')">ជ</div>
+            <div class="circle" onclick="showExample('ឈ', 'គោរពបក្សត្រីវិល')">ឈ</div>
+            <div class="circle" onclick="showExample('ញ', 'ឃុំជាតិ')">ញ</div>
+        </div> 
+        <div class="row"> 
+            <div class="circle" onclick="showExample('ដ', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ដ</div>
+            <div class="circle" onclick="showExample('ឋ', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ឋ</div>
+            <div class="circle" onclick="showExample('ឌ', 'ខ្មែរជាភាសាប្រចាំក្រុមនៅទីប្រឆាំងតូចក្រុងភ្នំពេញ')">ឌ</div>
+            <div class="circle" onclick="showExample('ឍ', 'គោរពបក្សត្រីវិល')">ឍ</div>
+            <div class="circle" onclick="showExample('ត', 'ឃុំជាតិ')">ណ</div>
+        </div>
+        <div class="row"> 
+            <div class="circle" onclick="showExample('ត', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ត</div>
+            <div class="circle" onclick="showExample('ថ', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ថ</div>
+            <div class="circle" onclick="showExample('ទ', 'ខ្មែរជាភាសាប្រចាំក្រុមនៅទីប្រឆាំងតូចក្រុងភ្នំពេញ')">ទ</div>
+            <div class="circle" onclick="showExample('ធ', 'គោរពបក្សត្រីវិល')">ធ</div>
+            <div class="circle" onclick="showExample('ន', 'ឃុំជាតិ')">ន</div>
+        </div>
+        <div class="row"> 
+            <div class="circle" onclick="showExample('ត', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ត</div>
+            <div class="circle" onclick="showExample('ថ', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ថ</div>
+            <div class="circle" onclick="showExample('ទ', 'ខ្មែរជាភាសាប្រចាំក្រុមនៅទីប្រឆាំងតូចក្រុងភ្នំពេញ')">ទ</div>
+            <div class="circle" onclick="showExample('ធ', 'គោរពបក្សត្រីវិល')">ធ</div>
+            <div class="circle" onclick="showExample('ន', 'ឃុំជាតិ')">ន</div>
+        </div>
+        <div class="row"> 
+            <div class="circle" onclick="showExample('ត', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ត</div>
+            <div class="circle" onclick="showExample('ថ', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ថ</div>
+            <div class="circle" onclick="showExample('ទ', 'ខ្មែរជាភាសាប្រចាំក្រុមនៅទីប្រឆាំងតូចក្រុងភ្នំពេញ')">ទ</div>
+            <div class="circle" onclick="showExample('ធ', 'គោរពបក្សត្រីវិល')">ធ</div>
+            <div class="circle" onclick="showExample('ន', 'ឃុំជាតិ')">ន</div>
+        </div>
+        <div class="row"> 
+            <div class="circle" onclick="showExample('ត', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ត</div>
+            <div class="circle" onclick="showExample('ថ', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ថ</div>
+            <div class="circle" onclick="showExample('ទ', 'ខ្មែរជាភាសាប្រចាំក្រុមនៅទីប្រឆាំងតូចក្រុងភ្នំពេញ')">ទ</div>
+        </div>
+        <!-- Thêm hàng và các phụ âm Khmer khác vào đây -->
+    </div>
+
+    <!-- Khung hiển thị ví dụ -->
+      <div class="example-container" id="exampleContainer">
+            <span class="close" onclick="hideExample()">&times;</span>
+            <h2>Ví dụ</h2>
+            <p id="exampleText">Chọn một phụ âm để xem ví dụ.</p>
+            <audio id="exampleAudio" controls></audio>
+        </div>
+   
+   <!-- End học phụ âm cơ ban-->
+    <script>
+          // Mảng chứa đường dẫn tới các tệp audio và nội dung ví dụ tương ứng
+        const audioFiles = [
+            { audio: 'audio/1.mp3'},
+            { audio: 'audio/2.mp3'},
+            { audio: 'audio/3.mp3'},
+            { audio: 'audio/4.mp3'},
+            { audio: 'audio/5.mp3'},
+            // Thêm các đường dẫn và nội dung ví dụ cho các phụ âm Khmer khác vào đây
+        ];
+        // JavaScript để xử lý sự kiện khi nhấn vào hình tròn và hiển thị ví dụ
+        function showExample(id,character, example) {
+            const exampleText = document.getElementById('exampleText');
+            const exampleAudio = document.getElementById('exampleAudio');
+            const selectedAudio = audioFiles[id - 1]; // -1 vì id bắt đầu từ 1
+           
+
+            exampleText.textContent = `Ví dụ cho phụ âm "${character}": ${example}`;
+            //exampleAudio.src = 'audio/1.mp3'; // Thay đổi đường dẫn audio tương ứng
+            exampleAudio.src = selectedAudio.audio;
+
+            exampleText.style.display = 'block';
+            exampleAudio.style.display = 'block';
+        }
+
+        function hideExample() {
+            const exampleText = document.getElementById('exampleText');
+            const exampleAudio = document.getElementById('exampleAudio');
+
+            exampleText.style.display = 'none';
+            exampleAudio.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
