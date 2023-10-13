@@ -31,8 +31,7 @@
 
         /* CSS cho cột trái */
         .left-column {
-
-            /*background-color: #f2f2f2;*/ /* Màu của cột trái */
+           /*background-color: #f2f2f2;*/ /* Màu của cột trái */
            /* padding: 20px;*/
 		   flex: 1;
 			padding: 20px;
@@ -48,15 +47,14 @@
             background-color: #ddd; /* Màu của cột phải */
             padding: 20px;
         }
-
-        /* Sử dụng media query cho điện thoại di động */
+       /* Sử dụng media query cho điện thoại di động */
         @media screen and (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr; /* Một cột duy nhất trên điện thoại di động */
             }
         }
-		/* CSS cho hinh tron 5 chu cai*/
-		.circle {
+	/* CSS cho hinh tron 5 chu cai*/
+	.circle {
             width: 50px;
             height: 50px;
             background-color: #007bff;
@@ -67,50 +65,50 @@
             color: #fff;
             margin: 10px;
             cursor: pointer;
+	    margin-bottom: 10px;	
         }
-		/* CSS cho khung hiển thị ví dụ */
-		.example-container {
-			flex: 1;
-			padding: 20px;
-			background-color: rgba(255, 255, 255, 0.7); /* Màu nền khung hiển thị */
-			border-radius: 10px;
-			margin: 20px;
-			border: 2px solid #333; /* Đường viền khung */
-			background-color: #e29e9e;
-		}
-		.example-content {
+	/* CSS cho khung hiển thị ví dụ */
+	.example-container {
+		flex: 1;
+		padding: 20px;
+		background-color: rgba(255, 255, 255, 0.7); /* Màu nền khung hiển thị */
+		border-radius: 10px;
+		margin: 20px;
+		border: 2px solid #333; /* Đường viền khung */
+		background-color: #e29e9e;
+	}
+	.example-content {
     		text-align: center;
 		}
-		element.style{
-			display: block;
+	element.style{
+		display: block;
 		}
-		p {
-			position: unset;
-			margin-block-start: 1em;
-			margin-block-end: 1em;
-			margin-inline-start: 0px;
-			margin-inline-end: 0px;
-			text-align: left;
-			font-size: large;
-			font-weight: bolder;
-			}
-		/* Đảm bảo video tự động thay đổi kích thước để vừa với khung hiển thị */
-		#exampleVideo {
+	p {
+		position: unset;
+		margin-block-start: 1em;
+		margin-block-end: 1em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		text-align: left;
+		font-size: large;
+		font-weight: bolder;
+		}
+	/* Đảm bảo video tự động thay đổi kích thước để vừa với khung hiển thị */
+	#exampleVideo {
     		max-width: 100%;
     		height: auto;
     		width: 100%; /* 100% chiều rộng để video thay đổi theo màn hình */
     		display: block;
     		margin: 0 auto; /* Căn giữa video trong khung */
 		}
-
-		/* Ẩn hình ảnh và chỉ hiển thị video khi cần thiết */
-		#exampleImage {
+	/* Ẩn hình ảnh và chỉ hiển thị video khi cần thiết */
+	#exampleImage {
     		display: none;
 		}		
-		.close {
+	.close {
     		float: right;
-   			 cursor: pointer;
-			}
+   		 cursor: pointer;
+		}
     </style>
 	<!-- End tracking codes here, including ShareThis/Analytics -->
 </head>
@@ -118,42 +116,43 @@
 <body id="body-layout" class="layout-default">
 
 	<div class="site-content">
-		<!-- Home Jumbotron
+	<!-- Home Jumbotron
     ================================================== -->
         <div id="banner">
             <img src="assets/images/banner1.png"/>
-        
-		</div>
-
-		<!-- Noi dung hoc phu am-->
+ 	</div>
+	<!-- Noi dung hoc phu am-->
         <div class="container">
-			<div class="row">
-				<!-- Cột trái -->
-				<div class="left-column">
-					<h2 style="font-size: 30px;color: #333;font-weight: bolder;">Phụ âm </h2>
-					<div class="row">
-						<div class="circle" onclick="showExample(1,'ក', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ក</div>
-						<div class="circle" onclick="showExample(2,'ខ', 'ខ្មែរជាភាសាប្រចាំក្រុមនៅទីប្រឆាំងតូចក្រុងភ្នំពេញ')">ខ</div>
-						<div class="circle" onclick="showExample(3,'គ', 'គោរពបក្សត្រីវិល')">គ</div>
-						<div class="circle" onclick="showExample(4,'ឃ', 'ឃុំជាតិ')">ឃ</div>
-						<div class="circle" onclick="showExample(5,'ង', 'ងកិលត្រារាំង')">ង</div>
-					</div> 
-					<img src="assets/images/bangchucai/1.png"/>
+		<div class="row">
+			<!-- Cột trái -->
+			<div class="left-column">
+				<h2 style="font-size: 30px;color: #333;font-weight: bolder;">Phụ âm </h2>
+				<div class="row">
+					<div class="circle" onclick="showExample(1,'ក', 'ការសិក្សារយុទ្ធសាស្រ្ត')">ក</div>
+					<div class="circle" onclick="showExample(2,'ខ', 'ខ្មែរជាភាសាប្រចាំក្រុមនៅទីប្រឆាំងតូចក្រុងភ្នំពេញ')">ខ</div>
+					<div class="circle" onclick="showExample(3,'គ', 'គោរពបក្សត្រីវិល')">គ</div>
+					<div class="circle" onclick="showExample(4,'ឃ', 'ឃុំជាតិ')">ឃ</div>
+					<div class="circle" onclick="showExample(5,'ង', 'ងកិលត្រារាំង')">ង</div>
+				</div> 
+				<!-- <img src="assets/images/bangchucai/1.png"/>-->
+				<div class="carousel-inner">
+					<iframe width="960" height="682" data-original-width="1520" data-original-height="1080" src="https://www.thinglink.com/view/scene/1765875664830857893" type="text/html" style="border: none;" webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no"></iframe><script async src="//cdn.thinglink.me/jse/responsive.js"></script>
 				</div>
-				<!-- Cột phải -->
-				<!-- Khung hiển thị ví dụ -->
-				<div class="example-container" id="exampleContainer">
-					<span class="close" onclick="hideExample()">&times;</span>
-					<h2 style="font-size: 30px;color: #333;font-weight: bolder;">Hướng dẫn</h2>
-					<p id="exampleText">Chọn một phụ âm để xem ví dụ.</p>
-					<p>Cách đọc</p>
-					<audio id="exampleAudio" controls></audio>
-					<p>Cách viết</p>
-					<img id="exampleImage" src="assets/images/cachvietphuam/pa1.png" alt="pa1" style="display: none;">
-					<!-- Thêm video vào khung ví dụ -->
+			</div>
+			<!-- Cột phải -->
+			<!-- Khung hiển thị ví dụ -->
+			<div class="example-container" id="exampleContainer">
+				<span class="close" onclick="hideExample()">&times;</span>
+				<h2 style="font-size: 30px;color: #333;font-weight: bolder;">Hướng dẫn</h2>
+				<p id="exampleText">Chọn một phụ âm để xem ví dụ.</p>
+				<p>Cách đọc</p>
+				<audio id="exampleAudio" controls></audio>
+				<p>Cách viết</p>
+				<img id="exampleImage" src="assets/images/cachvietphuam/pa1.png" alt="pa1" style="display: none;">
+				<!-- Thêm video vào khung ví dụ -->
     				<video id="exampleVideo" controls style="display: none;">
         				<source src="videos/Pa1.mp4" type="v1">
-						<source src="videos/Pa2.mp4" type="v2">
+					<source src="videos/Pa2.mp4" type="v2">
     				</video>
 				</div>
 			</div>
