@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Học chữ số</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+   
+	<style>
+		.container {
+            display: flex;
+            text-align: left;
+        }
+		.container1 {
+            display: flex;         
+            align-items: center; /* Căn giữa các cột theo chiều ngang */
+          	width: 100%;
+            font-size: 25px;
+        }
+        .container2{
+            display: flex;         
+            align-items: center; /* Căn giữa các cột theo chiều ngang */
+            font-size: 25px;
+            background-color: #3498db;
+            border: 2px solid #2980b9;
+            margin-top: 10px;
+        }
+       .inner-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Căn giữa theo cả chiều dọc và chiều ngang */
+            border: 2px solid #000;
+            text-align: center;
+            width: 30%; /* Độ rộng cố định cho mỗi cột */
+			height: 100px;
+            justify-content: center;
+            width: 100%;
+        }
+        .inner-column h2 {
+            font-size: 30px;
+        }
+		.rectangle {
+            display: flex;
+            height: 50px;
+            background-color: #3498db;
+            border: 2px solid #2980b9;
+            border-radius: 20px;
+            margin: 10px 0;
+            text-align: left;
+            line-height: 50px;
+            color: #0c0c0c;
+            position: relative; /* Để có thể đặt các border-radius con */
+            font-size: 25px;
+            font-weight: bold;
+            padding: 10px;
+        }
+		.speaker-icon {
+            width: 30px;
+            height: 30px;
+            background-image: url('./assets/images/loa.jpg'); /* Thay đổi đường dẫn tới biểu tượng loa */
+            background-size: cover;
+            cursor: pointer;
+        }
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .rectangle1 {
+            display: flex;
+            height: 150px;
+            border: 2px solid #000;
+            margin: 10px 0;
+            line-height: 150px;
+            color: #0c0c0c;
+            font-size: 100px;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            align-items: center; 
+            justify-content: center;
+        }
+	</style>
+</head>
+<body>
+      <div class="container" style="font-size: 25px;"> Học chữ số </div>
+      <div class="rectangle">Chữ số </div>
+	  <div class="container1">
+			<div class="inner-column">
+				<h2>១</h2>
+			</div>
+			<div class="inner-column">
+				<h2>muôi</h2>
+			</div>
+			<div class="inner-column">
+				<div class="speaker-icon" id="speaker"></div>
+				<audio id="audio" src="./audio/so/1.mp3"></audio>
+			</div>
+	    </div>
+		<div class="rectangle1"> ១ </div>
+        <div class="container1">
+			<div class="inner-column">
+                <div class="image-container">
+                    <img src="./assets/images/so/1trungga.png">
+                </div>
+			</div>
+			<div class="inner-column">
+				<h2>ពង មាន់</h2>
+			</div>
+			<div class="inner-column">
+				<div class="speaker-icon" id="speaker"></div>
+				<audio id="audio" src="./audio/so/1.mp3"></audio>
+			</div>
+	    </div>
+	
+        <footer class="footer">
+            <div class="container2" style="height: 60px;"> Luyện tập</div>
+        </footer>
+	</body>
+	<script>
+        const speakerIcon = document.getElementById("speaker");
+        const audio = document.getElementById("audio");
+
+        speakerIcon.addEventListener("click", function() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        });
+	</script>
+	</html>
