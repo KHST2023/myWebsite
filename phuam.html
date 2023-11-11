@@ -17,6 +17,7 @@
 	<link href="assets/css/theme.css" rel="stylesheet">
 	<link href="assets/css/theme1.css" rel="stylesheet">
 	
+	
 	<!-- Begin tracking codes here, including ShareThis/Analytics -->
 	
     <style>
@@ -31,7 +32,8 @@
 
         /* CSS cho cột trái */
         .left-column {
-           /*background-color: #f2f2f2;*/ /* Màu của cột trái */
+
+            /*background-color: #f2f2f2;*/ /* Màu của cột trái */
            /* padding: 20px;*/
 		   flex: 1;
 			padding: 20px;
@@ -47,14 +49,15 @@
             background-color: #ddd; /* Màu của cột phải */
             padding: 20px;
         }
-       /* Sử dụng media query cho điện thoại di động */
+
+        /* Sử dụng media query cho điện thoại di động */
         @media screen and (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr; /* Một cột duy nhất trên điện thoại di động */
             }
         }
-	/* CSS cho hinh tron 5 chu cai*/
-	.circle {
+		/* CSS cho hinh tron 5 chu cai*/
+		.circle {
             width: 50px;
             height: 50px;
             background-color: #007bff;
@@ -65,51 +68,64 @@
             color: #fff;
             margin: 5px;
             cursor: pointer;
-	    margin-bottom: 10px;	
+			margin-bottom: 10px;
         }
-	/* CSS cho khung hiển thị ví dụ */
-	.example-container {
-		flex: 1;
-		padding: 20px;
-		background-color: rgba(255, 255, 255, 0.7); /* Màu nền khung hiển thị */
-		border-radius: 10px;
-		margin: 20px;
-		border: 2px solid #333; /* Đường viền khung */
-		background-color: #e29e9e;
-	}
-	.example-content {
+		/* CSS cho khung hiển thị ví dụ */
+		.example-container {
+			flex: 1;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.7); /* Màu nền khung hiển thị */
+			border-radius: 10px;
+			margin: 20px;
+			border: 2px solid #333; /* Đường viền khung */
+			background-color: #e29e9e;
+		}
+		.example-content {
     		text-align: center;
 		}
-	element.style{
-		display: block;
+		element.style{
+			display: block;
 		}
-	p {
-		position: unset;
-		margin-block-start: 1em;
-		margin-block-end: 1em;
-		margin-inline-start: 0px;
-		margin-inline-end: 0px;
-		text-align: left;
-		font-size: large;
-		font-weight: bolder;
-		font-family: 'Times New Roman', Times, serif;
-		}
-	/* Đảm bảo video tự động thay đổi kích thước để vừa với khung hiển thị */
-	#exampleVideo {
+		p {
+			position: unset;
+			margin-block-start: 1em;
+			margin-block-end: 1em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			text-align: left;
+			font-size: large;
+			font-weight: bolder;
+			font-family: 'Times New Roman', Times, serif;
+			}
+		/* Đảm bảo video tự động thay đổi kích thước để vừa với khung hiển thị */
+		#exampleVideo {
     		max-width: 100%;
     		height: auto;
     		width: 100%; /* 100% chiều rộng để video thay đổi theo màn hình */
     		display: block;
-    		margin: 10px auto; /* Căn giữa video trong khung */
+    		margin: 20px auto; /* Căn giữa video trong khung */
 		}
-	/* Ẩn hình ảnh và chỉ hiển thị video khi cần thiết */
-	#exampleImage {
+		.row {
+    			margin-bottom: 20px; /* Khoảng cách 20px giữa carousel-inner và row */
+		
+		}
+		/* Ẩn hình ảnh và chỉ hiển thị video khi cần thiết */
+		#exampleImage {
     		display: none;
 		}		
-	.close {
+		.close {
     		float: right;
-   		 cursor: pointer;
-		}
+   			 cursor: pointer;
+			}
+	.thinglink-logo {
+        display: none !important;
+    }
+	.a {
+		text-align: center;
+        line-height: 50px;
+        font-size: 30px;
+        color: #fff;
+	}
     </style>
 	<!-- End tracking codes here, including ShareThis/Analytics -->
 </head>
@@ -117,48 +133,33 @@
 <body id="body-layout" class="layout-default">
 
 	<div class="site-content">
-	<!-- Home Jumbotron
+		<!-- Home Jumbotron
     ================================================== -->
         <div id="banner">
             <img src="assets/images/banner1.png"/>
- 	</div>
-	<!-- Noi dung hoc phu am-->
-        <div class="container">
-		<div class="row">
-			<!-- Cột trái -->
-			<div class="left-column">
-				<h2 style="font-size: 30px;color: #333;font-weight: bolder;">Phụ âm </h2>
-				<div class="row">
-					<div class="circle" onclick="showExample(1,'ក', 'ក: cổ; កា: cái ca, ly; កង់: Xe đạp')">ក</div>
-            				<div class="circle" onclick="showExample(2,'ខ', 'ខាំ: hành động cắn; ខែ: tháng; ខោអាវ: Quần áo')">ខ</div>
-            				<div class="circle" onclick="showExample(3,'គ', '- គេងទៅ!: ngủ đi!; គោររព: sự tôn trọng')">គ</div>
-            				<div class="circle" onclick="showExample(4,'ឃ', 'ឃោសនា: tuyên truyền; ឃើញ: thấy, nhìn')">ឃ</div>
-            				<div class="circle" onclick="showExample(5,'ង','ងាយ: Dễ; ងៀត: Cá khô; ងាក: Quay đầu, trở mình')">ង</div>
-				</div> 
-				<!-- <img src="assets/images/bangchucai/1.png"/>-->
-				<div class="carousel-inner">
-					<iframe width="960" height="682" data-original-width="1520" data-original-height="1080" src="https://www.thinglink.com/view/scene/1765875664830857893" type="text/html" style="border: none;" webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no"></iframe><script async src="//cdn.thinglink.me/jse/responsive.js"></script>
-				</div>
-			</div>
-			<!-- Cột phải -->
-			<!-- Khung hiển thị ví dụ -->
-			<div class="example-container" id="exampleContainer">
-				<span class="close" onclick="hideExample()">&times;</span>
-				<h2 style="font-size: 30px;color: #333;font-weight: bolder;">Hướng dẫn</h2>
-				<p id="exampleText">Chọn một phụ âm để xem ví dụ.</p>
-				<p>Cách đọc</p>
-				<audio id="exampleAudio" controls></audio>
-				<p>Cách viết</p>
-				<img id="exampleImage" src="assets/images/cachvietphuam/pa1.png" alt="pa1" style="display: none;">
-				<!-- Thêm video vào khung ví dụ -->
-    				<video id="exampleVideo" controls style="display: none;">
-        				<source src="videos/PA1.mp4" type="v1">
-					<source src="videos/PA2.mp4" type="v2">
-    				</video>
-				</div>
-			</div>
+        
 		</div>
-    </div>
+
+		<!-- Noi dung hoc phu am-->
+        <div class="container">
+			<div class="row">
+				<!-- Cột trái -->
+				<div class="left-column">
+					<h2 style="font-size: 30px;color: #333;font-weight: bolder;">Phụ âm </h2>
+					<div class="row">
+						<div class="circle" ><a href="phuam1.html " style="color: #fff;">ក</a></div>
+						<div class="circle" ><a href="phuam1.html " style="color: #fff;">ខ</a></div>
+						<div class="circle" ><a href="phuam1.html " style="color: #fff;">គ</a></div>
+						<div class="circle" ><a href="phuam1.html " style="color: #fff;">ឃ</a></div>
+						<div class="circle" ><a href="phuam1.html " style="color: #fff;">ង</a></div>
+					</div> 
+					<!--<img src="assets/images/bangchucai/1.png"/> -->
+					<div class="carousel-inner">
+						<iframe width="960" height="682" data-original-width="1520" data-original-height="1080" src="https://www.thinglink.com/view/scene/1765875664830857893" 
+                        type="text/html" style="border: none; margin: 0 auto; display: block;" 	webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no"></iframe>
+							  <script async src="//cdn.thinglink.me/jse/responsive.js"></script>
+					</div>
+				</div>
 
 <!--Begin footer-->
 <footer class="footer">
@@ -175,15 +176,19 @@
 				<div class="footer-widget">
 					<h5 class="title">Hệ thống học ngôn ngữ Khmer</h5>
 					<ul>
-						<li><a target="_blank" href="#PhongTrungBay1">Học cơ bản</a></li>
+						<li><a target="_blank" href="index.html">Giới thiệu</a></li>
 						<li><a target="_blank"
-							href="#PhongTrungBay2">Học PP tương tác, trải nghiệm</a>
+							href="hoccoban1.html">Học cơ bản</a>
 						</li>
 						<li><a target="_blank"
-							href="#PhongTrungBay3">Hệ thống luyện tập</a></li>
-						<li><a target="_blank" href="#PhongTrungBay4">Hệ thống kiểm tra</a>
+							href="hocnangcaotheochude.html">Học nâng cao theo chủ đề</a></li>
+						<li><a target="_blank" href="luyentapkiemtra.html">Luyện tập, kiểm tra</a>
 						</li>
-						<li><a target="_blank" href="#PhongTrungBay5">Từ điển</a>
+						<li><a target="_blank" href="tudien.html">Từ điển</a>
+						</li>
+						<li><a target="_blank" href="disanvanhoadantockhmer_thuvienso.html">Di sản văn hóa dân tộc Khmer</a>
+						</li>
+						<li><a target="_blank" href="thamquantrainghiem.html">Tham quan, trải nghiệm</a>
 						</li>
 					</ul>
 				</div>
@@ -192,7 +197,7 @@
 				<div class="footer-widget">
 					<h5 class="title">Nhóm tác giả</h5>
 					<ul>
-						<li><a href="#aboutUs">Hồ Việt Thuận Phú</a></li>
+						<li><a href="#aboutUs">Hồ Việt Thuân Phú</a></li>
 						<li><a href="#aboutUs">Sơn Nguyễn Kỳ Duyên</a></li>
 					</ul>
 				</div>
@@ -211,12 +216,11 @@
 						<a class="dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe" aria-hidden="true"></i>Tiếng Việt</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown01">
-							<a class="dropdown-item" href="#pageKhmer">ភាសាខ្មែរ</a>
+							<a class="dropdown-item" href="index_Khmer.html">ភាសាខ្មែរ</a>
 						</div>
 					</div>
 				</div>
 			</div>
-			
 		</div>
 	</div>
 </footer>
@@ -244,8 +248,8 @@
 	  // Thêm các đường dẫn và nội dung hình ảnh cho các phụ âm Khmer khác vào đây
   ];
   const videoFiles = [
-	  { video: 'videos/PA1.mp4'},
-	  { video: 'videos/PA2.mp4'},
+	  { video: 'videos/Pa1.mp4'},
+	  { video: 'videos/Pa2.mp4'},
 	  // Thêm các đường dẫn và nội dung video cho các phụ âm Khmer khác vào đây
   ];
     let currentAudioIndex = 0;
