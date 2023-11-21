@@ -69,6 +69,7 @@
             background-color: #3498db;
             border: 2px solid #2980b9;
             margin-top: 10px;
+            cursor: pointer; 
         }
         .inner-column {
             display: flex;
@@ -153,6 +154,7 @@
     <div class="rectangle">Chữ số </div>
     <div class="slideshow-container">
         <div class="slide fade">
+           <!-- <h1>Slide 1</h1> -->
             <section>
                 <div class="container1">
                     <div class="inner-column">
@@ -162,8 +164,8 @@
                         <h2>muôi</h2>
                     </div>
                     <div class="inner-column">
-                        <div class="speaker-icon" id="speaker"></div>
-                        <audio id="audio" src="./audio/so/1.mp3"></audio>
+                        <div class="speaker-icon" id="speaker1" onclick="playAudio(audio1)"></div>
+                        <audio id="audio1" src="./audio/so/1.mp3"></audio>
                     </div>
                 </div>
             <div class="rectangle1"> ១ </div>
@@ -177,14 +179,36 @@
 				<h2>ពងមាន់មួយ</h2>
 			</div>
 			<div class="inner-column">
-				<div class="speaker-icon" id="speaker"></div>
-				<audio id="audio" src="./audio/so/ពងមាន់មួយmottrungga.mp3"></audio>
+				<div class="speaker-icon" id="speaker2" onclick="playAudio(audio2)"></div>
+				<audio id="audio2" src="./audio/so/ពងមាន់មួយmottrungga.mp3"></audio>
 			</div>
 	    </div>
+    <script>
+        //Xử lý sự kiện phát âm thanh cho từng loa trên slide
+        // Xử lý sự kiện khi người dùng click vào loa 1
+        document.getElementById("speaker1").addEventListener("click", function() {
+        const audio1 = document.getElementById("audio1");
+        if (audio1.paused) {
+            audio1.play();
+        } else {
+            audio1.pause();
+        }
+        });
+    // Xử lý sự kiện khi người dùng click vào loa 2
+    document.getElementById("speaker2").addEventListener("click", function() {
+        const audio2 = document.getElementById("audio2");
+        if (audio2.paused) {
+            audio2.play();
+        } else {
+            audio2.pause();
+        }
+        });
+    </script>
      </section>
         </div>
         
         <div class="slide fade">
+           <!-- <h1>Slide 2</h1>-->
             <section>
                 <div class="container1">
                     <div class="inner-column">
@@ -194,8 +218,8 @@
                         <h2>pi</h2>
                     </div>
                     <div class="inner-column">
-                        <div class="speaker-icon" id="speaker"></div>
-                        <audio id="audio" src="./audio/so/2.mp3"></audio>
+                        <div class="speaker-icon" id="speaker3"onclick="playAudio(audio3)"></div>
+                        <audio id="audio3" src="./audio/so/2.mp3"></audio>
                     </div>
                 </div>
             <div class="rectangle1"> ២ </div>
@@ -209,14 +233,36 @@
 				<h2>ផ្លែប៉ោមពីរ</h2>
 			</div>
 			<div class="inner-column">
-				<div class="speaker-icon" id="speaker"></div>
-				<audio id="audio" src="./audio/so/ផ្លែប៉ោមពីរhaiquatao.mp3"></audio>
+				<div class="speaker-icon" id="speaker4"></div>
+				<audio id="audio4" src="./audio/so/ផ្លែប៉ោមពីរhaiquatao.mp3"></audio>
 			</div>
 	    </div>
+        <script>
+            //Xử lý sự kiện phát âm thanh cho từng loa trên slide
+       // Xử lý sự kiện khi người dùng click vào loa 1
+       document.getElementById("speaker3").addEventListener("click", function() {
+       const audio1 = document.getElementById("audio3");
+       if (audio1.paused) {
+           audio1.play();
+       } else {
+           audio1.pause();
+       }
+       });
+   // Xử lý sự kiện khi người dùng click vào loa 2
+   document.getElementById("speaker4").addEventListener("click", function() {
+       const audio2 = document.getElementById("audio4");
+       if (audio2.paused) {
+           audio2.play();
+       } else {
+           audio2.pause();
+       }
+   });
+       </script>
      </section>
         </div>
 
         <div class="slide fade">
+           <!-- <h1>Slide 3</h1> -->
             <section>
                 <div class="container1">
                     <div class="inner-column">
@@ -226,8 +272,8 @@
                         <h2>bây</h2>
                     </div>
                     <div class="inner-column">
-                        <div class="speaker-icon" id="speaker"></div>
-                        <audio id="audio" src="./audio/so/3.mp3"></audio>
+                        <div class="speaker-icon" id="speaker5"></div>
+                        <audio id="audio5" src="./audio/so/3.mp3"></audio>
                     </div>
                 </div>
             <div class="rectangle1"> ៣ </div>
@@ -241,14 +287,35 @@
 				<h2>ចេកបី</h2>
 			</div>
 			<div class="inner-column">
-				<div class="speaker-icon" id="speaker"></div>
-				<audio id="audio" src="./audio/so/ផ្លែចេកបីbaquachuoi.mp3"></audio>
+				<div class="speaker-icon" id="speaker6"></div>
+				<audio id="audio6" src="./audio/so/ផ្លែចេកបីbaquachuoi.mp3"></audio>
 			</div>
 	    </div>
+        <script>
+        //Xử lý sự kiện phát âm thanh cho từng loa trên slide
+       // Xử lý sự kiện khi người dùng click vào loa 1
+       document.getElementById("speaker5").addEventListener("click", function() {
+       const audio1 = document.getElementById("audio5");
+       if (audio1.paused) {
+           audio1.play();
+       } else {
+           audio1.pause();
+       }
+       });
+   // Xử lý sự kiện khi người dùng click vào loa 2
+   document.getElementById("speaker6").addEventListener("click", function() {
+       const audio2 = document.getElementById("audio6");
+       if (audio2.paused) {
+           audio2.play();
+       } else {
+           audio2.pause();
+       }
+   });
+       </script>
      </section>
-
         </div>
         <div class="slide fade">
+           <!-- <h1>Slide 4</h1>-->
             <section>
                 <div class="container1">
                     <div class="inner-column">
@@ -258,8 +325,8 @@
                         <h2>buôn</h2>
                     </div>
                     <div class="inner-column">
-                        <div class="speaker-icon" id="speaker"></div>
-                        <audio id="audio" src="./audio/so/4.mp3"></audio>
+                        <div class="speaker-icon" id="speaker7"></div>
+                        <audio id="audio7" src="./audio/so/4.mp3"></audio>
                     </div>
                 </div>
             <div class="rectangle1"> ៤ </div>
@@ -273,14 +340,36 @@
 				<h2>ខ្មៅដៃបួន</h2>
 			</div>
 			<div class="inner-column">
-				<div class="speaker-icon" id="speaker"></div>
-				<audio id="audio" src="./audio/so/ខ្មៅដៃបួនbonvietchi.mp3"></audio>
+				<div class="speaker-icon" id="speaker8"></div>
+				<audio id="audio8" src="./audio/so/ខ្មៅដៃបួនbonvietchi.mp3"></audio>
 			</div>
 	    </div>
+        <script>
+        //Xử lý sự kiện phát âm thanh cho từng loa trên slide
+       // Xử lý sự kiện khi người dùng click vào loa 1
+       document.getElementById("speaker7").addEventListener("click", function() {
+       const audio1 = document.getElementById("audio7");
+       if (audio1.paused) {
+           audio1.play();
+       } else {
+           audio1.pause();
+       }
+       });
+   // Xử lý sự kiện khi người dùng click vào loa 2
+   document.getElementById("speaker8").addEventListener("click", function() {
+       const audio2 = document.getElementById("audio8");
+       if (audio2.paused) {
+           audio2.play();
+       } else {
+           audio2.pause();
+       }
+   });
+       </script>
      </section>
             
         </div>
         <div class="slide fade">
+            <!-- <h1>Slide 5</h1> -->
             <section>
                 <div class="container1">
                     <div class="inner-column">
@@ -290,200 +379,53 @@
                         <h2>po-răm</h2>
                     </div>
                     <div class="inner-column">
-                        <div class="speaker-icon" id="speaker"></div>
-                        <audio id="audio" src="./audio/so/5.mp3"></audio>
+                        <div class="speaker-icon" id="speaker9"></div>
+                        <audio id="audio9" src="./audio/so/5.mp3"></audio>
                     </div>
                 </div>
             <div class="rectangle1"> ៥ </div>
             <div class="container1">
 			<div class="inner-column">
                 <div class="image-container">
-                    <img src="./assets/images/so/5bongden.png">
+                    <img src="./assets/images/so/5caibongden.png">
                 </div>
             </div>
 			<div class="inner-column">
 				<h2>មនុស្សប្រាំនាក់។</h2>
 			</div>
 			<div class="inner-column">
-				<div class="speaker-icon" id="speaker"></div>
-				<audio id="audio" src="./audio/so/មនុស្សប្រាំនាក់។namnguoi.mp3"></audio>
+				<div class="speaker-icon" id="speaker10"></div>
+				<audio id="audio10" src="./audio/so/មនុស្សប្រាំនាក់។namnguoi.mp3"></audio>
 			</div>
 	    </div>
-     </section>
-                
-            </div>
-            <div class="slide fade">
-                <h1>Slide 6</h1>
-                <section>
-                    <div class="container1">
-                        <div class="inner-column">
-                            <h2>៦</h2>
-                        </div>
-                        <div class="inner-column">
-                            <h2>po-răm muôi</h2>
-                        </div>
-                        <div class="inner-column">
-                            <div class="speaker-icon" id="speaker"></div>
-                            <audio id="audio" src="./audio/so/6.mp3"></audio>
-                        </div>
-                    </div>
-                <div class="rectangle1"> ៦ </div>
-                <div class="container1">
-                <div class="inner-column">
-                    <div class="image-container">
-                        <img src="./assets/images/so/6quyensach.png">
-                    </div>
-			</div>
-			<div class="inner-column">
-				<h2>សៀវភៅប្រាំមួយ</h2>
-			</div>
-			<div class="inner-column">
-				<div class="speaker-icon" id="speaker"></div>
-				<audio id="audio" src="./audio/so/សៀវភៅប្រាំមួយsauquyensach.mp3"></audio>
-			</div>
-	    </div>
-     </section>
-
+        <script>
+        //Xử lý sự kiện phát âm thanh cho từng loa trên slide
+       // Xử lý sự kiện khi người dùng click vào loa 1
+       document.getElementById("speaker9").addEventListener("click", function() {
+       const audio1 = document.getElementById("audio9");
+       if (audio1.paused) {
+           audio1.play();
+       } else {
+           audio1.pause();
+       }
+       });
+   // Xử lý sự kiện khi người dùng click vào loa 2
+   document.getElementById("speaker10").addEventListener("click", function() {
+       const audio2 = document.getElementById("audio10");
+       if (audio2.paused) {
+           audio2.play();
+       } else {
+           audio2.pause();
+       }
+   });
+       </script>
+     </section>    
     </div>
-    <div class="slide fade">
-        <h1>Slide 7</h1>
-        <section>
-            <div class="container1">
-                <div class="inner-column">
-                    <h2>៧</h2>
-                </div>
-                <div class="inner-column">
-                    <h2>po-răm pi</h2>
-                </div>
-                <div class="inner-column">
-                    <div class="speaker-icon" id="speaker"></div>
-                    <audio id="audio" src="./audio/so/7.mp3"></audio>
-                </div>
-            </div>
-        <div class="rectangle1"> ៧ </div>
-        <div class="container1">
-        <div class="inner-column">
-            <div class="image-container">
-                <img src="./assets/images/so/7mausac.png">
-            </div>
-    </div>
-    <div class="inner-column">
-        <h2>ប្រាំពីរពណ៌</h2>
-    </div>
-    <div class="inner-column">
-        <div class="speaker-icon" id="speaker"></div>
-        <audio id="audio" src="./audio/so/ប្រាំពីរពណ៌baymausac.mp3"></audio>
-    </div>
-</div>
-</section>
-
-</div>
-<div class="slide fade">
-    <h1>Slide 8</h1>
-    <section>
-        <div class="container1">
-            <div class="inner-column">
-                <h2>៨</h2>
-            </div>
-            <div class="inner-column">
-                <h2>po-răm bây</h2>
-            </div>
-            <div class="inner-column">
-                <div class="speaker-icon" id="speaker"></div>
-                <audio id="audio" src="./audio/so/8.mp3"></audio>
-            </div>
-        </div>
-    <div class="rectangle1"> ៨ </div>
-    <div class="container1">
-    <div class="inner-column">
-        <div class="image-container">
-            <img src="./assets/images/so/8quabong.png">
-        </div>
-</div>
-<div class="inner-column">
-    <h2>បាល់ចំនួនប្រាំបី</h2>
-</div>
-<div class="inner-column">
-    <div class="speaker-icon" id="speaker"></div>
-    <audio id="audio" src="./audio/so/បាល់ចំនួនប្រាំបីtamquabong.mp3"></audio>
-</div>
-</div>
-</section>
-
-</div>
-<div class="slide fade">
-    <h1>Slide 9</h1>
-    <section>
-        <div class="container1">
-            <div class="inner-column">
-                <h2>៩</h2>
-            </div>
-            <div class="inner-column">
-                <h2>po-răm buôn</h2>
-            </div>
-            <div class="inner-column">
-                <div class="speaker-icon" id="speaker"></div>
-                <audio id="audio" src="./audio/so/9.mp3"></audio>
-            </div>
-        </div>
-    <div class="rectangle1"> ៩ </div>
-    <div class="container1">
-    <div class="inner-column">
-        <div class="image-container">
-            <img src="./assets/images/so/9traicay.png">
-        </div>
-</div>
-<div class="inner-column">
-    <h2>ផ្លែឈើប្រាំបួន</h2>
-</div>
-<div class="inner-column">
-    <div class="speaker-icon" id="speaker"></div>
-    <audio id="audio" src="./audio/so/ផ្លែឈើប្រាំបួនchintraicay.mp3"></audio>
-</div>
-</div>
-</section>
-
-</div>
-<div class="slide fade">
-    <h1>Slide 10</h1>
-    <section>
-        <div class="container1">
-            <div class="inner-column">
-                <h2>០</h2>
-            </div>
-            <div class="inner-column">
-                <h2>sôn</h2>
-            </div>
-            <div class="inner-column">
-                <div class="speaker-icon" id="speaker"></div>
-                <audio id="audio" src="./audio/so/0.mp3"></audio>
-            </div>
-        </div>
-    <div class="rectangle1"> ០ </div>
-    <div class="container1">
-    <div class="inner-column">
-        <div class="image-container">
-            <img src="./assets/images/so/0do.png">
-        </div>
-</div>
-<div class="inner-column">
-    <h2>សូន្យដឺក្រេ</h2>
-</div>
-<div class="inner-column">
-    <div class="speaker-icon" id="speaker"></div>
-    <audio id="audio" src="./audio/so/សូន្យដឺក្រេkhongdo.mp3"></audio>
-</div>
-</div>
-</section>
-            
-        </div>
 
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-
     <br>
-
     <div style="text-align:center">
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
@@ -492,9 +434,18 @@
         <span class="dot" onclick="currentSlide(5)"></span>
     </div>
     <footer class="footer">
-        <div class="container2" style="height: 60px;"> Luyện tập</div>
+        <div class="container2" style="height: 60px; font-weight: bold;" onclick="dieuhuong ('testso.html')"> 
+            Luyện tập
+        </div>
+        <div class="container2" style="height: 60px; font-weight: bold;" onclick="dieuhuong ('trochoiso.html')">
+            Trò chơi
+        </div>
     </footer>
 <script>
+        function dieuhuong(url) {
+            window.location.href = url;
+        }
+
     let slideIndex = 1;
     showSlides(slideIndex);
 
@@ -530,16 +481,6 @@
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
     }
-    const speakerIcon = document.getElementById("speaker");
-        const audio = document.getElementById("audio");
-
-        speakerIcon.addEventListener("click", function() {
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        });
 </script>
 </body>
 </html>
