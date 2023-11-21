@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Học nguyên âm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+        }
+    
+        .slide {
+            display: none;
+            text-align: center;
+        }
+    
+        .slide h1 {
+            font-size: 48px;
+        }
+    
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+    
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    
+        .next {
+            right: 0;
+        }
+    
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 8px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.5s;
+            cursor: pointer;
+        }
+    
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+        .container {
+            display: flex;
+            text-align: left;
+        }
+        .container1 {
+            display: flex;         
+            align-items: center; /* Căn giữa các cột theo chiều ngang */
+          	width: 100%;
+            font-size: 25px;
+        }
+        .container2{
+            display: flex;         
+            align-items: center; /* Căn giữa các cột theo chiều ngang */
+            font-size: 25px;
+            background-color: #3498db;
+            border: 2px solid #2980b9;
+            margin-top: 10px;
+        }
+        .inner-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Căn giữa theo cả chiều dọc và chiều ngang */
+            border: 2px solid #000;
+            text-align: center;
+            width: 30%; /* Độ rộng cố định cho mỗi cột */
+			height: 100px;
+            justify-content: center;
+            width: 100%;
+        }
+        .inner-column h2 {
+            font-size: 30px;
+        }
+        .rectangle {
+            display: flex;
+            height: 50px;
+            background-color: #3498db;
+            border: 2px solid #2980b9;
+            border-radius: 20px;
+            margin: 10px 0;
+            text-align: left;
+            line-height: 50px;
+            color: #0c0c0c;
+            position: relative; /* Để có thể đặt các border-radius con */
+            font-size: 25px;
+            font-weight: bold;
+            padding: 10px;
+        }
+        .speaker-icon {
+            width: 30px;
+            height: 30px;
+            background-image: url('./assets/images/loa.jpg'); /* Thay đổi đường dẫn tới biểu tượng loa */
+            background-color: white;
+            background-size: cover;
+            cursor: pointer;
+        }
+        .rectangle1 {
+            display: flex;
+            height: 150px;
+            border: 2px solid #000;
+            margin: 10px 0;
+            line-height: 150px;
+            color: #0c0c0c;
+            font-size: 100px;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            align-items: center; 
+            justify-content: center;
+        }
+       
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+           
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 90%;
+        }
+        .rectangle1 {
+            display: flex;
+            height: 150px;
+            border: 2px solid #000;
+            margin: 10px 0;
+            line-height: 150px;
+            color: #0c0c0c;
+            font-size: 100px;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            align-items: center; 
+            justify-content: center;
+        }
+    </style>   
+</head>
+<body>
+    <div class="rectangle">Nguyên âm </div>
+    <div class="slideshow-container">
+        <div class="slide fade">
+           <!-- <h1>Slide 1</h1> -->
+            <section>
+                <div class="container1">
+                    <div class="inner-column">
+                        <h2>ា</h2>
+                    </div>
+                    <div class="inner-column">
+                        <h2>/a/<br>/ia/</h2>
+                    </div>
+                    <div class="inner-column">
+                        <div class="speaker-icon" id="speaker1" onclick="playAudio(audio1)">
+                            <audio id="audio1" src="./audio/na/s11.mp3"></audio>
+                        </div>
+                        <div class="speaker-icon" id="speaker2" onclick="playAudio(audio2)">
+                        <audio id="audio2" src="./audio/na/s32.mp3"></audio>
+                        </div>
+                    </div>
+                </div>
+            <div class="rectangle1"> ា </div>
+            <div class="container1">
+			<div class="inner-column">
+                <div class="image-container">
+                    <img src="./assets/images/na/1.jpg">
+                </div>
+			</div>
+			<div class="inner-column">
+				<h2>សាខា /sa kha/ cành cây <br>ហា /lia/ con lừa</h2>
+			</div>
+            <div class="inner-column">
+                <div class="speaker-icon" id="speaker3" onclick="playAudio(audio3)">
+                    <audio id="audio3" src="./audio/na/11_1.mp3"></audio>
+                </div>
+                <div class="speaker-icon" id="speaker4" onclick="playAudio(audio4)">
+                <audio id="audio4" src="./audio/na/11_2.mp3"></audio>
+                </div>
+            </div>
+	    </div>
+    <script>
+        //Xử lý sự kiện phát âm thanh cho từng loa trên slide
+        // Xử lý sự kiện khi người dùng click vào loa 1
+        document.getElementById("speaker1").addEventListener("click", function() {
+        const audio1 = document.getElementById("audio1");
+        if (audio1.paused) {
+            audio1.play();
+        } else {
+            audio1.pause();
+        }
+        });
+    // Xử lý sự kiện khi người dùng click vào loa 2
+    document.getElementById("speaker2").addEventListener("click", function() {
+        const audio2 = document.getElementById("audio2");
+        if (audio2.paused) {
+            audio2.play();
+        } else {
+            audio2.pause();
+        }
+        });
+    // Xử lý sự kiện khi người dùng click vào loa 3
+    document.getElementById("speaker3").addEventListener("click", function() {
+        const audio3 = document.getElementById("audio3");
+        if (audio3.paused) {
+            audio3.play();
+        } else {
+            audio3.pause();
+        }
+        });
+        // Xử lý sự kiện khi người dùng click vào loa 4
+    document.getElementById("speaker4").addEventListener("click", function() {
+        const audio4 = document.getElementById("audio4");
+        if (audio4.paused) {
+            audio4.play();
+        } else {
+            audio4.pause();
+        }
+        });
+    </script>
+     </section>
+        </div>
+        
+        <div class="slide fade">
+             <!-- <h1>Slide 2</h1> -->
+             <section>
+                <div class="container1">
+                    <div class="inner-column">
+                        <h2>ិ</h2>
+                    </div>
+                    <div class="inner-column">
+                        <h2>/ê/<br>/í/</h2>
+                    </div>
+                    <div class="inner-column">
+                        <div class="speaker-icon" id="speaker5" onclick="playAudio(audio5)">
+                            <audio id="audio5" src="./audio/na/s12.mp3"></audio>
+                        </div>
+                        <div class="speaker-icon" id="speaker6" onclick="playAudio(audio6)">
+                        <audio id="audio6" src="./audio/na/s51.mp3"></audio>
+                        </div>
+                    </div>
+                </div>
+            <div class="rectangle1"> ិ </div>
+            <div class="container1">
+			<div class="inner-column">
+                <div class="image-container">
+                    <img src="./assets/images/na/2.jpg">
+                </div>
+			</div>
+			<div class="inner-column">
+				<h2>ទាឡិកា /nia lế ka/ đồng hồ<br>វិថី /ví thây/ đường phố</h2>
+			</div>
+			<div class="inner-column">
+                <div class="speaker-icon" id="speaker7" onclick="playAudio(audio7)">
+                    <audio id="audio7" src="./audio/na/12_1.mp3"></audio>
+                </div>
+                <div class="speaker-icon" id="speaker8" onclick="playAudio(audio8)">
+                <audio id="audio8" src="./audio/na/12_2.mp3"></audio>
+                </div>
+            </div>
+	    </div>
+    <script>
+         // Xử lý sự kiện khi người dùng click vào loa 5
+    document.getElementById("speaker5").addEventListener("click", function() {
+        const audio5 = document.getElementById("audio5");
+        if (audio5.paused) {
+            audio5.play();
+        } else {
+            audio5.pause();
+        }
+        });
+         // Xử lý sự kiện khi người dùng click vào loa 6
+    document.getElementById("speaker6").addEventListener("click", function() {
+        const audio6 = document.getElementById("audio6");
+        if (audio6.paused) {
+            audio6.play();
+        } else {
+            audio6.pause();
+        }
+        });
+
+        // Xử lý sự kiện khi người dùng click vào loa 7
+        document.getElementById("speaker7").addEventListener("click", function() {
+        const audio7 = document.getElementById("audio7");
+        if (audi07.paused) {
+            audio7.play();
+        } else {
+            audio7.pause();
+        }
+        });
+    // Xử lý sự kiện khi người dùng click vào loa 8
+    document.getElementById("speaker8").addEventListener("click", function() {
+        const audio8 = document.getElementById("audio8");
+        if (audio8.paused) {
+            audio8.play();
+        } else {
+            audio8.pause();
+        }
+        });
+   
+    </script>
+     </section>
+        </div>
+
+        <div class="slide fade">
+            <!-- <h1>Slide 3</h1> -->
+            <section>
+               <div class="container1">
+                   <div class="inner-column">
+                       <h2>ី</h2>
+                   </div>
+                   <div class="inner-column">
+                       <h2>/ây/<br>/i/</h2>
+                   </div>
+                   <div class="inner-column">
+                       <div class="speaker-icon" id="speaker9" onclick="playAudio(audio9)">
+                           <audio id="audio9" src="./audio/na/s13.mp3"></audio>
+                       </div>
+                       <div class="speaker-icon" id="speaker10" onclick="playAudio(audio10)">
+                       <audio id="audio10" src="./audio/na/s13.mp3"></audio>
+                       </div>
+                   </div>
+               </div>
+           <div class="rectangle1">ី</div>
+           <div class="container1">
+           <div class="inner-column">
+               <div class="image-container">
+                   <img src="./assets/images/na/3.jpg">
+               </div>
+           </div>
+           <div class="inner-column">
+               <h2>កៅអី /câu ây/ cái ghế<br>គិរី /ki ri/ núi</h2>
+           </div>
+           <div class="inner-column">
+            <div class="speaker-icon" id="speaker11" onclick="playAudio(audio11)">
+                <audio id="audio11" src="./audio/na/13_1.mp3"></audio>
+            </div>
+            <div class="speaker-icon" id="speaker12" onclick="playAudio(audio12)">
+            <audio id="audio12" src="./audio/na/13_2.mp3"></audio>
+            </div>
+        </div>
+       </div>
+   <script>
+       //Xử lý sự kiện phát âm thanh cho từng loa trên slide
+       // Xử lý sự kiện khi người dùng click vào loa 9
+       document.getElementById("speaker9").addEventListener("click", function() {
+       const audio9 = document.getElementById("audio9");
+       if (audio9.paused) {
+           audio9.play();
+       } else {
+           audio9.pause();
+       }
+       });
+   // Xử lý sự kiện khi người dùng click vào loa 10
+   document.getElementById("speaker10").addEventListener("click", function() {
+       const audio10 = document.getElementById("audio10");
+       if (audio10.paused) {
+           audio10.play();
+       } else {
+           audio10.pause();
+       }
+       });
+   // Xử lý sự kiện khi người dùng click vào loa 11
+   document.getElementById("speaker11").addEventListener("click", function() {
+       const audio11 = document.getElementById("audio11");
+       if (audio11.paused) {
+           audio11.play();
+       } else {
+           audio11.pause();
+       }
+       });
+        // Xử lý sự kiện khi người dùng click vào loa 12
+   document.getElementById("speaker12").addEventListener("click", function() {
+       const audio12 = document.getElementById("audio12");
+       if (audio12.paused) {
+           audio12.play();
+       } else {
+           audio12.pause();
+       }
+       });
+   </script>
+    </section>
+       </div>
+          
+   <div class="slide fade">
+             <!-- <h1>Slide 4</h1> -->
+             <section>
+                <div class="container1">
+                    <div class="inner-column">
+                        <h2>ឹ</h2>
+                    </div>
+                    <div class="inner-column">
+                        <h2>/ư/</h2>
+                    </div>
+                    <div class="inner-column">
+                        <div class="speaker-icon" id="speaker13" onclick="playAudio(audio13)"></div>
+                            <audio id="audio13" src="./audio/na/s14.mp3"></audio>
+                    </div>
+                </div>
+            <div class="rectangle1">ឹ</div>
+            <div class="container1">
+			<div class="inner-column">
+                <div class="image-container">
+                    <img src="./assets/images/na/4.jpg">
+                </div>
+			</div>
+			<div class="inner-column">
+				<h2> ឈឹ /chhư/ đau, bệnh</h2>
+			</div>
+			<div class="inner-column">
+                <div class="speaker-icon" id="speaker14" onclick="playAudio(audio14)">
+                    <audio id="audio7" src="./audio/na/5.mp3"></audio>
+                </div>
+            </div>
+	    </div>
+    <script>
+        //Xử lý sự kiện phát âm thanh cho từng loa trên slide
+        // Xử lý sự kiện khi người dùng click vào loa 13
+        document.getElementById("speaker13").addEventListener("click", function() {
+        const audio13 = document.getElementById("audio13");
+        if (audio13.paused) {
+            audio13.play();
+        } else {
+            audio13.pause();
+        }
+        });
+    // Xử lý sự kiện khi người dùng click vào loa 14
+    document.getElementById("speaker14").addEventListener("click", function() {
+        const audio14 = document.getElementById("audio14");
+        if (audio14.paused) {
+            audio14.play();
+        } else {
+            audio14.pause();
+        }
+        });
+    </script>
+     </section>
+        </div>
+
+        <div class="slide fade">
+            <!-- <h1>Slide 5</h1> -->
+            <section>
+               <div class="container1">
+                   <div class="inner-column">
+                       <h2>ឺ</h2>
+                   </div>
+                   <div class="inner-column">
+                       <h2>/ơ/<br>/ư/</h2>
+                   </div>
+                   <div class="inner-column">
+                       <div class="speaker-icon" id="speaker15" onclick="playAudio(audio15)">
+                           <audio id="audio15" src="./audio/na/s15.mp3"></audio>
+                       </div>
+                       <div class="speaker-icon" id="speaker16" onclick="playAudio(audio16)">
+                       <audio id="audio16" src="./audio/na/s14.mp3"></audio>
+                       </div>
+                   </div>
+               </div>
+           <div class="rectangle1"> ឺ </div>
+           <div class="container1">
+           <div class="inner-column">
+               <div class="image-container">
+                   <img src="./assets/images/na/5.jpg">
+               </div>
+           </div>
+           <div class="inner-column">
+               <h2>ផឹកទឹក /phơc tưc/ uống nước</h2>
+           </div>
+           <div class="inner-column">
+            <div class="speaker-icon" id="speaker17" onclick="playAudio(audio17)"></div>
+             <audio id="audio17" src="./audio/na/15_1.mp3"></audio>
+        </div>
+       </div>
+   <script>
+       //Xử lý sự kiện phát âm thanh cho từng loa trên slide
+       // Xử lý sự kiện khi người dùng click vào loa 15
+       document.getElementById("speaker15").addEventListener("click", function() {
+       const audio15 = document.getElementById("audio15");
+       if (audio15.paused) {
+           audio15.play();
+       } else {
+           audio15.pause();
+       }
+       });
+   // Xử lý sự kiện khi người dùng click vào loa 16
+   document.getElementById("speaker16").addEventListener("click", function() {
+       const audio16 = document.getElementById("audio16");
+       if (audio16.paused) {
+           audio16.play();
+       } else {
+           audio16.pause();
+       }
+       });
+        // Xử lý sự kiện khi người dùng click vào loa 17
+   document.getElementById("speaker17").addEventListener("click", function() {
+       const audio17 = document.getElementById("audio17");
+       if (audio17.paused) {
+           audio17.play();
+       } else {
+           audio17.pause();
+       }
+       });
+   </script>
+    </section>
+       </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+    <footer class="footer">
+        <div class="container2" style="height: 60px; font-weight: bold;"> Luyện tập</div>
+        <div class="container2" style="height: 60px; font-weight: bold;"> Trò chơi</div>
+    </footer>
+    
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        let dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+</body>
+</html>
