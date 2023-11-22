@@ -148,11 +148,11 @@
 				<div class="left-column">
 					<h2 style="font-size: 30px;color: #333;font-weight: bolder;">Phụ âm </h2>
 					<div class="row">
-			<div class="circle" onclick="showExample(1,'ច','ចង: Buộc, trói, cột; ចចក: Chó sói' )">ច</div>
-            <div class="circle" onclick="showExample(2,'ឆ', 'ចុះ: cầu thang; ឆា: Xào nấu; ឆ្មា: con mèo; ឆាឆៅ: Quậy phá, quấy rối, làm rối')">ឆ</div>
-            <div class="circle" onclick="showExample(3,'ជ', 'ជិះ Cưỡi; ឆី ăn; ជម្ងឺ: Bệnh; ជនរួមជាតិ: Đồng hương, đồng bào ')">ជ</div>
-            <div class="circle" onclick="showExample(4,'ឈ','ឈេី : gỗ; ឈម: Ngẩn mặt, ngẩn người, ngẩn ngơ; ឈូឆរ: Nhộn nhịp, ồn ào ')">ឈ</div>
-            <div class="circle" onclick="showExample(5,'ញ','ញញាក់: Run cầm cập; ញេច: Đè, nhấn, chà, nghiền')">ញ</div>
+						<div class="circle" onclick="showExample(1,'ត', 'តា; ông; ត: nối;តតេះតតះ: Đi lảo đảo; តិចៗ: Ít ít, từ từ')">ត</div>
+                        <div class="circle" onclick="showExample(2,'ថ', 'ថូ bình hoa; ថប់: Ngạt, nghẹt, ngộp; ថែទាំ: Chăm sóc')">ថ</div>
+                        <div class="circle" onclick="showExample(3,'ទ', 'ទា: con vịt; ទទឹក: Ướt; ទន្លេ: Sông cái, sông lớn; ទប់: Dừng, ngừng, ngăn chặn')">ទ</div>
+                        <div class="circle" onclick="showExample(4,'ធ', 'ធូលី bụi (cây); ធន: Tài sản; ធម្មតា: Bình thường; ធុំ: Ngửi, hửi, hôi (mùi)')">ធ</div>
+                        <div class="circle" onclick="showExample(5,'ន', 'នារី: con gái; នា: Ở chỗ, ngay chỗ; នាយក: Giám đốc/Hiệu trưởng')">ន</div>
 					</div> 
 					
 				</div>
@@ -165,9 +165,9 @@
 					<p>Cách đọc</p>
 					<audio id="exampleAudio" controls></audio>
 					<p>Cách viết</p>
-					<img id="exampleImage" src="assets/images/cachvietphuam/pa2.png" alt="pa2" style="display: none;">
+					<img id="exampleImage" src="assets/images/cachvietphuam/pa4.png" alt="pa4" style="display: none;">
 					<!-- Thêm video vào khung ví dụ -->
-    				<img id="exampleGif" src="videos/vietpa/PA2.mp4" alt="pa2" style="display: none;">
+    				<img id="exampleGif" src="videos/vietpa/PA4.mp4" alt="pa4" style="display: none;">
 				</div>
 			</div>
 		</div>
@@ -244,27 +244,27 @@
 	// Mảng chứa đường dẫn tới các tệp audio và nội dung ví dụ tương ứng
   
 	const audioFiles = [
-	  { audio: 'audio/pa/6.mp3'},
-	  { audio: 'audio/pa/7.mp3'},
-	  { audio: 'audio/pa/8.mp3'},
-	  { audio: 'audio/pa/9.mp3'},
-	  { audio: 'audio/pa/10.mp3'},
+	  { audio: 'audio/pa/16.mp3'},
+	  { audio: 'audio/pa/17.mp3'},
+	  { audio: 'audio/pa/18.mp3'},
+	  { audio: 'audio/pa/19.mp3'},
+	  { audio: 'audio/pa/20.mp3'},
 	  // Thêm các đường dẫn và nội dung ví dụ cho các phụ âm Khmer khác vào đây
   ];
   const imageFiles = [
-	  { Image: 'assets/images/cachvietphuam/pa6.png'},
-	  { Image: 'assets/images/cachvietphuam/pa7.png'},
-	  { Image: 'assets/images/cachvietphuam/pa8.png'},
-	  { Image: 'assets/images/cachvietphuam/pa9.png'},
-	  { Image: 'assets/images/cachvietphuam/pa10.png'}
+	  { Image: 'assets/images/cachvietphuam/pa16.png'},
+	  { Image: 'assets/images/cachvietphuam/pa17.png'},
+	  { Image: 'assets/images/cachvietphuam/pa18.png'},
+	  { Image: 'assets/images/cachvietphuam/pa19.png'},
+	  { Image: 'assets/images/cachvietphuam/pa20.png'}
 	  // Thêm các đường dẫn và nội dung hình ảnh cho các phụ âm Khmer khác vào đây
   ];
   const videoFiles = [
-	  { video: 'videos/vietpa/PA6.mp4'},
-	  { video: 'videos/vietpa/PA7.mp4'},
-	  { video: 'videos/vietpa/PA8.mp4'},
-	  { video: 'videos/vietpa/PA9.mp4'},
-	  { video: 'videos/vietpa/PA10.mp4'}
+	  { video: 'videos/vietpa/PA16.gif'},
+	  { video: 'videos/vietpa/PA17.gif'},
+	  { video: 'videos/vietpa/PA18.gif'},
+	  { video: 'videos/vietpa/PA19.gif'},
+	  { video: 'videos/vietpa/PA20.gif'}
 	  // Thêm các đường dẫn và nội dung video cho các phụ âm Khmer khác vào đây
   ];
     let currentAudioIndex = 0;
