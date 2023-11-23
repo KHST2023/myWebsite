@@ -148,10 +148,10 @@
 				<div class="left-column">
 					<h2 style="font-size: 30px;color: #333;font-weight: bolder;">Phụ âm </h2>
 					<div class="row">
-						<div class="circle" onclick="showExample(1,'យ', 'យួរ : xách, cầm;សប្បាយ: vui vẻ; យន្ត: Máy, động cơ; យប់: Đêm, tối')">យ</div>
-                        <div class="circle" onclick="showExample(2,'រ', 'យួរ xách, cầm; រក: Tìm, tìm kiếm; រខាក: Thưa, mỏng; រងា: Lạnh, rét')">រ</div>
-                        <div class="circle" onclick="showExample(3,'ល', 'លី khiên, vác; ល: Thử; លក់: Bán/ngủ; លាប: Thoa, xoa, xức, sơn')">ល</div>
-                        <div class="circle" onclick="showExample(4,'វ', 'វិថី đường phố; រៃ con ve; វរ: Nguy, gây go; វា: Nó, hắn; វាំង: Che, chắn, rào')">វ</div>
+						<div class="circle" onclick="showExample(1,'ស', 'សី trái cầu đá; ស: Trắng, bạch; សកម្ម: Tích cực, sốt sắng; សង: Trả, đền')">ស</div>
+                        <div class="circle" onclick="showExample(2,'ហ', 'ហោះ bay; ហត់: Mệt mỏi, mệt nhọc; ហា: Há, mở; ហាម: Cấm')">ហ</div>
+                        <div class="circle" onclick="showExample(3,'ឡ', 'កីឡា thể thao; ឡ: Lò gạch; ឡាវ: Lào; ឡាន: Ô tô, xe hơi')">ឡ</div>
+                        <div class="circle" onclick="showExample(4,'អ', 'អំបោះ sợi chỉ; អក្សរ: Chữ; អង្កាល់: Khi nào, chừng nào; អង្កេត: Xem, xem xét, quan sát, thẩm tra')">អ</div>
 					</div> 
 					
 				</div>
@@ -164,15 +164,15 @@
 					<p>Cách đọc</p>
 					<audio id="exampleAudio" controls></audio>
 					<p>Cách viết</p>
-					<img id="exampleImage" src="assets/images/cachvietphuam/pa26.png" alt="pa26" style="display: none;">
-					<img id="exampleImage" src="assets/images/cachvietphuam/pa27.png" alt="pa27" style="display: none;">
-					<img id="exampleImage" src="assets/images/cachvietphuam/pa28.png" alt="pa28" style="display: none;">
-					<img id="exampleImage" src="assets/images/cachvietphuam/pa29.png" alt="pa29" style="display: none;">
+					<img id="exampleImage" src="assets/images/cachvietphuam/pa30.png" alt="pa30" style="display: none;">
+					<img id="exampleImage" src="assets/images/cachvietphuam/pa31.png" alt="pa31" style="display: none;">
+					<img id="exampleImage" src="assets/images/cachvietphuam/pa32.png" alt="pa32" style="display: none;">
+					<img id="exampleImage" src="assets/images/cachvietphuam/pa33.png" alt="pa33" style="display: none;">
 					<!-- Thêm video vào khung ví dụ -->
-					<img id="exampleGif" src="videos/vietpa/PA26.gif" alt="pa26" style="display: none;">
-    				<img id="exampleGif" src="videos/vietpa/PA27.gif" alt="pa27" style="display: none;">
-					<img id="exampleGif" src="videos/vietpa/PA28.gif" alt="pa28" style="display: none;">
-					<img id="exampleGif" src="videos/vietpa/PA29.gif" alt="pa29" style="display: none;">
+					<img id="exampleGif" src="videos/vietpa/PA30.gif" alt="pa30" style="display: none;">
+    				<img id="exampleGif" src="videos/vietpa/PA31.gif" alt="pa31" style="display: none;">
+					<img id="exampleGif" src="videos/vietpa/PA32.gif" alt="pa32" style="display: none;">
+					<img id="exampleGif" src="videos/vietpa/PA33.gif" alt="pa33" style="display: none;">
 				</div>
 			</div>
 		</div>
@@ -249,24 +249,24 @@
 	// Mảng chứa đường dẫn tới các tệp audio và nội dung ví dụ tương ứng
   
 	const audioFiles = [
-	  { audio: 'audio/pa/26.mp3'},
-	  { audio: 'audio/pa/27.mp3'},
-	  { audio: 'audio/pa/28.mp3'},
-	  { audio: 'audio/pa/29.mp3'},
+	  { audio: 'audio/pa/30.mp3'},
+	  { audio: 'audio/pa/31.mp3'},
+	  { audio: 'audio/pa/32.mp3'},
+	  { audio: 'audio/pa/33.mp3'},
 	  // Thêm các đường dẫn và nội dung ví dụ cho các phụ âm Khmer khác vào đây
   ];
   const imageFiles = [
-	  { Image: 'assets/images/cachvietphuam/pa26.png'},
-	  { Image: 'assets/images/cachvietphuam/pa27.png'},
-	  { Image: 'assets/images/cachvietphuam/pa28.png'},
-	  { Image: 'assets/images/cachvietphuam/pa29.png'},
+	  { Image: 'assets/images/cachvietphuam/pa30.png'},
+	  { Image: 'assets/images/cachvietphuam/pa31.png'},
+	  { Image: 'assets/images/cachvietphuam/pa32.png'},
+	  { Image: 'assets/images/cachvietphuam/pa33.png'},
 	  // Thêm các đường dẫn và nội dung hình ảnh cho các phụ âm Khmer khác vào đây
   ];
   const videoFiles = [
-	  { video: 'videos/vietpa/PA26.gif'},
-	  { video: 'videos/vietpa/PA27.gif'},
-	  { video: 'videos/vietpa/PA28.gif'},
-	  { video: 'videos/vietpa/PA29.gif'}
+	  { video: 'videos/vietpa/PA30.gif'},
+	  { video: 'videos/vietpa/PA31.gif'},
+	  { video: 'videos/vietpa/PA32.gif'},
+	  { video: 'videos/vietpa/PA33.gif'}
 	  // Thêm các đường dẫn và nội dung video cho các phụ âm Khmer khác vào đây
   ];
     let currentAudioIndex = 0;
