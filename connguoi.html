@@ -24,6 +24,21 @@
             height: 100vh; /* Chiều cao là 100% của chiều cao của màn hình (viewport height) */
             border: none;
         }
+        .button-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        .button-container button {
+            padding: 5px 20px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body id="body-layout" class="layout-default">
@@ -41,6 +56,22 @@
             style="border: none;" webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no">
         </iframe>
         <script async src="//cdn.thinglink.me/jse/responsive.js"></script>   
+        <!-- Các nút bên dưới-->
+        <div class="post-preview">
+            <div class="button-container">
+                <button type="button" onclick="dieu_huong()">LUYỆN TẬP TỪ VỰNG</button>
+                <script>
+                    function dieu_huong() 
+                    { location.assign("luyentaptuvungconnguoi.html"); }
+                </script>
+                <button type="button" onclick="dieu_huong1()">TRÒ CHƠI</button>
+                <script>
+                    function dieu_huong1() 
+                    { location.assign("https://wordwall.net/embed/fc332bd73346490d8a82df490bf2c3a4?themeId=49&templateId=76&fontStackId=0"); }
+                </script>
+            </div>
+        </div>
+        <!-- ////////////////////////-->
     <!--Begin footer-->
     <footer class="footer">
         <div class="container">
