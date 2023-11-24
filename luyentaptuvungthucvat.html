@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Luyện tập từ vựng - thực vật</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        section {
+            margin: 10px 0;
+        }
+        .section1{
+           margin: 10px 0;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .rectangle {
+            width: 100%;
+            height: 50px;
+            background-color: #3498db;
+            border: 2px solid #2980b9;
+            border-radius: 20px;
+            margin: 10px 0;
+            text-align: center;
+            line-height: 50px;
+            color: #0c0c0c;
+            position: relative; /* Để có thể đặt các border-radius con */
+            font-size: 25px;
+            font-weight: bold;
+            text-indent: 10px;
+        }
+        .button-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        .button-container button {
+            padding: 5px 20px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .hidden {
+        display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="rectangle">LUYỆN TẬP TỪ VỰNG - THỰC VẬT</div>
+    <section id="section1">
+        <h2><a href="#section1"  class="toggleLink" >THỰC VẬT</a></h2>
+        <ul class="gameList hidden">
+            <li><a href="https://wordwall.net/embed/fc332bd73346490d8a82df490bf2c3a4?themeId=49&templateId=76&fontStackId=0">Game 1</a></li>
+            <li><a href="https://wordwall.net/embed/ff176e91ac9a4c2fbf49d67d15d4e2f2?themeId=21&templateId=69&fontStackId=0">Game 2</a></li>
+            <li><a href="https://wordwall.net/play/yet-another-game-link">Game 3</a></li>
+            <li><a href="https://wordwall.net/play/one-more-game-link">Game 4</a></li>
+            <li><a href="https://wordwall.net/play/final-game-link">Game 5</a></li>
+        </ul>
+    </section>
+    
+        <script>
+            // Lấy tất cả các liên kết và danh sách game
+            const toggleLinks = document.querySelectorAll('.toggleLink');
+            const gameLists = document.querySelectorAll('.gameList');
+        
+            // Thêm sự kiện click cho mỗi liên kết
+            toggleLinks.forEach((toggleLink, index) => {
+              toggleLink.addEventListener('click', function () {
+                // Kiểm tra xem danh sách đang ẩn hay hiển thị
+                const isHidden = gameLists[index].classList.contains('hidden');
+        
+                // Nếu đang ẩn, hiển thị danh sách; ngược lại, ẩn danh sách
+                if (isHidden) {
+                  gameLists[index].classList.remove('hidden');
+                } else {
+                  gameLists[index].classList.add('hidden');
+                }
+              });
+            });
+          </script>
+    
+    <!--=============================================-->
+    <div class="post-preview">
+        <div class="button-container">
+            <button type="button" onclick="dieu_huong()">LUYỆN TẬP TỪ VỰNG</button>
+            <script>
+                function dieu_huong() 
+                { location.assign("luyentaptuvungdiadiem.html"); }
+            </script>
+            <button type="button" onclick="dieu_huong1()">TRÒ CHƠI</button>
+            <script>
+                function dieu_huong1() 
+                { location.assign("https://wordwall.net/embed/fc332bd73346490d8a82df490bf2c3a4?themeId=49&templateId=76&fontStackId=0"); }
+            </script>
+            <button type="button" onclick="dieu_huong2()">THỰC VẬT</button>
+            <script>
+                function dieu_huong2() 
+                { location.assign("thucvat.html"); }
+            </script>
+        </div>
+    </div>
+    <div class="rectangle">HỌC NÂNG CAO THEO CHỦ ĐỀ - THỰC VẬT</div>
+   
+</body>
+</html>
