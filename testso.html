@@ -2,50 +2,21 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
-	<style> 
-	body{
-		font-family: Arial, sans-serif;
-		margin: 0;
-		padding: 0;
-		}
-
-	.iframe-container {
-		width: 100%;
-		height: 50vh;
-		margin: 10px 0;
-	}
-
-	iframe {
-		width: 100%;
-		height: 100%;
-		border: none;
-	}
-</style>
+  <title>Luyện tập chữ số</title>
+  <style>
+     iframe 
+        {   margin-top: 20px;
+            width: 100%;
+            height: 100vh; /* Chiều cao là 100% của chiều cao của màn hình (viewport height) */
+            border: none;
+        }
+  </style>
 </head>
 <body>
-	<div class="iframe-container" id="iframe-container-1">
-        <!-- iframe 1 sẽ hiển thị ở đây -->
-		<iframe style="max-width:100%" src="https://wordwall.net/vi/embed/26b4b92437734c3abfeb82cdeafd5ed9?themeId=1&templateId=5&fontStackId=0" width="500" height="380" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <a href="javascript:void(0)" onclick="loadIframe(1)">Luyện tập số, nguyên âm</a>
-
-    <div class="iframe-container" id="iframe-container-2">
-        <!-- iframe 2 sẽ hiển thị ở đây -->
-    </div>
-    <a href="javascript:void(0)" onclick="loadIframe(2)">Luyện tập phụ âm</a>
-
-    <!-- Thêm các iframe và hàng chữ tương ứng ở đây -->
-
-    <script>
-        function loadIframe(number) {
-            // Đổi địa chỉ URL của iframe tương ứng ở đây
-            var iframeContainer = document.getElementById("iframe-container-" + number);
-            iframeContainer.innerHTML = 'https://wordwall.net/vi/embed/26b4b92437734c3abfeb82cdeafd5ed9?themeId=1&templateId=5&fontStackId=0' + number + '" allowfullscreen></iframe>';
-        }
-    </script>
-	
+	<iframe src="https://wordwall.net/vi/embed/26b4b92437734c3abfeb82cdeafd5ed9?themeId=1&templateId=5&fontStackId=0"
+			 width="500" height="380" frameborder="0" allowfullscreen>
+	</iframe>
 </body>
 </html>
