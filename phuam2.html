@@ -32,21 +32,22 @@
 
         /* CSS cho cột trái */
         .left-column {
-
             /*background-color: #f2f2f2;*/ /* Màu của cột trái */
            /* padding: 20px;*/
-		   flex: 1;
+		    flex: 1;
 			padding: 20px;
 			background-color: rgba(255, 255, 255, 0.7); /* Màu nền khung hiển thị */
 			border-radius: 10px;
 			margin: 20px;
 			border: 2px solid #333; /* Đường viền khung */
 			background-color: #FFF2E6;
+			align-items: flex-start; /* Đặt chiều cao theo nội dung */
         }
 
         /* CSS cho cột phải */
         .right-column {
-            background-color: #FFF2E6; /* Màu của cột phải */
+            flex: 1;
+			background-color: #FFF2E6; /* Màu của cột phải */
             padding: 20px;
         }
 
@@ -54,17 +55,19 @@
         @media screen and (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr; /* Một cột duy nhất trên điện thoại di động */
+				display: flex;
             }
         }
+		
 		/* CSS cho hinh tron 5 chu cai*/
 		.circle {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background-color: #f07f16;
             border-radius: 50%;
             text-align: center;
-            line-height: 50px;
-            font-size: 24px;
+            line-height: 40px;
+            font-size: 18px;
             color: #fff;
             margin: 5px;
             cursor: pointer;
@@ -97,6 +100,13 @@
 			font-weight: bolder;
 			font-family: 'Times New Roman', Times, serif;
 			}
+		h2{
+			font-family: 'Times New Roman', Times, serif;
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			font-weight: bolder;
+		}
 		/* Đảm bảo video tự động thay đổi kích thước để vừa với khung hiển thị */
 		#exampleVideo {
     		max-width: 100%;
@@ -119,7 +129,13 @@
 		/* Ẩn hình ảnh và chỉ hiển thị video khi cần thiết */
 		#exampleImage {
     		display: none;
-		}		
+		}	
+        .carousel-inner {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh; /* Chiều cao của màn hình */
+            }
 		.close {
     		float: right;
    			 cursor: pointer;
@@ -179,7 +195,15 @@
 				</div>
 			</div>
 		</div>
-    </div>
+		<!--Ảnh tương tác-->
+		<h2> Ảnh tương tác</h2>
+		<div class="carousel-inner">
+			<iframe width="960" height="682" data-original-width="1520" data-original-height="1080" 
+                src="https://www.thinglink.com/view/scene/1769300426005414374" type="text/html" 
+                style="border: none;" webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no">
+            </iframe>
+            <script async src="//cdn.thinglink.me/jse/responsive.js"></script>
+        </div>
 
 <!--Begin footer-->
 <footer class="footer">
@@ -196,15 +220,19 @@
 				<div class="footer-widget">
 					<h5 class="title">Hệ thống học ngôn ngữ Khmer</h5>
 					<ul>
-						<li><a target="_blank" href="#PhongTrungBay1">Học cơ bản</a></li>
+						<li><a target="_blank" href="index.html">Giới thiệu</a></li>
 						<li><a target="_blank"
-							href="#PhongTrungBay2">Học PP tương tác, trải nghiệm</a>
+							href="hoccoban1.html">Học cơ bản</a>
 						</li>
 						<li><a target="_blank"
-							href="#PhongTrungBay3">Hệ thống luyện tập</a></li>
-						<li><a target="_blank" href="#PhongTrungBay4">Hệ thống kiểm tra</a>
+							href="hocnangcaotheochude.html">Học nâng cao theo chủ đề</a></li>
+						<li><a target="_blank" href="luyentapkiemtra.html">Luyện tập, kiểm tra</a>
 						</li>
-						<li><a target="_blank" href="#PhongTrungBay5">Từ điển</a>
+						<li><a target="_blank" href="tudien.html">Từ điển</a>
+						</li>
+						<li><a target="_blank" href="./btkhmerhc/index.html">Di sản văn hóa dân tộc Khmer</a>
+						</li>
+						<li><a target="_blank" href="thamquantrainghiem.html">Tham quan, trải nghiệm</a>
 						</li>
 					</ul>
 				</div>
@@ -232,7 +260,7 @@
 						<a class="dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
 							aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe" aria-hidden="true"></i>Tiếng Việt</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown01">
-							<a class="dropdown-item" href="#pageKhmer">ភាសាខ្មែរ</a>
+							<a class="dropdown-item" href="phuam1_khmer.html">ភាសាខ្មែរ</a>
 						</div>
 					</div>
 				</div>
@@ -252,27 +280,27 @@
 	// Mảng chứa đường dẫn tới các tệp audio và nội dung ví dụ tương ứng
   
 	const audioFiles = [
-	  { audio: 'audio/pa/6.mp3'},
-	  { audio: 'audio/pa/7.mp3'},
-	  { audio: 'audio/pa/8.mp3'},
-	  { audio: 'audio/pa/9.mp3'},
-	  { audio: 'audio/pa/10.mp3'},
+	  { audio: 'audio/pa/1.mp3'},
+	  { audio: 'audio/pa/2.mp3'},
+	  { audio: 'audio/pa/3.mp3'},
+	  { audio: 'audio/pa/4.mp3'},
+	  { audio: 'audio/pa/5.mp3'},
 	  // Thêm các đường dẫn và nội dung ví dụ cho các phụ âm Khmer khác vào đây
   ];
   const imageFiles = [
-	  { Image: 'assets/images/cachvietphuam/pa6.png'},
-	  { Image: 'assets/images/cachvietphuam/pa7.png'},
-	  { Image: 'assets/images/cachvietphuam/pa8.png'},
-	  { Image: 'assets/images/cachvietphuam/pa9.png'},
-	  { Image: 'assets/images/cachvietphuam/pa10.png'}
+	  { Image: 'assets/images/cachvietphuam/pa1.png'},
+	  { Image: 'assets/images/cachvietphuam/pa2.png'},
+	  { Image: 'assets/images/cachvietphuam/pa3.png'},
+	  { Image: 'assets/images/cachvietphuam/pa4.png'},
+	  { Image: 'assets/images/cachvietphuam/pa5.png'}
 	  // Thêm các đường dẫn và nội dung hình ảnh cho các phụ âm Khmer khác vào đây
   ];
   const videoFiles = [
-	  { video: 'videos/vietpa/PA6.gif'},
-	  { video: 'videos/vietpa/PA7.gif'},
-	  { video: 'videos/vietpa/PA8.gif'},
-	  { video: 'videos/vietpa/PA9.gif'},
-	  { video: 'videos/vietpa/PA10.gif'}
+	  { video: 'videos/vietpa/PA1.gif'},
+	  { video: 'videos/vietpa/PA2.gif'},
+	  { video: 'videos/vietpa/PA3.gif'},
+	  { video: 'videos/vietpa/PA4.gif'},
+	  { video: 'videos/vietpa/PA5.gif'}
 	  // Thêm các đường dẫn và nội dung video cho các phụ âm Khmer khác vào đây
   ];
     let currentAudioIndex = 0;
