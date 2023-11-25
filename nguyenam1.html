@@ -3,7 +3,7 @@
 <head>
     <title>Học nguyên âm</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <style>
+    <style>
         .slideshow-container {
             position: relative;
             width: 100%;
@@ -66,7 +66,24 @@
             display: flex;         
             align-items: center; /* Căn giữa các cột theo chiều ngang */
             font-size: 25px;
-          14px;
+            background-color: #f79c13;
+            border: 2px solid #ff7300;
+            margin-top: 10px;
+            cursor: pointer; 
+        }
+        .inner-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Căn giữa theo cả chiều dọc và chiều ngang */
+            border: 2px solid #000;
+            text-align: center;
+            width: 30%; /* Độ rộng cố định cho mỗi cột */
+			height: 100px;
+            justify-content: center;
+            width: 100%;
+        }
+        .inner-column h2 {
+            font-size: 14px;
         }
         .rectangle {
             display: flex;
@@ -131,7 +148,7 @@
             align-items: center; 
             justify-content: center;
         }
-    </style>  
+    </style>
 </head>
 <body>
     <div class="rectangle">Nguyên âm </div>
@@ -151,11 +168,11 @@
                             <audio id="audio1" src="./audio/na/s11.mp3"></audio>
                         </div>
                         <div class="speaker-icon" id="speaker2" onclick="playAudio(audio2)">
-                        <audio id="audio2" src="./audio/na/s32.mp3"></audio>
+                            <audio id="audio2" src="./audio/na/s32.mp3"></audio>
                         </div>
                     </div>
                 </div>
-            <div class="rectangle1"> ា </div>
+                <div class="rectangle1"> ា </div>
             <div class="container1">
 			<div class="inner-column">
                 <div class="image-container">
@@ -231,11 +248,11 @@
                             <audio id="audio5" src="./audio/na/s12.mp3"></audio>
                         </div>
                         <div class="speaker-icon" id="speaker6" onclick="playAudio(audio6)">
-                        <audio id="audio6" src="./audio/na/s51.mp3"></audio>
+                        <audio id="audio6" src="./audio/na/s12.mp3"></audio>
                         </div>
                     </div>
                 </div>
-            <div class="rectangle1"> ិ </div>
+                <div class="rectangle1"> ិ </div>
             <div class="container1">
 			<div class="inner-column">
                 <div class="image-container">
@@ -243,7 +260,7 @@
                 </div>
 			</div>
 			<div class="inner-column">
-				<h2>ទាឡិកា /nia lế ka/ đồng hồ<br>វិថី /ví thây/ đường phố</h2>
+                <h2>ទាឡិកា /nia lế ka/ đồng hồ<br>វិថី /ví thây/ đường phố</h2>
 			</div>
 			<div class="inner-column">
                 <div class="speaker-icon" id="speaker7" onclick="playAudio(audio7)">
@@ -302,21 +319,21 @@
             <section>
                <div class="container1">
                    <div class="inner-column">
-                       <h2>ី</h2>
+                    <h2>ី</h2>
                    </div>
                    <div class="inner-column">
-                       <h2>/ây/<br>/i/</h2>
+                    <h2>/ây/<br>/i/</h2>
                    </div>
                    <div class="inner-column">
                        <div class="speaker-icon" id="speaker9" onclick="playAudio(audio9)">
                            <audio id="audio9" src="./audio/na/s13.mp3"></audio>
                        </div>
                        <div class="speaker-icon" id="speaker10" onclick="playAudio(audio10)">
-                       <audio id="audio10" src="./audio/na/s13.mp3"></audio>
-                       </div>
+                        <audio id="audio10" src="./audio/na/s13.mp3"></audio>
+                    </div>
                    </div>
                </div>
-           <div class="rectangle1">ី</div>
+               <div class="rectangle1">ី</div>
            <div class="container1">
            <div class="inner-column">
                <div class="image-container">
@@ -324,14 +341,14 @@
                </div>
            </div>
            <div class="inner-column">
-               <h2>កៅអី /câu ây/ cái ghế<br>គិរី /ki ri/ núi</h2>
+            <h2>កៅអី /câu ây/ cái ghế<br>គិរី /ki ri/ núi</h2>
            </div>
            <div class="inner-column">
             <div class="speaker-icon" id="speaker11" onclick="playAudio(audio11)">
-                <audio id="audio11" src="./audio/na/13_1.mp3"></audio>
+                <audio id="audio11" src="./audio/na/13.mp3"></audio>
             </div>
             <div class="speaker-icon" id="speaker12" onclick="playAudio(audio12)">
-            <audio id="audio12" src="./audio/na/13_2.mp3"></audio>
+                <audio id="audio12" src="./audio/na/13.mp3"></audio>
             </div>
         </div>
        </div>
@@ -346,7 +363,7 @@
            audio9.pause();
        }
        });
-   // Xử lý sự kiện khi người dùng click vào loa 10
+       // Xử lý sự kiện khi người dùng click vào loa 10
    document.getElementById("speaker10").addEventListener("click", function() {
        const audio10 = document.getElementById("audio10");
        if (audio10.paused) {
@@ -355,6 +372,7 @@
            audio10.pause();
        }
        });
+
    // Xử lý sự kiện khi người dùng click vào loa 11
    document.getElementById("speaker11").addEventListener("click", function() {
        const audio11 = document.getElementById("audio11");
@@ -364,7 +382,7 @@
            audio11.pause();
        }
        });
-        // Xử lý sự kiện khi người dùng click vào loa 12
+      // Xử lý sự kiện khi người dùng click vào loa 12
    document.getElementById("speaker12").addEventListener("click", function() {
        const audio12 = document.getElementById("audio12");
        if (audio12.paused) {
@@ -372,7 +390,7 @@
        } else {
            audio12.pause();
        }
-       });
+       }); 
    </script>
     </section>
        </div>
@@ -392,7 +410,7 @@
                             <audio id="audio13" src="./audio/na/s14.mp3"></audio>
                     </div>
                 </div>
-            <div class="rectangle1">ឹ</div>
+                <div class="rectangle1">ឹ</div>
             <div class="container1">
 			<div class="inner-column">
                 <div class="image-container">
@@ -404,7 +422,7 @@
 			</div>
 			<div class="inner-column">
                 <div class="speaker-icon" id="speaker14" onclick="playAudio(audio14)">
-                    <audio id="audio7" src="./audio/na/5.mp3"></audio>
+                    <audio id="audio14" src="./audio/na/14.mp3"></audio>
                 </div>
             </div>
 	    </div>
@@ -432,73 +450,6 @@
      </section>
         </div>
 
-        <div class="slide fade">
-            <!-- <h1>Slide 5</h1> -->
-            <section>
-               <div class="container1">
-                   <div class="inner-column">
-                       <h2>ឺ</h2>
-                   </div>
-                   <div class="inner-column">
-                       <h2>/ơ/<br>/ư/</h2>
-                   </div>
-                   <div class="inner-column">
-                       <div class="speaker-icon" id="speaker15" onclick="playAudio(audio15)">
-                           <audio id="audio15" src="./audio/na/s15.mp3"></audio>
-                       </div>
-                       <div class="speaker-icon" id="speaker16" onclick="playAudio(audio16)">
-                       <audio id="audio16" src="./audio/na/s14.mp3"></audio>
-                       </div>
-                   </div>
-               </div>
-           <div class="rectangle1"> ឺ </div>
-           <div class="container1">
-           <div class="inner-column">
-               <div class="image-container">
-                   <img src="./assets/images/na/5.jpg">
-               </div>
-           </div>
-           <div class="inner-column">
-               <h2>ផឹកទឹក /phơc tưc/ uống nước</h2>
-           </div>
-           <div class="inner-column">
-            <div class="speaker-icon" id="speaker17" onclick="playAudio(audio17)"></div>
-             <audio id="audio17" src="./audio/na/15_1.mp3"></audio>
-        </div>
-       </div>
-   <script>
-       //Xử lý sự kiện phát âm thanh cho từng loa trên slide
-       // Xử lý sự kiện khi người dùng click vào loa 15
-       document.getElementById("speaker15").addEventListener("click", function() {
-       const audio15 = document.getElementById("audio15");
-       if (audio15.paused) {
-           audio15.play();
-       } else {
-           audio15.pause();
-       }
-       });
-   // Xử lý sự kiện khi người dùng click vào loa 16
-   document.getElementById("speaker16").addEventListener("click", function() {
-       const audio16 = document.getElementById("audio16");
-       if (audio16.paused) {
-           audio16.play();
-       } else {
-           audio16.pause();
-       }
-       });
-        // Xử lý sự kiện khi người dùng click vào loa 17
-   document.getElementById("speaker17").addEventListener("click", function() {
-       const audio17 = document.getElementById("audio17");
-       if (audio17.paused) {
-           audio17.play();
-       } else {
-           audio17.pause();
-       }
-       });
-   </script>
-    </section>
-       </div>
-
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
@@ -508,7 +459,6 @@
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
         <span class="dot" onclick="currentSlide(4)"></span>
-        <span class="dot" onclick="currentSlide(5)"></span>
     </div>
     <footer class="footer">
         <div class="container2" style="height: 60px; font-weight: bold;"> Luyện tập</div>
