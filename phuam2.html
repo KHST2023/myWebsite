@@ -17,10 +17,8 @@
 	<link href="assets/css/theme.css" rel="stylesheet">
 	<link href="assets/css/theme1.css" rel="stylesheet">
 	
-	
 	<!-- Begin tracking codes here, including ShareThis/Analytics -->
-	
-    <style>
+     <style>
         
         /* CSS cho grid container */
         .container1 {
@@ -46,7 +44,7 @@
 
         /* CSS cho cột phải */
         .right-column {
-            flex: 1;
+            flex: 0;
 			background-color: #FFF2E6; /* Màu của cột phải */
             padding: 20px;
         }
@@ -55,7 +53,7 @@
         @media screen and (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr; /* Một cột duy nhất trên điện thoại di động */
-		
+	
             }
         }
 		
@@ -123,19 +121,13 @@
     		margin: 20px auto; /* Căn giữa video trong khung */
 		}
 		.row {
-    			margin-bottom: 20px; /* Khoảng cách 20px giữa carousel-inner và row */
+    			margin-bottom: 10px; /* Khoảng cách 20px giữa carousel-inner và row */
 		
 		}
 		/* Ẩn hình ảnh và chỉ hiển thị video khi cần thiết */
 		#exampleImage {
     		display: none;
-		}	
-        .carousel-inner {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100vh; /* Chiều cao của màn hình */
-            }
+		}		
 		.close {
     		float: right;
    			 cursor: pointer;
