@@ -62,12 +62,12 @@
         .container1 {
             display: flex;
             align-items: center;
-            border: 2px solid #000;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 30px;
             background-color: #f79c13;
-            margin-bottom: 20px;
+            border: 2px solid #ff7300;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
         .left-part, .right-part {
             flex: 1;
@@ -85,6 +85,15 @@
                 display: block; /* Để căn giữa hình ảnh */
                 margin: 0 auto; /* Căn giữa theo chiều ngang */
             }
+        .button-container button{
+            display: flex;
+            padding: 10px 10px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
         </style>
 </head>
 <body>
@@ -111,7 +120,10 @@
     <div id="output-container">
         <textarea id="output-text" rows="4" cols="50" readonly></textarea>
     </div>
-    <div class="container1">
+    <div class="button-container">
+        <button type="button" onclick="translateLanguage()">TRANSLATE</button>
+    </div>
+   <div class="container1">
         <div class="left-part" id="left-part">TIẾNG KHMER</div>
         <div class="arrow"id="arrow" onclick="dieuhuong()">
             <img src="./assets/images/muiten.png" id="arrow-image">
@@ -131,6 +143,10 @@
         "bồ câu": { "vi": "Bồ câu", "km": "បុរស" },
         "sinh nở": { "vi": "Sinh nở", "km": "សំណើ" },
     }
+    function translateLanguage()
+    {
+        updateLanguage();
+    }
     function updateLanguage() {
         const inputText = document.getElementById("input-text");
         const outputText = document.getElementById("output-text");
@@ -138,6 +154,7 @@
         const targetLang1 = document.getElementById("target-lang1");
 
         const userInput = inputText.value.trim().toLowerCase();
+        let currentLanguage = "vi";
         for (const key in dictionary1)
         {
             if (key === userInput) 
@@ -163,7 +180,6 @@
         outputText.value = translatedText;
         inputText.value = userInput;
     }
-
 
 
     function dieuhuong() {
