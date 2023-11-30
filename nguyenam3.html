@@ -148,9 +148,20 @@
             align-items: center; 
             justify-content: center;
         }
+        .back-button {
+            padding: 8px 16px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
+    <button class="back-button" onclick="goBack()">Back</button> 
     <div class="rectangle">Nguyên âm </div>
     <div class="slideshow-container">
         <div class="slide fade">
@@ -262,6 +273,12 @@
         }
         });
    
+    </script>
+    <script>
+        function goBack() {
+            // Quay lại trang chủ khi click nút "Back"
+            window.location.href = 'hoccoban1.html';
+        }
     </script>
      </section>
         </div>
