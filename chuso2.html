@@ -66,7 +66,7 @@
             display: flex;         
             align-items: center; /* Căn giữa các cột theo chiều ngang */
             font-size: 25px;
-            background-color: #f79c13;
+            background-color: #bbb;
             border: 2px solid #ff7300;
             margin-top: 10px;
             cursor: pointer;
@@ -88,8 +88,8 @@
         .rectangle {
             display: flex;
             height: 50px;
-            background-color: #f79c13;
-            border: 2px solid #ff7300;
+            background-color: #FFF2E6;
+            border: 2px solid #ffca98;
             border-radius: 20px;
             margin: 10px 0;
             text-align: left;
@@ -148,9 +148,20 @@
             align-items: center; 
             justify-content: center;
         }
+        .back-button {
+            padding: 8px 16px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+            display: inline-block;
+        }
     </style>   
 </head>
 <body>
+    <button class="back-button" onclick="goBack()">Back</button> 
     <div class="rectangle">Chữ số </div>
     <div class="slideshow-container">
         <div class="slide fade">
@@ -172,7 +183,7 @@
                 <div class="container1">
                 <div class="inner-column">
                     <div class="image-container">
-                        <img src="./assets/images/so/6quyensach.png">
+                        <img src="./assets/images/so/6quyensach.jpg">
                     </div>
 			</div>
 			<div class="inner-column">
@@ -204,6 +215,12 @@
             }
             });
         </script>
+        <script>
+            function goBack() {
+                // Quay lại trang chủ khi click nút "Back"
+                window.location.href = 'hoccoban1.html';
+            }
+        </script>
      </section>
 
     </div>
@@ -226,7 +243,7 @@
         <div class="container1">
         <div class="inner-column">
             <div class="image-container">
-                <img src="./assets/images/so/7mausac.png">
+                <img src="./assets/images/so/7mausac.jpg">
             </div>
     </div>
     <div class="inner-column">
