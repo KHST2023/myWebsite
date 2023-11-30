@@ -66,8 +66,8 @@
             display: flex;         
             align-items: center; /* Căn giữa các cột theo chiều ngang */
             font-size: 25px;
-    	    background-color: #f79c13;
-            border: 2px solid #ff7300;
+            background-color: #FFF2E6;
+            border: 2px solid #ffca98;
             margin-top: 10px;
             cursor: pointer; 
         }
@@ -88,8 +88,8 @@
         .rectangle {
             display: flex;
             height: 50px;
-            background-color: #f79c13;
-            border: 2px solid #ff7300;
+            background-color: #FFF2E6;
+            border: 2px solid #ffca98;
             border-radius: 20px;
             margin: 10px 0;
             text-align: left;
@@ -148,15 +148,26 @@
             align-items: center; 
             justify-content: center;
         }
+        .back-button {
+            padding: 8px 16px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+            display: inline-block;
+        }
     </style>   
 </head>
 <body>
+    <button class="back-button" onclick="goBack()">Back</button> 
     <div class="rectangle">Chữ số </div>
     <div class="slideshow-container">
         <div class="slide fade">
            <!-- <h1>Slide 1</h1> -->
             <section>
-                <div class="container1">
+                  <div class="container1">
                     <div class="inner-column">
                         <h2>១</h2>
                     </div>
@@ -203,6 +214,12 @@
             audio2.pause();
         }
         });
+    </script>
+    <script>
+        function goBack() {
+            // Quay lại trang chủ khi click nút "Back"
+            window.location.href = 'hoccoban1.html';
+        }
     </script>
      </section>
         </div>
