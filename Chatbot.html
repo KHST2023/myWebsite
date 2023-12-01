@@ -1,127 +1,50 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Học giao tiếp qua hệ thống Chatbot</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-    <style>
-        body {
-            font-family: 'Times New Roman', Times, serif;
-        }
-        
-        h1 {
-            color: black;
-            margin-bottom: 0;
-            margin-top: 0;
-            text-align: center;
-            font-size: 40px;
-        }
-        
-        h3 {
-            color: black;
-            font-size: 20px;
-            margin-top: 3px;
-            text-align: center;
-        }
-        
-        #chatbox {
-            margin-left: auto;
-            margin-right: auto;
-            width: 40%;
-            margin-top: 60px;
-        }
-        
-        #userInput {
-            margin-left: auto;
-            margin-right: auto;
-            width: 40%;
-            margin-top: 60px;
-        }
-        
-        #textInput {
-            width: 87%;
-            border: none;
-            border-bottom: 3px solid #009688;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 17px;
-        }
-        
-        #buttonInput {
-            padding: 3px;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 17px;
-        }
-        
-        .userText {
-            color: white;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 17px;
-            text-align: right;
-            line-height: 30px;
-        }
-        
-        .userText span {
-            background-color: #009688;
-            padding: 10px;
-            border-radius: 2px;
-        }
-        
-        .botText {
-            color: white;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 17px;
-            text-align: left;
-            line-height: 30px;
-        }
-        
-        .botText span {
-            background-color: #EF5350;
-            padding: 10px;
-            border-radius: 2px;
-        }
-        
-        #tidbit {
-            position:absolute;
-            bottom:0;
-            right:0;
-            width: 300px;
-        }
-    </style>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website</title>
+  <!-- Đặt các thẻ meta và link khác nếu cần -->
 </head>
-  <body>
-    <h1>HỘI THOẠI GIAO TIẾP CHATBOT</h1>
-    <h3>=========================================</h3>
-    <div>
-      <div id="chatbox">
-        <p class="botText"><span>Xin chào (ជំរាបសួរ - chomreabsuor)!.</span></p>
-      </div>
-      <div id="userInput">
-        <input id="textInput" type="text" name="msg" placeholder="Nhập câu của bạn..!">
-        <input id="buttonInput" type="submit" value="Send">
-      </div>
-      <script>
-        function getBotResponse() {
-          var rawText = $("#textInput").val();
-          var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
-          $("#textInput").val("");
-          $("#chatbox").append(userHtml);
-          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-          $.get("/get", { msg: rawText }).done(function(data) {
-            var botHtml = '<p class="botText"><span>' + data + '</span></p>';
-            $("#chatbox").append(botHtml);
-            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-          });
-        }
-        $("#textInput").keypress(function(e) {
-            if(e.which == 13) {
-                getBotResponse();
-            }
-        });
-        $("#buttonInput").click(function() {
-          getBotResponse();
-        })
-      </script>
-    </div>
-  </body>
+<body>
+
+  <!-- Nơi bạn muốn hiển thị live chat box -->
+  <div id="livechat-container"></div>
+  <!-- Đoạn mã live chat -->
+  
+  <script>
+    let __protocol = document.location.protocol;
+    let __baseUrl = __protocol + '//livechat.fpt.ai/v35/src';
+
+    let prefixNameLiveChat = 'HỌC ĐÀM THOẠI TIẾNG KHMER';
+    let objPreDefineLiveChat = {
+      appCode: '9348b7c1fc81120cda4d21cf31d0e784',
+      themes: '',
+      appName: prefixNameLiveChat ? prefixNameLiveChat : 'Live support',
+      thumb: '',
+      icon_bot: 'https://chatbot-tools.fpt.ai/livechat-builder/img/Icon-fpt-ai.png'
+    };
+
+    let appCodeHash = window.location.hash.substr(1);
+    if (appCodeHash.length == 32) {
+      objPreDefineLiveChat.appCode = appCodeHash;
+    }
+
+    let fpt_ai_livechat_script = document.createElement('script');
+    fpt_ai_livechat_script.id = 'fpt_ai_livechat_script';
+    fpt_ai_livechat_script.src = __baseUrl + '/static/fptai-livechat.js';
+    document.body.appendChild(fpt_ai_livechat_script);
+
+    let fpt_ai_livechat_stylesheet = document.createElement('link');
+    fpt_ai_livechat_stylesheet.id = 'fpt_ai_livechat_stylesheet';
+    fpt_ai_livechat_stylesheet.rel = 'stylesheet';
+    fpt_ai_livechat_stylesheet.href = __baseUrl + '/static/fptai-livechat.css';
+    document.body.appendChild(fpt_ai_livechat_stylesheet);
+
+    fpt_ai_livechat_script.onload = function () {
+      fpt_ai_render_chatbox(objPreDefineLiveChat, __baseUrl, 'livechat.fpt.ai:443', 'livechat-container');
+    }
+  </script>
+
+</body>
 </html>
