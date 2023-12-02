@@ -3,26 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Website</title>
-  <!-- Đặt các thẻ meta và link khác nếu cần -->
+  <title>Hoc giao tiếp với Chatbot</title>
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="/static-v35/vendor/node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static-v35/vendor/node_modules/bootstrap-vue/dist/bootstrap-vue.css">
+  <!-- Font Awesome CSS-->
+  <link rel="stylesheet" href="/static-v35/vendor/node_modules/font-awesome/css/font-awesome.min.css">
+   <!-- theme stylesheet-->
+   <link rel="stylesheet" href="/static-v35/fptai/css/style.default.css" id="theme-stylesheet">
+   <link rel="stylesheet" href="https://livechat.fpt.ai/v35/src/static/fptai-livechat.css" id="theme-stylesheet">
+   <link id="new-stylesheet" rel="stylesheet">
+   
 </head>
 <body>
-
-  <!-- Nơi bạn muốn hiển thị live chat box -->
-  <div id="livechat-container"></div>
-  <!-- Đoạn mã live chat -->
-  
+  <div id="fpt_ai_livechat_display_container" style="display: block;" class="fullscreen">
+    <div id="fpt_ai_livechat_container_header">HỌC ĐÀM THOẠI TIẾNG KHMER
+        <button class="fpt_ai_livechat_container_header_close_button">
+          <img src="https://livechat.fpt.ai/v35/src/img/close.png">
+        </button>
+    </div>
+    <div id="fpt_ai_livechat_container_iframe">
+        <iframe id="fpt_ai_i_live_chat" name="1701504139510" 
+             style="border: none; background-color: transparent; position: absolute; bottom: 0; right: 0; width: 100%; height: 100%;" 
+             src="https://livechat.fpt.ai/v35/src/index.html?botcode=9348b7c1fc81120cda4d21cf31d0e784&amp;botname=H%E1%BB%8CC%20%C4%90%C3%80M%20THO%E1%BA%A0I%20TI%E1%BA%BENG%20KHMER&amp;sendername=&amp;scendpoint=livechat.fpt.ai%3A443&amp;time=1701504139510&amp;setting_request_info_button=&amp;setting_request_info_logo=&amp;setting_request_info_text=&amp;setting_request_info_placeholder=">
+        </iframe>
+      </div>
+          <button id="fpt_ai_livechat_toggle_fullscreen" class="fpt_ai_livechat_container_header_fullscreen_button">
+            <img src="https://livechat.fpt.ai/v35/src/img/fullscreen.png">
+          </button>
+        </div>
+ 
+  <script>src="https://livechat.fpt.ai/v35/src/static/fptai-livechat.js"</script>
+  <script src="/static-v35/fptai/js/front.js"></script>
+  <!-- Widget Chat Bot -->
   <script>
     let __protocol = document.location.protocol;
     let __baseUrl = __protocol + '//livechat.fpt.ai/v35/src';
 
-    let prefixNameLiveChat = 'HỌC ĐÀM THOẠI TIẾNG KHMER';
+    let prefixNameLiveChat = 'HỌC ĐÀM THOẠI TIẾNG KHMER'; 
     let objPreDefineLiveChat = {
       appCode: '9348b7c1fc81120cda4d21cf31d0e784',
       themes: '',
       appName: prefixNameLiveChat ? prefixNameLiveChat : 'Live support',
       thumb: '',
-      icon_bot: 'https://chatbot-tools.fpt.ai/livechat-builder/img/Icon-fpt-ai.png'
+      icon_bot: ''
     };
 
     let appCodeHash = window.location.hash.substr(1);
@@ -41,8 +65,9 @@
     fpt_ai_livechat_stylesheet.href = __baseUrl + '/static/fptai-livechat.css';
     document.body.appendChild(fpt_ai_livechat_stylesheet);
 
+    // Tự động mở chat bot khi trang được tải
     fpt_ai_livechat_script.onload = function () {
-      fpt_ai_render_chatbox(objPreDefineLiveChat, __baseUrl, 'livechat.fpt.ai:443', 'livechat-container');
+      fpt_ai_render_chatbox(objPreDefineLiveChat, __baseUrl, 'livechat.fpt.ai:443');
     }
   </script>
 
