@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Luyện tập chữ số</title>
+  <title>Test chữ số</title>
   <style>
      iframe 
         {   margin-top: 20px;
@@ -12,11 +12,28 @@
             height: 100vh; /* Chiều cao là 100% của chiều cao của màn hình (viewport height) */
             border: none;
         }
+        .back-button {
+            padding: 8px 16px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+            display: inline-block;
+        }
   </style>
 </head>
 <body>
+  <button class="back-button" onclick="goBack()">Back</button> 
 	<iframe src="https://wordwall.net/vi/embed/26b4b92437734c3abfeb82cdeafd5ed9?themeId=1&templateId=5&fontStackId=0"
 			 width="500" height="380" frameborder="0" allowfullscreen>
 	</iframe>
 </body>
+<script>
+  function goBack() {
+      // Quay lại trang chủ khi click nút "Back"
+      window.location.href = 'hoccoban1.html';
+  }
+</script>
 </html>
