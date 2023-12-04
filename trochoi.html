@@ -11,12 +11,46 @@
             height: 100vh; /* Chiều cao là 100% của chiều cao của màn hình (viewport height) */
             border: none;
         }
+        .site-content {
+    padding-top: 0.5rem;
+    transition: all 0.4s;
+    }
+    .button-container {
+    display: flex;
+    }
+    .home-button,
+    .back-button {
+            padding: 8px 16px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+            display: inline-block;
+            margin-right: 5px;
+        }
   </style>
 </head>
 <body>
-
-  <iframe src="trochoi/TQBAOTANG-GamePPT-ThuHoachCaRot (Published)/index.html">
+  <div class="button-container">
+    <button class="home-button" onclick="goHome()">Home</button>
+    <button class="back-button" onclick="goBack()">Back</button>
+</div>
+<div class="site-content">
+  <iframe src="trochoi/TQBAOTANG-GamePPT-ThuHoachCaRot (Published)/index.html" width="800" 
+          height="600" frameborder="0" allowfullscreen="true">
   </iframe>
-
+</div>
 </body>
+<script>
+  function goHome() {
+      // Quay lại trang chủ khi click nút "Back"
+      window.location.href = 'hocnangcaotheochude.html';
+  }
+  function goBack() {
+      // Quay lại trang chủ khi click nút "Back"
+      window.location.href = 'diadiem.html';
+  }
+</script>
 </html>
