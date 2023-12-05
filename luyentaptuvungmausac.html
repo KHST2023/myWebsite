@@ -91,9 +91,33 @@
         }
         
     }
+    .site-content {
+    padding-top: 2rem;
+    transition: all 0.4s;
+    }
+    .button-container {
+    display: flex;
+    }
+    .home-button,
+    .back-button {
+            padding: 8px 16px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+            display: inline-block;
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
+    <div class="site-content">
+        <div class="button-container">
+            <button class="home-button" onclick="goHome()">Home</button>
+            <button class="back-button" onclick="goBack()">Back</button>
+        </div>
     <div class="rectangle">LUYỆN TẬP TỪ VỰNG - MÀU SẮC</div>
     <section id="section1">
         <h2><a href="#section1" class="toggleLink" onclick="toggleGameList()">Màu sắc</a></h2>
@@ -160,6 +184,16 @@
         </div>
     </div>
     <div class="rectangle">HỌC NÂNG CAO THEO CHỦ ĐỀ - MÀU SẮC</div>
-   
+</div>
 </body>
+<script>
+    function goHome() {
+        // Quay lại trang chủ khi click nút "Back"
+        window.location.href = 'hocnangcaotheochude.html';
+    }
+    function goBack() {
+        // Quay lại trang chủ khi click nút "Back"
+        window.location.href = 'mausac.html';
+    }
+  </script>
 </html>
