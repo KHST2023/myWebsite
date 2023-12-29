@@ -98,6 +98,13 @@
 			font-weight: bolder;
 			font-family: 'Times New Roman', Times, serif;
 			}
+	     h2{
+			font-family: 'Times New Roman', Times, serif;
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			font-weight: bolder;
+		}
 		/* Đảm bảo video tự động thay đổi kích thước để vừa với khung hiển thị */
 		#exampleVideo {
     		max-width: 100%;
@@ -120,13 +127,6 @@
 		/* Ẩn hình ảnh và chỉ hiển thị video khi cần thiết */
 		#exampleImage {
     		display: none;
-		}
-        h2{
-			font-family: 'Times New Roman', Times, serif;
-			text-align: center;
-			font-size: 30px;
-			font-weight: bold;
-			font-weight: bolder;
 		}
         .carousel-inner {
                 display: flex;
@@ -184,7 +184,7 @@
 					<img id="exampleImage" src="assets/images/cachvietphuam/pa29.png" alt="pa29" style="display: none;">
 					<!-- Thêm video vào khung ví dụ -->
 					<img id="exampleGif" src="videos/vietpa/PA26.gif" alt="pa26" style="display: none;">
-    				<img id="exampleGif" src="videos/vietpa/PA27.gif" alt="pa27" style="display: none;">
+    					<img id="exampleGif" src="videos/vietpa/PA27.gif" alt="pa27" style="display: none;">
 					<img id="exampleGif" src="videos/vietpa/PA28.gif" alt="pa28" style="display: none;">
 					<img id="exampleGif" src="videos/vietpa/PA29.gif" alt="pa29" style="display: none;">
 				</div>
@@ -193,8 +193,11 @@
         <!--Ảnh tương tác-->
 		<h2> Ảnh tương tác</h2>
 		<div class="carousel-inner">
-			<iframe width="960" height="682" data-original-width="1520" data-original-height="1080" src="https://www.thinglink.com/view/scene/1783598313560343396" type="text/html" style="border: none;" webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no">
-			</iframe><script async src="//cdn.thinglink.me/jse/responsive.js"></script>
+			<iframe width="960" height="682" data-original-width="1520" data-original-height="1080" 
+				src="https://www.thinglink.com/view/scene/1769751673468617381" type="text/html" 
+				style="border: none;" webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no">
+			</iframe>
+			<script async src="//cdn.thinglink.me/jse/responsive.js"></script>
         </div>
     </div>
 
@@ -273,24 +276,24 @@
 	// Mảng chứa đường dẫn tới các tệp audio và nội dung ví dụ tương ứng
   
 	const audioFiles = [
-	  { audio: 'audio/pa/30.mp3'},
-	  { audio: 'audio/pa/31.mp3'},
-	  { audio: 'audio/pa/32.mp3'},
-	  { audio: 'audio/pa/33.mp3'},
+	  { audio: 'audio/pa/26.mp3'},
+	  { audio: 'audio/pa/27.mp3'},
+	  { audio: 'audio/pa/28.mp3'},
+	  { audio: 'audio/pa/29.mp3'},
 	  // Thêm các đường dẫn và nội dung ví dụ cho các phụ âm Khmer khác vào đây
   ];
   const imageFiles = [
-	  { Image: 'assets/images/cachvietphuam/pa30.png'},
-	  { Image: 'assets/images/cachvietphuam/pa31.png'},
-	  { Image: 'assets/images/cachvietphuam/pa32.png'},
-	  { Image: 'assets/images/cachvietphuam/pa33.png'},
+	  { Image: 'assets/images/cachvietphuam/pa26.png'},
+	  { Image: 'assets/images/cachvietphuam/pa27.png'},
+	  { Image: 'assets/images/cachvietphuam/pa28.png'},
+	  { Image: 'assets/images/cachvietphuam/pa29.png'},
 	  // Thêm các đường dẫn và nội dung hình ảnh cho các phụ âm Khmer khác vào đây
   ];
   const videoFiles = [
-	  { video: 'videos/vietpa/PA30.gif'},
-	  { video: 'videos/vietpa/PA31.gif'},
-	  { video: 'videos/vietpa/PA32.gif'},
-	  { video: 'videos/vietpa/PA33.gif'}
+	  { video: 'videos/vietpa/PA26.gif'},
+	  { video: 'videos/vietpa/PA27.gif'},
+	  { video: 'videos/vietpa/PA28.gif'},
+	  { video: 'videos/vietpa/PA29.gif'}
 	  // Thêm các đường dẫn và nội dung video cho các phụ âm Khmer khác vào đây
   ];
     let currentAudioIndex = 0;
