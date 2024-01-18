@@ -14,7 +14,25 @@
     <link rel="stylesheet" href="assets/css/style.css">
 <!-- <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=upURt_4bsgSKnuoMTMiyie-URRJGVP9A8X6cVJyVFB-i3GR4dx0wSey9GsjhZ0P3z4h3KFCKLOQ9szZeFKnC5w" charset="UTF-8"></script></head>
 -->
+<style>
+    .home-button,
+    .back-button {
+            padding: 8px 16px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+</style>
 <body>
+    <div class="button-container">
+        <button class="home-button" onclick="goHome()">Tiếng Khmer</button>
+        <button class="back-button" onclick="goBack()">Tiếng Việt</button>
+    </div>
     <section class="header">
         <div class="container">
             <div class="header-content">
@@ -48,19 +66,19 @@
                 </p>
             </div>
             <hr>
-            <div class="masonry" style="margin-left: 20px; margin-right: 10px">
+            <div class="masonry" style="margin-left: 20px; margin-right: 10px; text-align: left;">
                 <div class="item">
                     <a href="detail-19-khmer.html">
                     <img src="assets/img/0001_1_2_jpg_2b68596830.jpg">
-                        <p style="font-family: Khmer OS Content ; font-size: 40px; font-style: italic; font-weight:500; color: #d61236; margin-top: 25px">
+                        <p style="font-family: Khmer OS Content ; font-size: 30px; font-style: italic; font-weight:500; color: #d61236;">
                             មុខថ្លុកហនុមាន</p>
-                    <p style="color: #666666; font-size: 30px; margin-top: 20px; ">
+                    <p style="color: #666666; font-size: 20px; margin-top: 15px; ">
                         <span style="font-weight: bold; color: #4d4d4d; ">វត្ថុធាតុ: </span> <span style="font-weight: light;"> ​ធ្វើដោយក្រដាស</span></p>
                     <br>
-                    <p style="color: #666666; font-size: 30px; margin-top: 10px;">
+                    <p style="color: #666666; font-size: 20px;">
                         <span style="font-weight: bold; color: #4d4d4d">ខ្នាត៖ 
                     </span>
-                    <span style="font-weight: light;font-size: xx-large">
+                    <span style="font-weight: light;font-size:20px">
                         កម្ពស់ ២៧ សង់ទីមែត្រ</span>
                     </p>
                     </a>
@@ -68,13 +86,13 @@
                 <div class="item">
                 <a href="detail-20-khmer.html">
                 <img src="./assets/img/0095_27_1_jpg_04489978d1.jpg">
-                    <p style="font-family: Khmer OS Content ; font-size: 32px; font-style: italic; font-weight:500; color: #d61236; margin-top: 25px">
+                    <p style="font-family: Khmer OS Content ; font-size: 30px; font-style: italic; font-weight:500; color: #d61236;">
                  សត្វគ្រុឌ</p>
-                <p style="color: #666666; font-size: 30px; margin-top: 20px; ">
+                <p style="color: #666666; font-size: 20px; margin-top: 15px; ">
                     <span style="font-weight: bold; color: #4d4d4d; ">ធ្វើដោយវត្ថុធាតុ: </span> <span style="font-weight: light;">
                     ឈើ</span></p>
                 <br>
-                <p style="color: #666666; font-size: 30px; margin-top: 10px;">
+                <p style="color: #666666; font-size: 20px;">
                     <span style="font-weight: bold; color: #4d4d4d"> រយកាលវត្ថុបុរាណ:</span>
                 <span style="font-weight: light;">
                 សត្តវត្តទី២០</span>
@@ -83,13 +101,13 @@
             </div> <div class="item">
                 <a href="detail-21-khmer.html">
                 <img src="./assets/img/BETUONGPHAT/betuongphat4.jpg">
-                    <p style="font-family: Khmer OS Content; font-size: 40px; font-style: italic; font-weight:500; color: #d61236; margin-top: 25px">
+                    <p style="font-family: Khmer OS Content; font-size: 30px; font-style: italic; font-weight:500; color: #d61236;">
                         ជើងទម្រព្រះពុទ្ធបដិមាសក្យមុនី</p>
-                <p style="color: #666666; font-size: 30px; margin-top: 20px; ">
+                <p style="color: #666666; font-size: 20px; margin-top: 15px; ">
                     <span style="font-weight: bold; color: #4d4d4d; "> ធ្វើដោយវត្ថុធាតុ: </span> <span style="font-weight: light;">
                     ឈើ</span></p>
                 <br>
-                <p style="color: #666666; font-size: 30px; margin-top: 10px;">
+                <p style="color: #666666; font-size: 20px;">
                     <span style="font-weight: bold; color: #4d4d4d">រយៈកាលប្រវត្តិសាស្រ្ត៖ 
                 </span>
                 <span style="font-weight: light;font-family: Khmer OS Content;">
@@ -99,13 +117,13 @@
             </div> <div class="item">
                 <a href="detail-22-khmer.html">
                 <img src="./assets/img/CHANTRUCSECHI/0065_18_1_jpg_8f6e4d8f20.jpg">
-                    <p style="font-family: TKhmer OS Content; font-size: 40px; font-style: italic; font-weight:500; color: #d61236; margin-top: 25px">
+                    <p style="font-family: TKhmer OS Content; font-size: 30px; font-style: italic; font-weight:500; color: #d61236;">
                         ជើងត្រល់</p>
-                <p style="color: #666666; font-size: 30px; margin-top: 20px; ">
+                <p style="color: #666666; font-size: 20px; margin-top: 15px; ">
                     <span style="font-weight: bold; color: #4d4d4d; ">វត្ថុធាតុ៖  </span> <span style="font-weight: light;">
                         ឈើ</span></p>
                 <br>
-                <p style="color: #666666; font-size: 30px; margin-top: 10px;">
+                <p style="color: #666666; font-size: 20px;">
                     <span style="font-weight: bold; color: #4d4d4d">យុគសម័យ៖   </span>
                 <span style="font-weight: light;">
                 ដើមសតវត្សទី២០</span>
@@ -114,14 +132,14 @@
             </div> <div class="item">
                 <a href="detail-23-khmer.html">
                 <img src="./assets/img/MATNACHAN/matnachangkrongriep.jpg">
-                    <p style="font-family: Khmer OS Content; font-size: 40px; font-style: italic; font-weight:500; color: #d61236; margin-top: 25px">
+                    <p style="font-family: Khmer OS Content; font-size: 30px; font-style: italic; font-weight:500; color: #d61236;">
                     មុខថ្លុកក្រុងរាប</p>
-                <p style="color: #666666; font-size: 30px; margin-top: 20px; ">
+                <p style="color: #666666; font-size: 20px; margin-top: 15px; ">
                     <span style="font-weight: bold; color: #4d4d4d; ">វត្ថុធាតុ:
                 </span> <span style="font-weight: light;">
                 ធ្វើដោយក្រដាស</span></p>
                 <br>
-                <p style="color: #666666; font-size: 30px; margin-top: 10px;">
+                <p style="color: #666666; font-size: 20px;">
                     <span style="font-weight: bold; color: #4d4d4d;"> រយៈកាលប្រវត្តិសាស្រ្ត៖
                 </span>
                 <span style="font-weight: light;">
@@ -131,13 +149,13 @@
             </div> <div class="item">
                 <a href="detail-24-khmer.html">
                 <img src="./assets/img/BOTATMAITREYA1/DSC_03516_3e6c3f7fd5.jpg">
-                    <p style="font-family: Khmer OS Content; font-size: 40px; font-style: italic; font-weight:500; color: #d61236; margin-top: 25px">
+                    <p style="font-family: Khmer OS Content; font-size: 30px; font-style: italic; font-weight:500; color: #d61236;">
                      ដិមាព្រះសិអារ្យមេត្រី</p>
-                <p style="color: #666666; font-size: 30px; margin-top: 20px; ">
+                <p style="color: #666666; font-size: 20px; margin-top: 15px; ">
                     <span style="font-weight: bold; color: #4d4d4d; ">វត្ថុធាតុ៖ </span> <span style="font-weight: light;">
                 ឈើ</span></p>
                 <br>
-                <p style="color: #666666; font-size: 30px; margin-top: 10px;">
+                <p style="color: #666666; font-size: 20px;">
                     <span style="font-weight: bold; color: #4d4d4d; ">យុគសម័យ៖ </span>
                 <span style="font-weight: light;">
                 ដើមសតវត្សរ៍ទី១៩</span>
@@ -146,13 +164,13 @@
             </div> <div class="item">
                 <a href="detail-25-khmer.html">
                 <img src="./assets/img/NGAUTUONG/DSC_03717_a44df6f132.jpg">
-                    <p style="font-family: Khmer OS Content; font-size: 40px; font-style: italic; font-weight:500; color: #d61236; margin-top: 25px">
+                    <p style="font-family: Khmer OS Content; font-size: 30px; font-style: italic; font-weight:500; color: #d61236;">
                  រូបចម្លាក់លឹង្គ-យូនី</p>
-                <p style="color: #666666; font-size: 30px; margin-top: 20px; ">
+                <p style="color: #666666; font-size: 20px; margin-top: 15px; ">
                     <span style="font-weight: bold; color: #4d4d4d; ">វត្ថុធាតុ:   </span> <span style="font-weight: light;">
                 ធ្វើដោយកែវចរណៃ</span></p>
                 <br>
-                <p style="color: #666666; font-size: 30px; margin-top: 10px;">
+                <p style="color: #666666; font-size: 20px;">
                     <span style="font-weight: bold; color: #4d4d4d">រយ:កាលប្រវត្តិសាស្រ្ត:  </span>
                 <span style="font-weight: light;">
                 សត្តវត្តិទី៥,ទី៦, ក្រោយគ.ស។</span>
@@ -161,13 +179,13 @@
             </div> <div class="item">
                 <a href="detail-64-khmer.html">
                 <img src="./assets/img/BOTATMAITREYA/DSC_03855_64248305ab.jpg">
-                    <p style="font-family: Khmer OS Content; font-size: 40px; font-style: italic; font-weight:500; color: #d61236; margin-top: 25px">
+                    <p style="font-family: Khmer OS Content; font-size: 30px; font-style: italic; font-weight:500; color: #d61236;">
                 ដិមាព្រះសិអារ្យមេត្រី </p>
-                <p style="color: #666666; font-size: 30px; margin-top: 20px; ">
+                <p style="color: #666666; font-size: 20px; margin-top: 15px; ">
                     <span style="font-weight: bold; color: #4d4d4d; ">វត្ថុធាតុ៖   </span> <span style="font-weight: light;">
                 ឈើ</span></p>
                 <br>
-                <p style="color: #666666; font-size: 30px; margin-top: 10px;">
+                <p style="color: #666666; font-size: 20px;">
                     <span style="font-weight: bold; color: #4d4d4d">យុគសម័យ៖   </span>
                 <span style="font-weight: light;">
                 ដើមសតវត្សរ៍ទី១៩</span>
@@ -176,20 +194,92 @@
             </div> <div class="item">
                 <a href="detail-67-khmer.html">
                 <img src="./assets/img/DAURONG/DSC_05046_a18e40fcdf.jpg">
-                    <p style="font-family: Khmer OS Content; font-size: 40px; font-style: italic; font-weight:500; color: #d61236; margin-top: 25px">
+                    <p style="font-family: Khmer OS Content; font-size: 30px; font-style: italic; font-weight:500; color: #d61236;">
                 រូបសំណាកក្បាលនាគ</p>
-                <p style="color: #666666; font-size: 30px; margin-top: 20px; ">
+                <p style="color: #666666; font-size: 20px; margin-top: 15px; ">
                     <span style="font-weight: bold; color: #4d4d4d; ">វត្ថុធាតុ៖ 
                 </span> <span style="font-weight: light;">
                 ឈើ</span></p>
                 <br>
-                <p style="color: #666666; font-size: 30px; margin-top: 10px;">
+                <p style="color: #666666; font-size: 20px;">
                     <span style="font-weight: bold; color: #4d4d4d">យុគសម័យ៖  </span>
                 <span style="font-weight: light;">
                 ដើមសតវត្សរ៍ទី១៩</span>
                 </p>
                 </a>
-            </div></div> </div>
+            </div>
+             <!-- Cà ràng và nồi-->
+             <div class="item">
+                <a href="L3carangvanoi-khmer.html">
+                <img src="./assets/img/LANGNGHEGIACU/carangvanoi.jpg">
+                    <p style="font-family: Khmer OS Content; font-size: 30px; font-style: italic; font-weight:500; color: #d61236;">
+                ចង្ក្រាន, ាំង</p>
+                <p style="color: #666666; font-size: 20px; margin-top: 15px; ">
+                    <span style="font-weight: bold; color: #4d4d4d; ">វត្ថុធាតុ៖ : 
+                </span> <span style="font-weight: light;">
+                ដីដុត</span></p>
+                <br>
+                <p style="color: #666666; font-size: 20px;">
+                    <span style="font-weight: bold; color: #4d4d4d">យុគសម័យ៖ 
+                </span>
+                <span style="font-weight: light;">
+                កណ្តាលសតវត្សរ៍ទី២០</span>
+                </p>
+                </a>
+            </div>
+             <!-- Tượng 12 con giáp-->
+             <div class="item">
+                <a href="L4tuong12congiap.html">
+                <img src="./assets/img/LANGNGHEGIACU/tuong12congiap.jpg">
+                    <p style="font-family: Khmer OS Content; font-size: 30px; font-style: italic; font-weight:500; color: #d61236;">
+                រូបចម្លាក់សត្វដំណាងឆ្នាំទាំង១២</p>            
+                <p style="color: #666666; font-size: 20px; margin-top: 10px;">
+                    <span style="font-weight: bold; color: #4d4d4d">យុគសម័យ៖  
+                </span>
+                <span style="font-weight: light;">
+                សតវត្សរ៍ទី២០</span>
+                </p>
+                </a>
+            </div>
+            <!-- Gàu vai-->
+            <div class="item">
+                <a href="L7gauvai.html">
+                <img src="./assets/img/LANGNGHEGIACU/gauvai1.png">
+                    <p style="font-family: Khmer OS Content; font-size: 30px; font-style: italic; font-weight:500; color: #d61236;">
+                ស្នាចយោង </p>            
+                <p style="color: #666666; font-size: 20px; margin-top: 15px; ">
+                    <span style="font-weight: bold; color: #4d4d4d; ">វត្ថុធាតុ៖ 
+                </span> <span style="font-weight: light;">
+                ឫស្សី</span></p>
+                <p style="color: #666666; font-size: 20px;">
+                    <span style="font-weight: bold; color: #4d4d4d">យុគសម័យ៖  
+                </span>
+                <span style="font-weight: light;">
+                សតវត្សរ៍ទី២០</span>
+                </p>
+                </a>
+            </div>
+            <!-- Giỏ đựng cá-->
+            <div class="item">
+                <a href="L10giodungca.html">
+                <img src="./assets/img/LANGNGHEGIACU/giodungca.png">
+                    <p style="font-family: Khmer OS Content; font-size: 30px; font-style: italic; font-weight:500; color: #d61236;">
+                កន្ត្រកដាក់ត្រី </p>            
+                <p style="color: #666666; font-size: 20px; margin-top: 15px; ">
+                    <span style="font-weight: bold; color: #4d4d4d; ">Cត្ថុធាតុ៖ 
+                </span> <span style="font-weight: light;">
+                ឫស្សី</span></p>
+                <p style="color: #666666; font-size: 20px;">
+                    <span style="font-weight: bold; color: #4d4d4d">យុគសម័យ៖ 
+                </span>
+                <span style="font-weight: light;">
+                កណ្តាលសតវត្សរ៍ទី២០</span>
+                </p>
+                </a>
+            </div>
+        
+        </div> 
+     </div>
     </section>
     <section class="footer">
         <div class="container">
@@ -232,6 +322,16 @@
 
         </div>
     </section>
+    <script>
+        function goHome() {
+            // Quay lại Khmer khi click nút "Khmer"
+            window.location.href = 'index-khmer.html';
+        }
+        function goBack() {
+            // Quay lại trang chủ khi click nút "Tiếng Việt"
+            window.location.href = 'index.html';
+        }
+      </script>
     <script src="cdnjs/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -240,6 +340,7 @@
         integrity="sha512-Hqe3s+yLpqaBbXM6VA0cnj/T56ii5YjNrMT9v+us11Q81L0wzUG0jEMNECtugqNu2Uq5MSttCg0p4KK0kCPVaQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="assets/js/scripts.js"></script>
+
 </body>
 
 </html>
