@@ -85,6 +85,27 @@
                 display: block; /* Để căn giữa hình ảnh */
                 margin: 0 auto; /* Căn giữa theo chiều ngang */
             }
+    #image-container {
+        max-width: 80%; /* Đảm bảo hình ảnh không vượt quá kích thước của parent container */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #image-container img {
+        width: 80%; /* Hình ảnh chiếm toàn bộ chiều rộng của container */
+        height: auto; /* Đảm bảo tỷ lệ chiều cao được giữ nguyên */
+       
+    }
+
+    .half-width {
+        width: 30% !important; /* Sử dụng !important để đảm bảo rằng quy tắc này có ưu tiên cao hơn */
+    }
+    @media (max-width: 767px) {
+        #image-container img {
+            width: 30%; /* Đặt kích thước hình ảnh là 50% chiều rộng của viewport khi đang ở chế độ điện thoại */
+        }
+    }
         .button-container button{
             display: flex;
             padding: 10px 10px;
@@ -94,21 +115,38 @@
             cursor: pointer;
             font-size: 18px;
         }
+        .button-container1 {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        .button-container1 button {
+            padding: 5px 20px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
         </style>
 </head>
 <body>
+    <div class="button-container1">
+        <button class="viet-button" onclick="goViet()">Việt-Khmer</button>
+        <button class="khmer-button" onclick="goKhmer()">Khmer-Việt</button>
+    </div>
     <div class="site-content">
 		<!-- Home Jumbotron
     ================================================== -->
+        
     <div class="container1">
         <div class="source-lang" style="text-align: center; font-size: 25PX; font-weight: bold;">TRA TỪ ĐIỂN</div>
     </div>
     <div class="container">
-        <div class="source-lang">VĂN BẢN</div>
-        <div class="target-container">
-            <div class="target-lang" id="target-lang">TIẾNG KHMER</div>
-            <div class="speaker-icon"></div>
-        </div>
+        <div class="source-lang">VĂN BẢN TIẾNG VIỆT</div>
+        
     </div>
     <div id="input-container">
         <textarea id="input-text" rows="4" cols="50" placeholder="Nhập từ"></textarea>
@@ -116,7 +154,7 @@
     <div class="container">
         <div class="source-lang">BẢN DỊCH</div>
         <div class="target-container">
-            <div class="target-lang" id="target-lang1">TIẾNG VIỆT</div>
+            <div class="target-lang" id="target-lang1">TIẾNG KHMER</div>
             <div class="speaker-icon"></div>
         </div>
     </div>
@@ -126,13 +164,8 @@
     <div class="button-container">
         <button type="button" onclick="translateLanguage()">TRANSLATE</button>
     </div>
-   <div class="container1">
-        <div class="left-part" id="left-part">TIẾNG KHMER</div>
-        <div class="arrow"id="arrow" onclick="dieuhuong()">
-            <img src="./assets/images/muiten.png" id="arrow-image">
-          </div>
-        <div class="right-part" id="right-part">TIẾNG VIỆT</div>
-    </div>
+    <div id="image-container">
+
     </div>
 </body>
 <script>
@@ -141,20 +174,21 @@
         "ស្រី": { "vi": "Nữ", "km": "ស្រី" },
         "បុរស": { "vi": "Bồ câu", "km": "បុរស" },
         "សំណើ": { "vi": "Sinh nở", "km": "សំណើ" },
-    };
+    }
     let dictionary1 = {
         "nữ": { "vi": "Nữ", "km": "ស្រី" },
         "bồ câu": { "vi": "Bồ câu", "km": "បុរស" },
         "sinh nở": { "vi": "Sinh nở", "km": "សំណើ" },
+        "mèo":{"vi":"mèo","km":"ឆ្មា"},
     }
     function translateLanguage()
     {
         updateLanguage();
+        updateimage();
     }
     function updateLanguage() {
         const inputText = document.getElementById("input-text");
         const outputText = document.getElementById("output-text");
-        const targetLang = document.getElementById("target-lang");
         const targetLang1 = document.getElementById("target-lang1");
 
         const userInput = inputText.value.trim().toLowerCase();
@@ -184,31 +218,32 @@
         outputText.value = translatedText;
         inputText.value = userInput;
     }
+    function updateimage() {
+    // Tạo một phần tử hình ảnh
+    var imageElement = document.createElement("img");
+    imageElement.src = "https://cdn.pixabay.com/photo/2020/11/15/18/51/cat-5746875_1280.png"; // Đường dẫn của hình ảnh bạn muốn hiển thị
 
+    // Lấy thẻ div chứa hình ảnh
+    var imageContainer = document.getElementById("image-container");
 
-    function dieuhuong() {
-        const leftPart = document.getElementById("left-part");
-        const rightPart = document.getElementById("right-part");
-        const arrowImage = document.getElementById("arrow-image");
-        const tg = document.getElementById("target-lang");
-        const tg1 = document.getElementById("target-lang1");
-        
-        if (currentLanguage === "vi") {
-            tg.textContent = "TIẾNG VIỆT"; // Đổi sang tiếng Khmer
-            tg1.textContent = "TIẾNG KHMER";
-            leftPart.textContent = "TIẾNG VIỆT";
-            rightPart.textContent = "TIẾNG KHMER";
-            arrowImage.style.transform = "rotate(180deg)";
-            currentLanguage = "km";
-        } else {
-            tg.textContent = "TIẾNG KHMER"; // Đổi sang tiếng Việt
-            tg1.textContent = "TIẾNG VIỆT"; 
-            leftPart.textContent = "TIẾNG KHMER";
-            rightPart.textContent = "TIẾNG VIỆT";
-            arrowImage.style.transform = "rotate(0deg)";
-            currentLanguage = "vi";
-        }
-
-        updateLanguage();
+    // Xóa các phần tử con hiện tại của div
+    while (imageContainer.firstChild) {
+        imageContainer.removeChild(imageContainer.firstChild);
     }
+
+    // Thêm phần tử hình ảnh vào div
+    imageContainer.appendChild(imageElement);
+    // Thêm lớp CSS "half-width" để định dạng hình ảnh khi click
+    imageElement.classList.add("half-width");
+}
 </script>
+<script>
+    function goViet() {
+        // Quay lại trang chủ khi click nút "Việt-Khmer"
+        window.location.href = 'tudienvietkhmer.html';
+    }
+    function goKhmer() {
+        // Quay lại trang chủ khi click nút "Khmer-Việt"
+        window.location.href = 'tudienkhmerviet.html';
+    }
+  </script>
