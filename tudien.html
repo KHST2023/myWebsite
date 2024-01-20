@@ -69,28 +69,12 @@
             margin-top: 20px;
             margin-bottom: 10px;
         }
-        .left-part, .right-part {
-            flex: 1;
-            text-align: center;
-            font-size: 24px;
-        }
-       .arrow {
-            flex: 1;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            display: inline-block;
-            margin: 5px;
-            }
-        .arrow img {
-                display: block; /* Để căn giữa hình ảnh */
-                margin: 0 auto; /* Căn giữa theo chiều ngang */
-            }
     #image-container {
         max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước của parent container */
         display: flex;
         align-items: center;
         justify-content: center;
-	margin-top:25px;
+        margin-top: 25px;
     }
 
     #image-container img {
@@ -116,14 +100,7 @@
             cursor: pointer;
             font-size: 18px;
         }
-        .button-container1 {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-            margin-left: 20px;
-        }
-
-        .button-container1 button {
+       .button-container1 button {
             padding: 5px 20px;
             background-color: #D86419;
             color: #fff;
@@ -153,10 +130,9 @@
         <textarea id="input-text" rows="8" cols="50" placeholder="Nhập từ"></textarea>
     </div>
     <div class="container">
-        <div class="source-lang">BẢN DỊCH</div>
+        <div class="source-lang">BẢN DỊCH TIẾNG KHMER</div>
         <div class="target-container">
-            <div class="target-lang" id="target-lang1">TIẾNG KHMER</div>
-            <div class="speaker-icon"></div>
+            <div class="speaker-icon" id="speaker"></div>
         </div>
     </div>
     <div id="output-container">
@@ -165,79 +141,363 @@
     <div class="button-container">
         <button type="button" onclick="translateLanguage()">TRANSLATE</button>
     </div>
-    <div id="image-container">
-
-    </div>
+    <div id="image-container"> </div>
 </body>
 <script>
-    let currentLanguage = "vi"; // Ban đầu là tiếng Việt
-    let dictionary = {
-        "ស្រី": { "vi": "Nữ", "km": "ស្រី" },
-        "បុរស": { "vi": "Bồ câu", "km": "បុរស" },
-        "សំណើ": { "vi": "Sinh nở", "km": "សំណើ" },
+    // Dữ liệu từ điển từ Excel (đã chuyển đổi thành JSON)
+   const dictionaryData = [
+   [
+    "Bạch tuộc",
+    "រតីយាវហឺ",
+    "rtei yeav heu",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/con-bach-tuoc.jpg",
+    "./audio/tudien/bạch tuộc.mp3"
+  ],
+  [
+    "Cá heo",
+    "ផ្សោត",
+    "phsaot",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/ca-heo.jpg",
+    "./audio/tudien/cá heo.mp3"
+  ],
+  [
+    "Cá mập",
+    "ត្រីឆ្លាម",
+    "treichhleam",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/con-ca-map.jpeg",
+    "./audio/tudien/cá mập.mp3"
+  ],
+  [
+    "cá nhiệt đới",
+    "ត្រីតំបន់ត្រូពិច",
+    "(tri đom bon trô phik)",
+    "https://img.yeupet.vn/2019/03/1424706897.pham-vi-nhiet-do-de-nuoi-ca-he-nhiet-doi-la-bao-nhieu1.jpg",
+    "./audio/tudien/canhietdoi.mp3"
+  ],
+  [
+    "cá vàng",
+    "ត្រីមាស",
+    "(tri miếs)",
+    "https://st2.depositphotos.com/7760196/11449/i/950/depositphotos_114495536-stock-photo-yellow-fish-cartoon.jpg",
+    "./audio/tudien/cavang.mp3"
+  ],
+  [
+    "cắn",
+    "ខាំ",
+    "(khăm)",
+    "https://dep.com.vn/wp-content/uploads/2019/04/health_xu-ly-vet-thuong-cho-can-3-1.jpg",
+    "./audio/tudien/cắn.mp3"
+  ],
+  [
+    "cáo",
+    "ហ្វក",
+    "(hkho)",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Vulpes_vulpes_laying_in_snow.jpg/1200px-Vulpes_vulpes_laying_in_snow.jpg",
+    "./audio/tudien/cáo.mp3"
+  ],
+  [
+    "chó",
+    "ឆ្កែ",
+    "(chha-ke)",
+    "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/119509859/original/a4b4d447d4d4223232912ba81768f00177de6565/do-animal-dog-cat-pet-illustration-cartoon-caricature.png",
+    "./audio/tudien/concho.m4a"
+  ],
+  [
+    "chó con",
+    "កូនឆ្កែ",
+    "(kôn chha-ke)",
+    "https://azpet.vn/wp-content/uploads/2020/12/sua-bot-cho-cho-con.jpg",
+    "./audio/tudien/chocon.mp3"
+  ],
+  [
+    "chuột",
+    "កណ្តុរ",
+    "(kon-đôr)",
+    "https://cand.com.vn/Files/Image/thanhbinh/2020/01/28/27ce5cf6-fa70-4eeb-8bd5-eb754b60dff7.jpg",
+    "./audio/tudien/chuot.mp3"
+  ],
+  [
+    "chuột lang",
+    "កណ្តុរហ្គីណេ",
+    "(kon-đôr khi-nê)",
+    "https://lolipet.net/wp-content/uploads/2019/01/chuot-lang8.jpg",
+    "./audio/tudien/chuotlang.mp3"
+  ],
+  [
+    "Con cú",
+    "សត្វទីទុយ",
+    "satv titouy",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/chim-cu-meo.jpg",
+    "./audio/tudien/con cú.mp3"
+  ],
+  [
+    "Con ếch",
+    "កង្កែបមួយ។",
+    "kangkeb muoy",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/con-ech.jpg",
+    "./audio/tudien/con ếch.mp3"
+  ],
+  [
+    "Cua",
+    "ក្តាម",
+    "ktam",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/con-cua.jpg",
+    "./audio/tudien/cua.mp3"
+  ],
+  [
+    "cuối tuần",
+    "ចុងសប្តាហ៍",
+    "(choông sap-pđa)",
+    "https://cf.shopee.vn/file/54ab368f7c9ca3798221712abb408c4a",
+    "./audio/tudien/cuối tuần.mp3"
+  ],
+  [
+    "Dơi",
+    "ប្រចៀវ",
+    "brachiev",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/con-doi.jpg",
+    "./audio/tudien/dơi.mp3"
+  ],
+  [
+    "gấu trúc",
+    "ខ្លាឃ្មុំផេនដា",
+    "khla-khmóum-phen-da",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/con-gau-truc.jpg",
+    "./audio/tudien/gấu trúc.mp3"
+  ],
+  [
+    "giây",
+    "វិនាទី",
+    "(ví nia thi)",
+    "https://media.istockphoto.com/vectors/time-design-vector-id485508657?s=612x612",
+    "./audio/tudien/giây.mp3"
+  ],
+  [
+    "giờ",
+    "ម៉ោង",
+    "(moông)",
+    "https://media.istockphoto.com/vectors/one-hour-arrow-icon-vector-id1093734460?k=20&m=1093734460&s=612x612&w=0&h=FFQYshYfvn1tVXqAqlfufPJN99sXsNEaimfFXPh5CzY=",
+    "./audio/tudien/giờ.mp3"
+  ],
+  [
+    "Hươu cao cổ",
+    "ហ្សីរ៉ាហ្វ",
+    "hsáei-ran",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/con-huou-cao-co.jpg",
+    "./audio/tudien/hươu cao cổ.mp3"
+  ],
+  [
+    "mèo",
+    "ឆ្មា",
+    "(chha-ma)",
+    "https://cdn.pixabay.com/photo/2020/11/15/18/51/cat-5746875_1280.png",
+    "./audio/tudien/conmeo.m4a"
+  ],
+  [
+    "mèo con",
+    "កូនឆ្មា",
+    "(kôn chha-ma)",
+    "https://trumboss.com/wp-content/uploads/2018/10/xa-hoi-hoa-meo-con.jpg",
+    "./audio/tudien/meocon.mp3"
+  ],
+  [
+    "năm",
+    "ឆ្នាំ",
+    "(chho-nam)",
+    "https://yola.vn/wp-content/uploads/2020/12/C%C3%A1ch-%C4%91%E1%BB%8Dc-n%C4%83m-trong-ti%E1%BA%BFng-Anh-2.png",
+    "./audio/tudien/năm.mp3"
+  ],
+  [
+    "năm nhuận",
+    "ឆ្នាំផ្លោះ",
+    "(chho-nam plốs)",
+    "https://meta.vn/Data/image/2020/11/03/nam-2021-co-nhuan-khong-3.png",
+    "./audio/tudien/năm nhuậm.mp3"
+  ],
+  [
+    "ngày",
+    "ថ្ងៃ",
+    "(thngay)",
+    "https://media.istockphoto.com/vectors/calendar-day-29-february-leap-and-intercalary-year-vector-id1197022563?s=612x612",
+    "./audio/tudien/ngày.mp3"
+  ],
+  [
+    "ngựa",
+    "សេះ",
+    "(sếs)",
+    "https://phunugioi.com/wp-content/uploads/2021/08/Hinh-anh-con-Ngua-dep-nhat.jpg",
+    "./audio/tudien/ngua.mp3"
+  ],
+  [
+    "ngựa con",
+    "កូនសេះ",
+    "(kôn sếs)",
+    "http://hanoimoi.com.vn/Uploads/image/Hong%20Van/ngau%20giong.jpg",
+    "./audio/tudien/nguacon.mp3"
+  ],
+  [
+    "Ngựa vằn",
+    "សេះបង្កង់",
+    "sehbangkong",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/con-ngua-van.jpg",
+    "./audio/tudien/ngựa vằn.mp3"
+  ],
+  [
+    "phút",
+    "នាទី",
+    "(nia thi)",
+    "https://media.istockphoto.com/vectors/the-30-minutes-stopwatch-vector-icon-stopwatch-icon-in-flat-style-on-vector-id1072525952?k=20&m=1072525952&s=612x612&w=0&h=gItfdFB0uEFH8-QsytBpB8pwmTdSoiCNocfS-xoYYRw=",
+    "./audio/tudien/phút.mp3"
+  ],
+  [
+    "rắn",
+    "ពស់",
+    "(phốs)",
+    "http://socnhi3.vcmedia.vn/users/1021064/11.jpg",
+    "./audio/tudien/ran.mp3"
+  ],
+  [
+    "rùa",
+    "អណ្តើក",
+    "(on-đơk)",
+    "https://vibienxanh.vn/upload/2017/09/29/rua-bien-4.jpg",
+    "./audio/tudien/rua.mp3"
+  ],
+  [
+    "sao biển",
+    "ត្រីផ្កាយ",
+    "trei phkay",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/sao-bien.jpg",
+    "./audio/tudien/sao biển.mp3"
+  ],
+  [
+    "Sóc",
+    "កំប្រុក",
+    "kambrok",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/con-soc.jpg",
+    "./audio/tudien/sóc.mp3"
+  ],
+  [
+    "sư tử",
+    "តោ",
+    "Tao",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/con-su-tu.jpg",
+    "./audio/tudien/sư tử.mp3"
+  ],
+  [
+    "sủa",
+    "ព្រុស",
+    "​​(prús)",
+    "http://thichthucung.com/wp-content/uploads/cho-sua.jpg",
+    "./audio/tudien/sua.mp3"
+  ],
+  [
+    "thỏ",
+    "ទន្សាយ",
+    "(thon-say)",
+    "https://www.vbpharma.vn/storage/tu-van-ky-thuat/ccvt1.jpg",
+    "./audio/tudien/tho.mp3"
+  ],
+  [
+    "thứ ba",
+    "ទីបី",
+    "( thi bi )",
+    "https://pbs.twimg.com/profile_images/378800000628258739/35b92e3fdfe8804be4e24e2b59dc5bad_400x400.jpeg",
+    "./audio/tudien/thứ ba.mp3"
+  ],
+  [
+    "thứ năm",
+    "ទីប្រាំ",
+    "( thi pram )",
+    "https://cdn.w600.comps.canstockphoto.com/shiny-5th-silverchrome-drawing_csp2928344.jpg",
+    "./audio/tudien/thứ năm.mp3"
+  ],
+  [
+    "thứ sáu",
+    "ទីប្រាំមួយ",
+    "( thi pram muôy )",
+    "https://media-exp1.licdn.com/dms/image/C4E0BAQGXFuBjLnpg-g/company-logo_200_200/0/1532484110413?e=2159024400&v=beta&t=c7nQPZZFVRE7XtmdZo7OqxOXX1ImME1C61OLlE7AOrw",
+    "./audio/tudien/thứ sáu.mp3"
+  ],
+  [
+    "thứ tư",
+    "ទីបួន",
+    "( thi buôn )",
+    "https://media.istockphoto.com/photos/gold-4th-party-birthday-event-celebration-background-picture-id611063858",
+    "./audio/tudien/thứ tư.mp3"
+  ],
+  [
+    "trâu",
+    "ក្របី",
+    "krabei",
+    "https://lh3.googleusercontent.com/proxy/hAYP70ASUrYhb0juqgB9jYAyG88-Nk1Zz0xsPV9gFSORSBZu4DF7WpQp-Kjy-wkfr1HwRoC18cr5CEqT6OWDH7MO_IDdoZI435jHcaF-B2fjqsNmLQ_NURVOf-dYEfzUwmNm",
+    "./audio/tudien/trâu.mp3"
+  ],
+  [
+    "Tuần lộc",
+    "សត្វរមាំង",
+    "satv rmeang",
+    "https://cap123.tuhoconline.net/wp-content/uploads/2019/10/con-tuan-loc.jpg",
+    "./audio/tudien/tuần lộc.mp3"
+  ],
+  [
+    "vẹt",
+    "សេក",
+    "(sêk)",
+    "https://anphupet.com/wp-content/uploads/2021/01/con-vet.jpg",
+    "./audio/tudien/vet.mp3"
+  ]
+    // Thêm dữ liệu từ Excel vào đây
+  ];
+
+  // Chuyển đổi dữ liệu từ điển thành định dạng dictionary
+  const dictionary = {};
+  for (const row of dictionaryData) {
+    const word = row[0];
+    const vi = row[1];
+    const km = row[2];
+    const imageSrc = row[3]; // Thuộc tính hình ảnh
+    const audioSrc = row[4]; // Thuộc tính âm thanh
+
+    dictionary[word] = { "vi": vi, "km": km, "imageSrc": imageSrc, "audioSrc": audioSrc };
+  }
+  function translateLanguage() {
+    const inputText = document.getElementById("input-text").value.trim().toLowerCase();
+    const outputText = document.getElementById("output-text");
+    const targetLang = document.querySelector(".target-container");
+
+    let translatedText;
+
+    if (dictionary.hasOwnProperty(inputText)) {
+      translatedText = `${dictionary[inputText].vi}\nPhiên âm: ${dictionary[inputText].km}`;
+      // Hiển thị hình ảnh
+      const imageContainer = document.getElementById("image-container");
+      const imageElement = document.createElement("img");
+      imageElement.src = dictionary[inputText].imageSrc;
+      // Thêm class .half-width vào hình ảnh
+      imageElement.classList.add("half-width");
+
+      imageContainer.innerHTML = "";
+      imageContainer.appendChild(imageElement);
+
+      // Hiển thị âm thanh
+      targetLang.innerHTML = `<div class="speaker-icon" onclick="playAudio('${dictionary[inputText].audioSrc}')"></div>`;
+    } else {
+      translatedText = "Không tìm thấy từ trong từ điển.";
+      targetLang.innerHTML = ""; // Xóa biểu tượng loa nếu không có dữ liệu
     }
-    let dictionary1 = {
-        "nữ": { "vi": "Nữ", "km": "ស្រី" },
-        "bồ câu": { "vi": "Bồ câu", "km": "បុរស" },
-        "sinh nở": { "vi": "Sinh nở", "km": "សំណើ" },
-        "mèo":{"vi":"mèo","km":"ឆ្មា"},
-    }
-    function translateLanguage()
-    {
-        updateLanguage();
-        updateimage();
-    }
-    function updateLanguage() {
-        const inputText = document.getElementById("input-text");
-        const outputText = document.getElementById("output-text");
-        const targetLang1 = document.getElementById("target-lang1");
 
-        const userInput = inputText.value.trim().toLowerCase();
-        let currentLanguage = "vi";
-        for (const key in dictionary1)
-        {
-            if (key === userInput) 
-            {
-                currentLanguage = "km";
-                break;
-            }
-        }
-        //document.write(currentLanguage);
-        let translatedText;
-
-        if (currentLanguage === "vi") {
-            /*const reverseDictionary = {};
-            for (const key in dictionary1) {
-                reverseDictionary[dictionary1[key].vi] = key;
-            }*/
-            translatedText = dictionary[userInput]?.vi || "Không tìm thấy từ này trong từ điển.";
-        } 
-        else {
-            translatedText = dictionary1[userInput]?.km || "Không tìm thấy từ này trong từ điển.";
-        }
-
-        outputText.value = translatedText;
-        inputText.value = userInput;
-    }
-    function updateimage() {
-    // Tạo một phần tử hình ảnh
-    var imageElement = document.createElement("img");
-    imageElement.src = "https://cdn.pixabay.com/photo/2020/11/15/18/51/cat-5746875_1280.png"; // Đường dẫn của hình ảnh bạn muốn hiển thị
-
-    // Lấy thẻ div chứa hình ảnh
-    var imageContainer = document.getElementById("image-container");
-
-    // Xóa các phần tử con hiện tại của div
-    while (imageContainer.firstChild) {
-        imageContainer.removeChild(imageContainer.firstChild);
-    }
-
-    // Thêm phần tử hình ảnh vào div
-    imageContainer.appendChild(imageElement);
+    outputText.value = translatedText;
     // Thêm lớp CSS "half-width" để định dạng hình ảnh khi click
-    imageElement.classList.add("half-width");
-}
+    imageElement.classList.add("half-width"); 
+  }
+
+  function playAudio(audioSrc) {
+    const audio = new Audio(audioSrc);
+    audio.play();
+  }
 </script>
+
 <script>
     function goViet() {
         // Quay lại trang chủ khi click nút "Việt-Khmer"
