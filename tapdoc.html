@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Trang nội dung tập đọc</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 18px;
+            }
+        th{
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 20px;
+            color: red;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .container1 {
+            display: flex;
+            align-items: center;
+            background-color: #f79c13;
+            border: 2px solid #ff7300;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .source-lang {
+            flex: 60%; /* Chiếm 60% màn hình */
+            margin-right: 10px;
+        }
+        .button-container1 button {
+            padding: 5px 20px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .image-column {
+            width: 40%; /* Điều chỉnh chiều rộng của cột chứa ảnh */
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container1">
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+ 	<!-- Home Jumbotron
+    ================================================== -->
+        
+    <div class="container1">
+        <div class="source-lang" style="text-align: center; font-size: 25PX; font-weight: bold;">TẬP ĐỌC</div>
+    </div>
+    <table>
+         <!-- Bài 1: Bạn tôi -->
+        <thead>
+            <tr>
+                <th>Bài 1</th>
+                <th>Bạn tôi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="image-column"><img src="./assets/images/truyen/1bantoi.png" alt="Kitten"></td>
+                <td>
+                    មេរៀនទី ១ ពួកម៉ាកខ្ញុំ
+                    <br> ពួកម៉ាកខ្ញុំឈ្មោះសុខ។ គាត់ជាលេខាធិការនៅកន្លែងធ្វើការខ្ញុំ។ គាត់ចិត្ដ
+                    ល្អណាស់។  គាត់ចូលចិត្ដជួយអ្នកជិតខាងនិងមិត្ដភក្ដិ។  នៅពេលដែលខ្ញុំ
+                    <br>
+                    មិនយល់ មេរៀនខ្មែរ គាត់ជួយពន្យល់ខ្ញុំ។ នៅពេលទំនេរ គាត់តែងតែជួយ
+                    <br>
+                    មិនយល់ មេរៀនខ្មែរ គាត់ជួយពន្យល់ខ្ញុំ។ នៅពេលទំនេរ គាត់តែងតែជួយ
+                </td>
+            </tr>
+        </tbody>
+        <!-- Bài 2: Học tiếng Khmer -->
+        <thead>
+            <tr>
+                <th>Bài 2</th>
+                <th>Học tiếng Khmer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="./assets/images/truyen/2hoctiengkhmer.png" alt="Kitten"></td>
+                <td>
+                    មេរៀនទី ២ រៀនភាសាខ្មែរ <br>
+                    ខ្ញុំរៀនភាសាខ្មែរបានច្រើនខែហើយ។ ខ្ញុំអាន និយាយ និង សរសេរ
+                    បានល្អគ្រាន់បើ។ ប៉ុន្តែខ្ញុំអាចនិយាយបានច្រើនជាង អាន និងសរសេរ។
+                    អក្សរខ្មែរ ពិបាកសរសេរជាងអក្សរជាតិខ្ញុំ ប៉ុន្តែវេយ្យាករណ៍ខ្មែរស្រួលជាង
+                    វេយ្យាករណ៍បារាំង ឬអង់គ្លេស។ ខ្ញុំចូលចិត្ត ហាត់និយាយជាងហាត់
+                    សរសេរ។ គ្រូខ្ញុំសង្ឃឹមថា ខ្ញុំនឹង និយាយខ្មែរបានល្អ។                    
+                </td>
+            </tr>
+        </tbody>
+             <!-- Bài 3: Các bửa ăn -->
+        <thead>
+                <tr>
+                    <th>Bài 3</th>
+                    <th>Các bửa ăn</th>
+                </tr>
+        </thead>
+        <tbody>
+             <tr>
+                <td><img src="./assets/images/truyen/3cacbuaan.png" alt="Kitten"></td>
+                <td>
+                    មេរៀនទី ៥ ពេលញ៉ាំអាហារ <br>
+                    ជាទូទៅ ប្រជាជនខ្មែរញ៉ាំអាហារបីដងក្នុងមួយថ្ងៃ គឺអាហារពេលព្រឹក
+                    អាហារថ្ងៃត្រង់និងអាហារពេលល្ងាច។ ប៉ុន្តែកសិករហូបបាយតែពីរពេល
+                    ទេក្នុងមួយថ្ងៃ គឺ អាហារថ្ងៃត្រង់ និង អាហារពេលល្ងាច។ កសិករមិន
+                    ញាំអាហារពេលព្រឹក ដោយសារ គាត់ត្រូវក្រោកពីព្រលឹមដើម្បីទៅធ្វើស្រែ។
+                </td>
+            </tr>
+        </tbody>
+            <!-- Bài 4: Thời Khóa biểu -->
+        <thead>
+                <tr>
+                    <th>Bài 4</th>
+                    <th>Thời khóa biểu</th>
+                </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="./assets/images/truyen/4thoikhoabieu.png" alt="Kitten"></td>
+                <td>
+                    មេរៀនទី ៨ កាល វិភាគ <br>
+                    ខ្ញុំរវល់ណាស់រាល់ថ្ងៃនេះ។ ពេលព្រឹកឡើងខ្ញុំទៅរៀនភាសារខ្មែរចំនួន
+                    បីម៉ោង តែខ្ញុំ អត់ទៅរៀនរាល់ថ្ងៃទេ។ ខ្ញុំរៀនមួយថ្ងៃខានមួយថ្ងៃ។
+                    បន្ទាប់ពីចេញបពីរៀនភាសាខ្មែរហើយ ខ្ញុំត្រូវទៅធ្វើការនៅក្រុមហម៉ឺនរហូត
+                    ដល់ម៉ោងដប់ពីរ។ ពេលល្ងាច ខ្ញុំត្រូវចូលធ្វើការវិញនៅម៉ោងមួយ។
+                    ខ្ញុំមិនសូវមានពេលដើរលេងទេ យូរៗម្ដង។ តាមពិត ខ្ញុំដើរលេង
+                    បានមួយដងក្នុងមួយខែ។ ខ្ញុំមិនអាចទៅមួយសប្តាហ៍ម្តងដូចពួកម៉ាកខ្ញុំទេ។
+                </td>
+            </tr>
+        </tbody>
+             <!-- Bài 5: Sở thích -->
+        <thead>
+                <tr>
+                    <th>Bài 5</th>
+                    <th>Sở thích</th>
+                </tr>
+        </thead>
+        <tbody>
+             <tr>
+                <td><img src="./assets/images/truyen/5sothich.png" alt="Kitten"></td>
+                <td>
+                    មេរៀនទី ៧ ការកំសាន្ត <br>
+                    នៅពេលទំនេរ មិត្តភក្តិខ្ញុំចូលចិត្តធ្វើអ្វីផ្សេងៗគ្នា។ ខ្លះចូលចិត្ត
+                    ន្តលេងបាល់ អ្នកខ្លះចូលចិត្តហែលទឹក អ្នកខ្លះទៀតចូលចិត្តថតរូប។
+                    ចំណែកខ្ញុំវិញ ខ្ញុំចូលចិត្តទៅរត់នៅស្អាត។ ជួនកាលខ្ញុំទៅជិះកង់
+                    ប៉ុន្តែខ្ញុំទៅមិនទៀងទាត់ទេ។ ថ្ងៃខ្លះទៀត ខ្ញុំមិនទៅហាត់ប្រាណទេ
+                    តែខ្ញុំនៅផ្ទះអានសៀវភៅនិងកាសែត។
+                </td>
+            </tr>
+        </tbody>
+            <!-- Bài 6: Hôm qua, hôm nay và ngày mai -->
+        <thead>
+                <tr>
+                    <th>Bài 6</th>
+                    <th>Hôm qua, hôm nay, ngày mai</th>
+                </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="./assets/images/truyen/6homquahomnayngaymai.png" alt="Kitten"></td>
+                <td>
+                    មេរៀនទី ៩ ម្សិលមិញ ថ្ងៃនេះ ថ្ងៃស្អែក <br>
+                    ម្សិលមិញ កូនប្រុសអ្នកស្រីអែមគ្រុនខ្លាំងណាស់។ គាត់មិនសូវ
+                    បានគេងទេនៅពេលយប់ ព្រោះកូនគាត់យំច្រើនពេក។ គាត់ហាក់ដូចជា
+                    អស់កំលាំងខ្លាំងណាស់។
+                    ថ្ងៃនេះគាត់យកកូនគាត់ទៅពេទ្យ។ គាត់ថាកូនគាត់បានធូរហើយ។
+                    តែគាត់ត្រូវយកកូនគាត់ទៅពេទ្យម្តងទៀតថ្ងៃស្អែក។ គាត់សង្ឃឹមថាអាច
+                    ត្រលប់ទៅ ធ្វើការវិញ នៅពេលឆាប់ៗនេះ។                   
+                </td>
+            </tr>
+        </tbody>
+         <!-- Bài 7: Thức ăn chính -->
+         <thead>
+            <tr>
+                <th>Bài 7</th>
+                <th>Thức ăn chính</th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img src="./assets/images/truyen/7thucanchinh.png" alt="Kitten"></td>
+            <td>
+                មេរៀនទី ៦ អាហារ ចំបង <br>
+                អាហារចំបងបំផុតរបស់ប្រជាជនខ្មែរ គឺ បាយ ។ ប្រជាជនខ្មែរហូបបាយ
+                យ៉ាងតិចណាស់ក៏ពីរពេលដែរក្នុងមួយថ្ងៃ។ អាហារចាំបាច់មួយទៀត គឺ ត្រី។
+                គេយកត្រីទៅធ្វើជាម្ហូបច្រើនមុខទៀត ដូចជា ត្រីងៀត ត្រីឆ្អើរ ប្រហុក និង
+                ផ្អក។ ខ្មែរក៏ចូលចិត្តផ្លែឈើដែរដូចជា ចេក ល្ហុង ខ្នុរ ស្វាយ ទៀប ម្ចាស់
+                និងមាន។                
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    <script>
+        function goBack() {
+            // Quay lại khi click nút "Back"
+            window.location.href = 'luyentapkiemtra.html';
+        }
+    </script>
+</body>
+</html>

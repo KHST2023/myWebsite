@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Trang video đàm thoại (sưu tầm)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .youtube-link {
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-width: 560px; /* Điều chỉnh chiều rộng tối đa của video */
+        }
+        .container1 {
+            display: flex;
+            align-items: center;
+            background-color: #f79c13;
+            border: 2px solid #ff7300;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .source-lang {
+            flex: 60%; /* Chiếm 60% màn hình */
+            margin-right: 10px;
+        }
+        .button-container1 button {
+            padding: 5px 20px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .youtube-link img {
+            width: 50%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="button-container1">
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+ 	<!-- Home Jumbotron
+    ================================================== -->
+        
+    <div class="container1">
+        <div class="source-lang" style="text-align: center; font-size: 25PX; font-weight: bold;">VIDEO ĐÀM THOẠI (SƯU TẦM)</div>
+    </div>
+
+    <p>Các bài học đàm thoại theo chủ đề</p>
+    
+    <a class="youtube-link" href="https://www.youtube.com/playlist?list=PL6B_ZqZOpRvJxy6WaiglNlrPSJ7z_ul24">
+        <img src="./assets/images/truyen/8bieutuongvideo.png" alt="YouTube Video">
+    </a>
+    <script>
+        function goBack() {
+            // Quay lại khi click nút "Back"
+            window.location.href = 'luyentapkiemtra.html';
+        }
+    </script>
+    </body>
+</html>
