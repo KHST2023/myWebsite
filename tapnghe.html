@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Trang nội dung tập nghe</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 18px;
+            }
+        th{
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 20px;
+            color: red;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 60%;
+            height: auto;
+            
+            }
+        .container1 {
+            display: flex;
+            align-items: center;
+            background-color: #f79c13;
+            border: 2px solid #ff7300;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .source-lang {
+            flex: 60%; /* Chiếm 60% màn hình */
+            margin-right: 10px;
+        }
+        .button-container1 button {
+            padding: 5px 20px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .image-column {
+            width: 40%; /* Điều chỉnh chiều rộng của cột chứa ảnh */
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container1">
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+ 	<!-- Home Jumbotron
+    ================================================== -->
+        
+    <div class="container1">
+        <div class="source-lang" style="text-align: center; font-size: 25PX; font-weight: bold;">TẬP NGHE</div>
+    </div>
+    <table>
+         <!-- Bài 1: Chùa Âng -->
+        <thead>
+            <tr>
+                <th>Bài 1</th>
+                <th>Chùa âng (វត្តអង្គររាជបូរី (អង្គ))</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="image-column">
+                    <a href="Chuanangkhmernghe.html">
+                        <img src="./btkhmerhc/assets/img/chua/chuaang1.jpeg" alt="Kitten">
+                    </a>
+                </td>
+                <td>
+                     <audio controls>
+                        <source src="./btkhmerhc/audio/chua/chuaangkhmer.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+        </tbody>
+        <!-- Bài 2: Lễ hội oK OM BOK-->
+        <thead>
+            <tr>
+                <th>Bài 2</th>
+                <th>Lễ hội Ok OM BOK (បុណ្យអកអំបុក)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="lehoikhmer.html">
+                     <img src="./btkhmerhc/assets/img/LH/Le hoi ok om bok 1.jpg" alt="Kitten">
+                    </a>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="./btkhmerhc/audio/lehoikhmer.mp3" type="audio/mpeg">
+                    </audio>                
+                </td>
+            </tr>
+        </tbody>
+             <!-- Bài 3: Tượng Bồ tát-->
+        <thead>
+                <tr>
+                    <th>Bài 3</th>
+                    <th>Tượng Bồ tát Maitreya (ដិមាព្រះសិអារ្យមេត្រី)</th>
+                </tr>
+        </thead>
+        <tbody>
+             <tr>
+                <td>
+                    <a href="./btkhmerhc/detail-64-khmer.html">
+                         <img src="./btkhmerhc/assets/img/BOTATMAITREYA/DSC_03795_b6e2783c19.jpg" alt="Kitten"></td>
+                    </a>
+                 <td>
+                        <audio controls>
+                            <source src="./btkhmerhc/audio/5TuongbottaMaitreya.mp3" type="audio/mpeg">
+                        </audio>                
+                    </td>
+             </tr>
+        </tbody>
+            <!-- Bài 4: Mặt nạ thần khỉ -->
+        <thead>
+                <tr>
+                    <th>Bài 4</th>
+                    <th>Mặt nạ thần khỉ Hanuman (មុខថ្លុកហនុមាន)</th>
+                </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <a href="./btkhmerhc/detail-19-khmer.html">
+                        <img src="./btkhmerhc/assets/img/0001_1_2_jpg_2b68596830.jpg" alt="Kitten"></td>
+                    </a>
+                 <td>
+                        <audio controls>
+                            <source src="./btkhmerhc/audio/1matnathankhihanumankhmer.mp3" type="audio/mpeg">
+                        </audio>                
+                 </td>
+                </td>
+            </tr>
+        </tbody>
+           
+    </tbody>
+    </table>
+    
+    <script>
+        function goBack() {
+            // Quay lại khi click nút "Back"
+            window.location.href = 'luyentapkiemtra.html';
+        }
+    </script>
+</body>
+</html>
