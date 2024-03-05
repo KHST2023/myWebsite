@@ -148,20 +148,9 @@
             align-items: center; 
             justify-content: center;
         }
-        .back-button {
-            padding: 8px 16px;
-            background-color: #D86419;
-            color: #fff;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            margin: 0 10px;
-            display: inline-block;
-        }
     </style>
 </head>
 <body>
-    <button class="back-button" onclick="goBack()">Back</button> 
     <div class="rectangle">Nguyên âm </div>
     <div class="slideshow-container">
         <div class="slide fade">
@@ -176,10 +165,10 @@
                     </div>
                     <div class="inner-column">
                         <div class="speaker-icon" id="speaker1" onclick="playAudio(audio1)">
-                            <audio id="audio1" src="./audio/na2/s21.mp3"></audio>
+                            <audio id="audio1" src="./audio/nguyenam/6.mp3"></audio>
                         </div>
                         <div class="speaker-icon" id="speaker2" onclick="playAudio(audio2)">
-                        <audio id="audio2" src="./audio/na2/s21.mp3"></audio>
+                        <audio id="audio2" src="./audio/nguyenam2/6.mp3"></audio>
                         </div>
                     </div>
                 </div>
@@ -191,7 +180,7 @@
                 </div>
 			</div>
 			<div class="inner-column">
-				<h2>កុលាប /cố lap/ <br> hoa hồng <br> អរគុណ /o kun/ <br> cảm ơn</h2>
+				<h2>កុលាប /cố lap/ hoa hồng <br> អរគុណ /o kun/ cảm ơn</h2>
 			</div>
             <div class="inner-column">
                 <div class="speaker-icon" id="speaker3" onclick="playAudio(audio3)">
@@ -256,10 +245,10 @@
                     </div>
                     <div class="inner-column">
                         <div class="speaker-icon" id="speaker5" onclick="playAudio(audio5)">
-                            <audio id="audio5" src="./audio/na2/s22.mp3"></audio>
+                            <audio id="audio5" src="./audio/nguyenam/7.mp3"></audio>
                         </div>
                         <div class="speaker-icon" id="speaker6" onclick="playAudio(audio6)">
-                        <audio id="audio6" src="./audio/na2/s22.mp3"></audio>
+                        <audio id="audio6" src="./audio/nguyenam2/7.mp3"></audio>
                         </div>
                     </div>
                 </div>
@@ -271,7 +260,7 @@
                 </div>
 			</div>
 			<div class="inner-column">
-				<h2>ចូល /chôl/ <br> vào, đăng nhập<br>ទូ /tu/ <br> tủ</h2>
+				<h2>ចូល /chôl/ vào, đăng nhập<br>ទូ /tu/tủ</h2>
 			</div>
 			<div class="inner-column">
                 <div class="speaker-icon" id="speaker7" onclick="playAudio(audio7)">
@@ -322,12 +311,6 @@
         });
    
     </script>
-    <script>
-        function goBack() {
-            // Quay lại trang chủ khi click nút "Back"
-            window.location.href = 'hoccoban1.html';
-        }
-    </script>
      </section>
         </div>
 
@@ -343,7 +326,7 @@
                    </div>
                    <div class="inner-column">
                        <div class="speaker-icon" id="speaker9" onclick="playAudio(audio9)">
-                           <audio id="audio9" src="./audio/na2/s23.mp3"></audio>
+                           <audio id="audio9" src="./audio/nguyenam/8.mp3"></audio>
                        </div>
                    </div>
                </div>
@@ -400,7 +383,7 @@
                     </div>
                     <div class="inner-column">
                         <div class="speaker-icon" id="speaker13" onclick="playAudio(audio13)"></div>
-                            <audio id="audio13" src="./audio/na2/s24.mp3"></audio>
+                            <audio id="audio13" src="./audio/nguyenam/9.mp3"></audio>
                     </div>
                 </div>
             <div class="rectangle1">ើ</div>
@@ -411,7 +394,7 @@
                 </div>
 			</div>
 			<div class="inner-column">
-				<h2>បេីក /baơc/ mở cửa</h2>
+				<h2> ហេី /hơ/ bay </h2>
 			</div>
 			<div class="inner-column">
                 <div class="speaker-icon" id="speaker14" onclick="playAudio(audio14)">
@@ -443,9 +426,68 @@
      </section>
         </div>
 
+        <div class="slide fade">
+            <!-- <h1>Slide 5</h1> -->
+            <section>
+               <div class="container1">
+                   <div class="inner-column">
+                       <h2>ើ</h2>
+                   </div>
+                   <div class="inner-column">
+                       <h2>/aơ/</h2>
+                   </div>
+                   <div class="inner-column">
+                       <div class="speaker-icon" id="speaker13" onclick="playAudio(audio13)"></div>
+                           <audio id="audio13" src="./audio/nguyenam/9.mp3"></audio>
+                   </div>
+               </div>
+           <div class="rectangle1">ើ</div>
+           <div class="container1">
+           <div class="inner-column">
+               <div class="image-container">
+                   <img src="./assets/images/na2/4.jpg">
+               </div>
+           </div>
+           <div class="inner-column">
+               <h2>បេីក /baơc/ mở cửa</h2>
+           </div>
+           <div class="inner-column">
+               <div class="speaker-icon" id="speaker14" onclick="playAudio(audio14)">
+                   <audio id="audio7" src="./audio/na2/24.mp3"></audio>
+               </div>
+           </div>
+       </div>
+   <script>
+       //Xử lý sự kiện phát âm thanh cho từng loa trên slide
+       // Xử lý sự kiện khi người dùng click vào loa 13
+       document.getElementById("speaker13").addEventListener("click", function() {
+       const audio13 = document.getElementById("audio13");
+       if (audio13.paused) {
+           audio13.play();
+       } else {
+           audio13.pause();
+       }
+       });
+   // Xử lý sự kiện khi người dùng click vào loa 14
+   document.getElementById("speaker14").addEventListener("click", function() {
+       const audio14 = document.getElementById("audio14");
+       if (audio14.paused) {
+           audio14.play();
+       } else {
+           audio14.pause();
+       }
+       });
+   </script>
+    </section>
+       </div>
+
+
+        
+
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
+
     <br>
     <div style="text-align:center">
         <span class="dot" onclick="currentSlide(1)"></span>
@@ -453,15 +495,12 @@
         <span class="dot" onclick="currentSlide(3)"></span>
         <span class="dot" onclick="currentSlide(4)"></span>
     </div>
-     <footer class="footer">
-        <div class="container2" style="height: 60px; font-weight: bold;" onclick="dieuhuong ('testna.html')"> 
-            Luyện tập
-        </div>
+    <footer class="footer">
+        <div class="container2" style="height: 60px; font-weight: bold;"> Luyện tập</div>
+        <div class="container2" style="height: 60px; font-weight: bold;"> Trò chơi</div>
     </footer>
+    
 <script>
-	function dieuhuong(url) {
-            window.location.href = url;
-        }
     let slideIndex = 1;
     showSlides(slideIndex);
 
