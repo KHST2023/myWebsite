@@ -506,6 +506,15 @@
            audio17.pause();
        }
        });
+	     // Xử lý sự kiện khi người dùng click vào loa 20
+       document.getElementById("speaker20").addEventListener("click", function() {
+       const audio20 = document.getElementById("audio20");
+       if (audio20.paused) {
+           audio20.play();
+       } else {
+           audio20.pause();
+       }
+       });
    </script>
     </section>
        </div>
