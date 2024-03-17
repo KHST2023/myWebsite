@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danh sách âm thanh gốc</title>
+<style>
+.audio-item-container {
+    display: flex;
+    align-items: center;
+}
+.audio-item-container h3 {
+    margin: 0;
+    padding: 0;
+    margin-right: 10px;
+}
+button.back-button{
+        margin-top: 5px;
+    }
+.button-container1 button {
+            padding: 5px 20px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+</style>
+</head>
+<body>
+<div class="button-container1">
+        <button class="back-button" onclick="goBack()">Back</button>
+</div>
+<h1>Danh sách âm thanh</h1>
+<ul id="audioList">
+    <!-- Danh sách các âm thanh sẽ được hiển thị ở đây -->
+</ul>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const audioList = document.getElementById('audioList');
+
+    // Mảng chứa các mảng con chứa title, title1 và file của âm thanh gốc
+    const audioFilesData = [
+    [
+    "Địa điểm",
+    "ទីកន្លែង",
+    "./audio/tudien1/diadiem.mp3"
+  ],
+  [
+    "KHU TƯỞNG NIỆM CHỊ ÚT TỊCH ",
+    "តំបន់រំលឹកវិញ្ញាណក្ខន្ធបងស្រី់អ៊ុកតឹត",
+    "./audio/tudien1/khutuongniemchiuttich.mp3"
+  ],
+  [
+    "Gia đình",
+    "គ្រួសារ",
+    "./audio/tudien1/giadinh.mp3"
+  ],
+  [
+    "Nghề nghiệp",
+    "អាជីព",
+    "./audio/tudien1/nghenghiep.mp3"
+  ],
+  [
+    "Nhạc cụ truyền thống dân tộc",
+    "ឧបករណ៍ភ្លេងប្រពៃណីជនជាតិ",
+    "./audio/tudien1/nhaccutruyenthongdantoc.mp3"
+  ],
+  [
+    "Quê hương",
+    "ស្រុកកំណើត",
+    "./audio/tudien1/quehuong.mp3"
+  ],
+  [
+    "Màu sắc",
+    "ពណ៌",
+    "./audio/tudien1/mausac.mp3"
+  ],
+  [
+    "Cơ thể người",
+    "រាងកាយ​មនុស្ស",
+    "./audio/tudien1/cothenguoi.mp3"
+  ],
+  [
+    "Đồ vật",
+    "របស់របរ",
+    "./audio/tudien1/dovat.mp3"
+  ],
+  [
+    "Phòng khách/bếp",
+    "បន្ទប់ទទួលភ្ញៀវ/​ ផ្ទះបាយ",
+    "./audio/tudien1/ophongkhach.mp3"
+  ],
+  [
+    "Thiên nhiên",
+    "ធម្មជាតិ",
+    "./audio/tudien1/thiennhien.mp3"
+  ],
+  [
+    "Động vật",
+    "សត្វធាតុ",
+    "./audio/tudien1/dongvat.mp3"
+  ],
+  [
+    "Biển báo giao thông",
+    "ផ្លាកសញ្ញាចរាចរណ៍",
+    "./audio/tudien1/bienbaogiaothong.mp3"
+  ],
+  [
+    "Hoạt động hằng ngày",
+    "សកម្មភាព​ប្រចាំថ្ងៃ",
+    "./audio/tudien1/hoatdonghangngay.mp3"
+  ],
+  [
+    "Thời gian",
+    "ពេលវេលា",
+    "./audio/tudien1/thoigian.mp3"
+  ],
+  [
+    "học cơ bản",
+    "រៀនកំរិតមូលដ្ឋាន",
+    "./audio/tudien1/hoccoban.mp3"
+  ],
+  [
+    "học nâng cao theo chủ đề",
+    "រៀនកម្រិតខ្ពស់តាមប្រធានបទ",
+    "./audio/tudien1/hocnangcaotheochude.mp3"
+  ],
+  [
+    "luyện tập - kiểm tra",
+    "ហឹ្វកហាត់ - ពិនិត្យ",
+    "./audio/tudien1/luyentapk-kiemtra.mp3"
+  ],
+  [
+    "từ điển",
+    "វចនានុក្រម",
+    "./audio/tudien1/tudien.mp3"
+  ],
+  [
+    "tham quan trải nghiệm",
+    "ទស្សនកិច្ចសិក្សា",
+    "./audio/tudien1/thamquantrainghiem.mp3"
+  ],
+  [
+    "DI SẢN VĂN HÓA ",
+    "បេតិកភណ្ឌវប្បធម៌",
+    "./audio/tudien1/disanvanhoa.mp3"
+  ],
+  [
+    "DÂN TỘC KHMER",
+    "ជនជាតិខ្មែរ",
+    "./audio/tudien1/dantockhmer.mp3"
+  ],
+  [
+    "Di sản văn hóa dân tộc ខ្មែរ",
+    "សម្បត្តិវប្បធម៌ជនជាតិខ្មែរ",
+    "./audio/tudien1/disanvanhoadantockhmer.mp3"
+  ],
+  [
+    "Luyện tập kiểm tra theo chủ đề",
+    "ហ្វឹកហាត់ពិនិត្យតាមប្រធានបទ",
+    "./audio/tudien1/luyentapkiemtrathechude.mp3"
+  ],
+  [
+    "Hệ thống học chữ Khmer",
+    "ប្រព័ន្ធរៀនអក្សរខ្មែរ",
+    "./audio/tudien1/hethonghocchukhmer.mp3"
+  ],
+  [
+    "Số, nguyên âm",
+    "លេខ, ស្រៈ",
+    "./audio/tudien1/so-nguyenam.mp3"
+  ],
+  [
+    "phụ âm",
+    "ព្យញ្ជនៈ",
+    "./audio/tudien1/phuam.mp3"
+  ],
+  [
+    "thực vật",
+    "រុក្ខជាតិ",
+    "./audio/tudien1/dongvat.mp3"
+  ],
+  [
+    "đồ vật trong nhà",
+    "របស់របរក្នុងផ្ទះ",
+    "./audio/tudien1/dovattrongnha.mp3"
+  ],
+  [
+    "Danh mục các di tích lịch sử tỉnh Trà Vinh",
+    "បញ្ជីកេរដំណែលប្រវត្តិសាស្ត្រខេត្តត្រាវិញ",
+    "./audio/tudien1/danhmucdtlstravinh.mp3"
+  ],
+  [
+    "Di tích lịch sử",
+    "កេរដំណែលប្រវត្តិ​សា​ស្រ្ត",
+    "./audio/tudien1/ditichlichsu.mp3"
+  ],
+  [
+    "Đền thờ Chủ tịch Hồ Chí Minh",
+    "បូជណីយដ្ឋានប្រធានហូជីមិញ",
+    "./audio/tudien1/denthohcm.mp3"
+  ],
+  [
+    "BẢO TÀNG VĂN HÓA DÂN TỘC KHMER",
+    "សារមន្ទីរវប្បធម៌ជនជាតិខ្មែរ",
+    "./audio/tudien1/baotangvhkhmer.mp3"
+  ],
+  [
+    "tiếng việt",
+    "ភាសាវៀតណាម",
+    "./audio/tudien1/tiengviet.mp3"
+  ],
+  [
+    "Học phương pháp tương tác, trải nghiệm",
+    "រៀនតាមវិធីសាស្រ្តអន្តរកម្ម និងបទពិសោធន៍",
+    "./audio/tudien1/hocpptttn.mp3"
+  ],
+  [
+    "Hệ thống kiểm tra",
+    "បែបបទពិនិត្យ",
+    "./audio/tudien1/hethongkt.mp3"
+  ],
+  [
+    "Hệ thống luyện tập",
+    "បែបបទហឹ្វកហាត់",
+    "./audio/tudien1/hethongkiemtra.mp3"
+  ],
+  [
+    "chùa ",
+    "វត្តអារាម",
+    "./audio/tudien1/chua.mp3"
+  ],
+  [
+    "Trường học",
+    "សាលារៀន",
+    "./audio/tudien1/truonghoc.mp3"
+  ],
+  [
+    "Sở thú",
+    "សួនសត្វ",
+    "./audio/tudien1/sothu.mp3"
+  ],
+  [
+    "Bảo tàng",
+    "សារមន្ទីរ",
+    "./audio/tudien1/baotang.mp3"
+  ],
+  [
+    "Danh lam thắng cảnh",
+    "រមណីយដ្ឋាន",
+    "./audio/tudien1/danhlamthangcanh.mp3"
+  ],
+  [
+    "Chùa",
+    "វត្តអារាម",
+    "./audio/tudien1/chua.mp3"
+  ],
+  [
+    "Di tích lịch sử",
+    "កេរដំណែល​ប្រវត្តិ​សា​ស្រ្ត",
+    "./audio/tudien1/ditichlichsu.mp3"
+  ],
+  [
+    "cột cờ",
+    "បង្គោលទង់",
+    "./audio/tudien1/cotco.mp3"
+  ],
+  [
+    "băng đá",
+    "កៅអីថ្ម",
+    "./audio/tudien1/bangda.mp3"
+  ],
+  [
+    "bảng",
+    "ក្តារខៀន",
+    "./audio/tudien1/bang.mp3"
+  ],
+  [
+    "bàn học",
+    "តុរៀន",
+    "./audio/tudien1/banhoc.mp3"
+  ],
+  [
+    "ghế",
+    "កៅអី",
+    "./audio/tudien1/ghe.mp3"
+  ],
+  [
+    "xe máy",
+    "ម៉ូតូ",
+    "./audio/tudien1/xemay.mp3"
+  ],
+  [
+    "xe đạp",
+    "កង់",
+    "./audio/tudien1/xedap.mp3"
+  ],
+  [
+    "sân",
+    "ទីធ្លា",
+    "./audio/tudien1/san.mp3"
+  ],
+  [
+    "kí túc xá",
+    "អន្តេវាសិកដ្ឋាន",
+    "./audio/tudien1/kitucxa.mp3"
+  ],
+  [
+    "nhà để xe",
+    "យានដ្ឋាន",
+    "./audio/tudien1/nhadexe.mp3"
+  ],
+  [
+    "cổng trường",
+    "ក្លោងទ្វារសាលា",
+    "./audio/tudien1/congtruong.mp3"
+  ],
+  [
+    "sân khấu",
+    "វេទិការ",
+    "./audio/tudien1/sankhau.mp3"
+  ],
+  [
+    "sân bóng rổ",
+    "ទីលានបាល់បោះ",
+    "./audio/tudien1/sanbongro.mp3"
+  ],
+  [
+    "lối đi",
+    "ច្រកទ្វារ",
+    "./audio/tudien1/loidi.mp3"
+  ],
+  [
+    "nhà thi đấu",
+    "កីឡាដ្ឋាន",
+    "./audio/tudien1/nhathidau.mp3"
+  ],
+  [
+    "bạc",
+    "បា្រក់",
+    "./audio/tudien1/bac.mp3"
+  ],
+  [
+    "đồng",
+    "ស្ពាន់",
+    "./audio/tudien1/dong.mp3"
+  ],
+  [
+    "gỗ",
+    "ឈើ",
+    "./audio/tudien1/go.mp3"
+  ],
+  [
+    "đá",
+    "ថ្ម",
+    "./audio/tudien1/da.mp3"
+  ],
+  [
+    "Sắt",
+    "ដែក",
+    "./audio/tudien1/sat.mp3"
+  ],
+  [
+    "đá sa thạch",
+    "ថ្មភក់",
+    "./audio/tudien1/dasathach.mp3"
+  ],
+  [
+    "vải",
+    "សំពត់",
+    "./audio/tudien1/vai.mp3"
+  ],
+  [
+    "Lá Buông",
+    "ស្លឹកទ្រាំង",
+    "./audio/tudien1/labuong.mp3"
+  ],
+  [
+    "gốm",
+    "ដីដុត",
+    "./audio/tudien1/gom.mp3"
+  ],
+  [
+    "Thế kỉ",
+    "សតវត្សរ៍",
+    "./audio/tudien1/theky.mp3"
+  ],
+  [
+    "Tỉnh",
+    "ខេត្ត",
+    "./audio/tudien1/tinh.mp3"
+  ],
+  [
+    "Trà Vinh",
+    "ត្រាវិញ",
+    "./audio/tudien1/travinh.mp3"
+  ],
+  [
+    "Tre",
+    "ឫស្សី",
+    "./audio/tudien1/Tre.mp3"
+  ],
+  [
+    "cái cối",
+    "ត្បាល់",
+    "./audio/tudien1/caicoi.mp3"
+  ],
+  [
+    "Lúa",
+    "ស្រូវ",
+    "./audio/tudien1/lua.mp3"
+  ],
+  [
+    "đàn tà khê",
+    "ឧបករណ៍ភ្លេងតាខេ",
+    "./audio/tudien1/dantakhe.mp3"
+  ],
+  [
+    "Mặt trăng",
+    "ព្រះ​ច័ន្ទ",
+    "./audio/tudien1/mattrang.mp3"
+  ],
+  [
+    "Trái đất",
+    "ផែនដី",
+    "./audio/tudien1/traidat.mp3"
+  ],
+  [
+    "Rừng",
+    "ព្រៃ",
+    "./audio/tudien1/rung.mp3"
+  ],
+  [
+    "Rồng",
+    "នាគ",
+    "./audio/tudien1/rong.mp3"
+  ],
+  [
+    "lễ cúng trăng",
+    "បុណ្យអកអំបុក",
+    "./audio/tudien1/lecungtrang.mp3"
+  ],
+  [
+    "Lễ dâng y cà sa",
+    "បុណ្យកថិន ​ឬ កឋិន",
+    "./audio/tudien1/ledangy.mp3"
+  ],
+  [
+    "lễ sene dolta",
+    "បុណ្យសែនដូនតា",
+    "./audio/tudien1/lesendonta.mp3"
+  ],
+  [
+    "Lễ quy y",
+    "ពិធីខ្វាន់នាគ",
+    "./audio/tudien1/lequyy.mp3"
+  ],
+  [
+    "Lễ hội Đom Lơng Néak Tà",
+    "បុណ្យដំឡើងអ្នកតា",
+    "./audio/tudien1/lehoidomlongneakta.mp3"
+  ],
+  [
+    "sảnh chào",
+    "សាលទទួលភ្ញៀវ",
+    "./audio/tudien1/sanhchao.mp3"
+  ],
+  [
+    "Ngai Thuyết Pháp",
+    "គ្រែទេសនា",
+    "./audio/tudien1/ngaithuyetphap.mp3"
+  ],
+  [
+    "TƯỢNG QUAN THẾ  M BỒ TÁT",
+    "បដិមាព្រះពោធិសត្វ",
+    "./audio/tudien1/tuongquanambotat.mp3"
+  ],
+  [
+    "BỘ SƯU TẬP TƯỢNG PHẬT THÍCH CA",
+    "កម្រងព្រះពុទ្ធបដិមា",
+    "./audio/tudien1/bsttuongphatthichca.mp3"
+  ],
+  [
+    "KINH PHẬT (STRA)",
+    "សាស្ត្រាស្លឹករឹត",
+    "./audio/tudien1/kinhlabuong.mp3"
+  ],
+  [
+    "KẸP GÁNH LÚA",
+    "គែបរែកស្រូវ",
+    "./audio/tudien1/kepganhlua.mp3"
+  ],
+  [
+    "SA QUẠT NƯỚC",
+    "ចង្ហាត់ទឹក",
+    "./audio/tudien1/saquatnuoc.mp3"
+  ],
+  [
+    "GÀU VAI",
+    "ស្នាចយោង",
+    "./audio/tudien1/gauvai.mp3"
+  ],
+  [
+    "CỐI GIÃ CỐM DẸP",
+    "ត្បាល់បុកអំបុក",
+    "./audio/tudien1/coigiacomdep.mp3"
+  ],
+  [
+    "BỘ TRƯỜNG KỶ",
+    "កៅអីវែង​​",
+    "./audio/tudien1/botruongky.mp3"
+  ],
+  [
+    "CÀ RÀNG",
+    "ចង្ក្រាន",
+    "./audio/tudien1/carang.mp3"
+  ],
+  [
+    "Nhà lá",
+    "ផ្ទះស្លើក",
+    "./audio/tudien1/nhala.mp3"
+  ],
+  [
+    "cái gánh",
+    "ដងរែក",
+    "./audio/tudien1/caiganh.mp3"
+  ],
+  [
+    "cái mâm",
+    "ថាស",
+    "./audio/tudien1/caimam.mp2"
+  ],
+  [
+    "cái xịa",
+    "កញ្ជ្រែញ",
+    "./audio/tudien1/caixia.mp3"
+  ],
+  [
+    "xuồng/ghe",
+    "ទូក",
+    "./audio/tudien1/ghe.mp3"
+  ],
+  [
+    "sen",
+    "ផ្កាឈូក",
+    "./audio/tudien1/sen.mp3"
+  ],
+  [
+    "súng",
+    "កាំភ្លើង",
+    "./audio/tudien1/sung.mp3"
+  ],
+  [
+    "chén",
+    "ចាន",
+    "./audio/tudien1/chen.mp3"
+  ],
+  [
+    "dĩa",
+    "ចានទាប",
+    "./audio/tudien1/dia.mp3"
+  ],
+  [
+    "cái chai",
+    "ដប",
+    "./audio/tudien1/caichai.mp3"
+  ],
+  [
+    "ghế đẩu",
+    "កៅអ៊ី",
+    "./audio/tudien1/ghe.mp3"
+  ],
+  [
+    "ấm trà",
+    "ប៉ាន់តែ",
+    "./audio/tudien1/amtra.mp3"
+  ],
+  [
+    "cây dừa",
+    "ដើមដូង",
+    "./audio/tudien1/caydua.mp3"
+  ],
+  [
+    "nhà gỗ",
+    "ផ្ទះឈើ",
+    "./audio/tudien1/nhago.mp3"
+  ],
+  [
+    "cái hồ",
+    "ត្រពាំង",
+    "./audio/tudien1/caiho.mp3"
+  ],
+  [
+    "cây hoa sứ",
+    "ផ្កាចំប៉ី",
+    "./audio/tudien1/hoasu.mp3"
+  ],
+  [
+    "cây xanh",
+    "ដើមឈើ",
+    "./audio/tudien1/cayxanh.mp3"
+  ],
+  [
+    "đền thờ",
+    "បូជណីយដ្ឋាន",
+    "./audio/tudien1/dentho.mp3"
+  ],
+  [
+    "cục tạ ",
+    "ដុំដែក",
+    "./audio/tudien1/cucta.mp3"
+  ],
+  [
+    "gậy",
+    "ឈើច្រត",
+    "./audio/tudien1/gay.mp3"
+  ],
+  [
+    "nhà trưng bày",
+    "អាគារតាំងពិព័រណ៍",
+    "./audio/tudien1/nhatrungbay.mp3"
+  ],
+  [
+    "đầu",
+    "ក្បាល",
+    "./audio/tudien1/dau.mp3"
+  ],
+  [
+    "mắt",
+    "ភ្នែក",
+    "./audio/tudien1/mat.mp3"
+  ],
+  [
+    "tai",
+    "ត្រចៀក",
+    "./audio/tudien1/tai.mp3"
+  ],
+  [
+    "mũi",
+    "ច្រមុះ",
+    "./audio/tudien1/mui.mp3"
+  ],
+  [
+    "miệng",
+    "មាត់",
+    "./audio/tudien1/mieng.mp3"
+  ],
+  [
+    "răng",
+    "ធ្មេ​​ញ",
+    "./audio/tudien1/rang.mp3"
+  ],
+  [
+    "lưỡi",
+    "អណ្តាត",
+    "./audio/tudien1/luoi.mp3"
+  ],
+  [
+    "tóc",
+    "សក់",
+    "./audio/tudien1/toc.mp3"
+  ],
+  [
+    "thân",
+    "ខ្លួន",
+    "./audio/tudien1/than.mp3"
+  ],
+  [
+    "tay",
+    "ដៃ",
+    "./audio/tudien1/tay.mp3"
+  ],
+  [
+    "chân",
+    "ជើង",
+    "./audio/tudien1/chan.mp3"
+  ],
+  [
+    "ngón tay",
+    "ម្រាមដៃ",
+    "./audio/tudien1/ngontay.mp3"
+  ],
+  [
+    "ngón chân",
+    "ម្រាមជើង",
+    "./audio/tudien1/chan.mp3"
+  ],
+  [
+    "mắt cá chân",
+    "ភ្នែកកជើង",
+    "./audio/tudien1/matcachan.mp3"
+  ],
+  [
+    "cổ tay",
+    "កដៃ",
+    "./audio/tudien1/cotay.mp3"
+  ],
+  [
+    "cổ",
+    "ក",
+    "./audio/tudien1/co.mp3"
+  ],
+  [
+    "vai",
+    "ស្មា",
+    "./audio/tudien1/vai.mp3"
+  ],
+  [
+    "đầu gối",
+    "ក្បាលជង្គង់",
+    "./audio/tudien1/daudoi.mp3"
+  ],
+  [
+    "bụng",
+    "ពោះ",
+    "./audio/tudien1/bung.mp3"
+  ],
+  [
+    "Bồ nông",
+    "សត្វទុង",
+    "./audio/tudien1/bonong.mp3"
+  ],
+  [
+    "voi",
+    "ដំរី",
+    "./audio/tudien1/Voi.mp3"
+  ],
+  [
+    "nai",
+    "សត្វក្តាន់",
+    "./audio/tudien1/Nai.mp3"
+  ],
+  [
+    "rùa",
+    "អណ្តើក",
+    "./audio/tudien1/rua.mp3"
+  ],
+  [
+    "gấu",
+    "ខ្លាឃ្មុំ",
+    "./audio/tudien1/gau.mp3"
+  ],
+  [
+    "bướm",
+    "មេអំបៅ",
+    "./audio/tudien1/buom.mp3"
+  ],
+  [
+    "cá mập",
+    "ត្រីឆ្លាម",
+    "./audio/tudien1/camap.mp3"
+  ],
+  [
+    "mèo",
+    "ឆ្មា",
+    "./audio/tudien1/meo.mp3"
+  ],
+  [
+    "chó",
+    "ឆ្កែ",
+    "./audio/tudien1/cho.mp3"
+  ],
+  [
+    "chuột lang",
+    "កណ្តុរហ្គីណេ",
+    "./audio/tudien1/rong.mp3"
+  ],
+  [
+    "ngựa",
+    "សេះ",
+    "./audio/tudien1/ngua.mp3"
+  ],
+  [
+    "chuột",
+    "កណ្តុរ",
+    "./audio/tudien1/chuot.mp3"
+  ],
+  [
+    "vẹt",
+    "សត្វសេក",
+    "./audio/tudien1/vet.mp3"
+  ],
+  [
+    "ngựa con",
+    "កូនសេះ",
+    "./audio/tudien1/nguacon.mp3"
+  ],
+  [
+    "chó con",
+    "កូនឆ្កែ",
+    "./audio/tudien1/chocon.mp3"
+  ],
+  [
+    "rắn",
+    "ពស់",
+    "./audio/tudien1/ran.mp3"
+  ],
+  [
+    "bàn",
+    "តុ",
+    "./audio/tudien1/ban.mp3"
+  ],
+  [
+    "tủ",
+    "ទូ",
+    "./audio/tudien1/tu.mp3"
+  ],
+  [
+    "đèn",
+    "ចង្កៀង",
+    "./audio/tudien1/den.mp3"
+  ],
+  [
+    "đồng hồ",
+    "នាឡិកា",
+    "./audio/tudien1/dongho.mp3"
+  ],
+  [
+    "tivi",
+    "ទូរទស្សន៍",
+    "./audio/tudien1/Tivi.mp3"
+  ],
+  [
+    "loa",
+    "ធុងបាស់",
+    "./audio/tudien1/Loa.mp3"
+  ],
+  [
+    "bình hoa",
+    "ថូផ្កា",
+    "./audio/tudien1/binhhoa.mp3"
+  ],
+  [
+    "kiếng, gương",
+    "កញ្ចក់",
+    "./audio/tudien1/kinh-guong.mp3"
+  ],
+  [
+    "ly",
+    "កែវ",
+    "./audio/tudien1/Ly.mp3"
+  ],
+  [
+    "chén",
+    "ចាន",
+    "./audio/tudien1/chen.mp3"
+  ],
+  [
+    "nồi",
+    "ឆ្នាំង",
+    "./audio/tudien1/noi.mp3"
+  ],
+  [
+    "đĩa",
+    "ចានទាប",
+    "./audio/tudien1/dia.mp3"
+  ],
+  [
+    "đũa",
+    "ចង្កឹះ",
+    "./audio/tudien1/dua.mp3"
+  ],
+  [
+    "thớt",
+    "ក្ដារច្រេញ",
+    "./audio/tudien1/thot.mp3"
+  ],
+  [
+    "máy lạnh",
+    "ម៉ាស៊ីនត្រជាក់",
+    "./audio/tudien1/maylanh.mp3"
+  ],
+  [
+    "võng",
+    "អង្រឹង",
+    "./audio/tudien1/vong.mp3"
+  ],
+  [
+    "chăn",
+    "ភួយ",
+    "./audio/tudien1/caichan.mp3"
+  ],
+  [
+    "giường",
+    "គ្រែ",
+    "./audio/tudien1/giuong.mp3"
+  ],
+  [
+    "gối",
+    "ខ្នើយ",
+    "./audio/tudien1/goi.mp3"
+  ],
+  [
+    "quần",
+    "ខោ",
+    "./audio/tudien1/quan.mp3"
+  ],
+  [
+    "áo",
+    "អាវ",
+    "./audio/tudien1/ao.mp3"
+  ],
+  [
+    "ô, dù",
+    "ឆ័ត្រ",
+    "./audio/tudien1/odu.mp3"
+  ],
+  [
+    "xe đạp",
+    "កង់",
+    "./audio/tudien1/xedap.mp3"
+  ],
+  [
+    "xe máy",
+    "ម៉ូតូ",
+    "./audio/tudien1/xemay.mp3"
+  ],
+  [
+    "điện thoại",
+    "ទូរស័ព្ទ",
+    "./audio/tudien1/dienthoai.mp3"
+  ],
+  [
+    "màu trắng",
+    "ពណ៌ស",
+    "./audio/tudien1/mautrang.mp3"
+  ],
+  [
+    "màu vàng",
+    "ពណ៌លឿង",
+    "./audio/tudien1/mauvang.mp3"
+  ],
+  [
+    "màu da cam",
+    "ពណ៌ទឹកក្រូច",
+    "./audio/tudien1/maudacam.mp3"
+  ],
+  [
+    "màu hồng",
+    "ពណ៌ផ្កាឈូក",
+    "./audio/tudien1/mauhong.mp3"
+  ],
+  [
+    "màu đỏ",
+    "ពណ៌ក្រហម",
+    "./audio/tudien1/maudo.mp3"
+  ],
+  [
+    "màu nâu",
+    "ពណ៌ត្នោត",
+    "./audio/tudien1/maunau.mp3"
+  ],
+  [
+    "màu xanh lá cây",
+    "ពណ៌បៃតង",
+    "./audio/tudien1/mauxanhla.mp3"
+  ],
+  [
+    "màu xanh da trời",
+    "ពណ៌ផ្ទៃមេឃ",
+    "./audio/tudien1/mauxanhdatroi.mp3"
+  ],
+  [
+    "màu tím",
+    "ពណ៌ស្វាយ",
+    "./audio/tudien1/mautim.mp3"
+  ],
+  [
+    "màu xám",
+    "ពណ៌ប្រផេះ",
+    "./audio/tudien1/mauxam.mp3"
+  ],
+  [
+    "màu đen",
+    "ពណ៌ខ្មៅ",
+    "./audio/tudien1/mauden.mp3"
+  ],
+  [
+    "Hướng dương",
+    "ផ្កាឈូករ័ត្ន",
+    "./audio/tudien1/hoahuongduong.mp3"
+  ],
+  [
+    "Hoa hồng",
+    "ផ្កាកុលាប",
+    "./audio/tudien1/hoahong.mp3"
+  ],
+  [
+    "Cây dừa",
+    "ដើមដូង",
+    "./audio/tudien1/caydua.mp3"
+  ],
+  [
+    "Nấm",
+    "ផ្សិត",
+    "./audio/tudien1/nam.mp3"
+  ],
+  [
+    "Rêu",
+    "ស្លែ",
+    "./audio/tudien1/reu.mp3"
+  ],
+  [
+    "Tảo biển",
+    "សារាយសមុទ្រ",
+    "./audio/tudien1/taobien.mp3"
+  ],
+  [
+    "Củ cà rốt",
+    "មើមការ៉ុត",
+    "./audio/tudien1/cucarot.mp3"
+  ],
+  [
+    "hoa súng ",
+    "ផ្កាព្រលឹត",
+    "./audio/tudien1/hoasung.mp3"
+  ],
+  [
+    "Hoa giấy",
+    "ផ្កាក្រដាស់",
+    "./audio/tudien1/hoagiay.mp3"
+  ],
+  [
+    "Hoa Mười Giờ",
+    "ផ្កាម៉ោងដប់",
+    "./audio/tudien1/hoamuoigio.mp3"
+  ],
+  [
+    "Hoa Vạn Thọ",
+    "ផ្កាស្បៃរឿង",
+    "./audio/tudien1/hoavantho.mp3"
+  ],
+  [
+    "Hoa Huệ",
+    "ផ្កាចន្ធូ",
+    "./audio/tudien1/hoahue.mp3"
+  ],
+        // Thêm tiêu đề và tên tệp MP3 khác nếu cần
+    ];
+
+    // Hiển thị danh sách các tệp MP3 cùng với các tiêu đề
+    audioFilesData.forEach(function(item) {
+        const listItem = document.createElement('li');
+
+        // Tạo một phần tử div để chứa cả tiêu đề chính, tiêu đề phụ và tệp MP3
+        const itemContainer = document.createElement('div');
+        itemContainer.classList.add('audio-item-container');
+
+        // Tạo thẻ tiêu đề h3 cho tiêu đề chính
+        const titleElement = document.createElement('h3');
+        titleElement.textContent = item[0];
+        itemContainer.appendChild(titleElement);
+
+        // Tạo thẻ tiêu đề h3 cho tiêu đề phụ
+        const titleElement1 = document.createElement('h3');
+        titleElement1.textContent = item[1];
+        itemContainer.appendChild(titleElement1);
+
+        // Tạo thẻ audio
+        const audioElement = document.createElement('audio');
+        audioElement.controls = true;
+        audioElement.src = item[2]; // Đường dẫn đến tệp MP3
+        itemContainer.appendChild(audioElement);
+
+        // Thêm thẻ div chứa tiêu đề vào thẻ li
+        listItem.appendChild(itemContainer);
+
+        // Thêm thẻ li vào danh sách
+        audioList.appendChild(listItem);
+    });
+});
+
+function goBack() {
+            // Quay lại khi click nút "Back"
+            window.location.href = 'tapnoi2.html';
+        }
+</script>
+
+</body>
+</html>

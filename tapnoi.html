@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trang tập nói</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+    /*Định dạng hàng tập nói, nút back*/
+    .container1 {
+            display: flex;
+            align-items: center;
+            background-color: #f79c13;
+            border: 2px solid #ff7300;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    .source-lang {
+           flex: 60%; /* Chiếm 60% màn hình */
+           margin-right: 10px;
+        }
+     .button-container1 button {
+            padding: 5px 20px;
+            background-color: #D86419;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    button {
+        padding: 5px; 
+        margin: 0 10px;
+    }
+    button.back-button{
+        margin-top: 5px;
+    } 
+    .feature {
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .feature h2 {
+        margin-top: 0;
+    }
+    .feature a.button{
+        padding: 10px 0px;
+    }
+
+    .button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background-color: #45a049;
+    }
+    /*Định dạng nút start record và stop record*/
+     button {
+            font-size: 15px; /* Kích thước font chữ */
+            
+            border: none; /* Loại bỏ viền */
+            background-color: #007bff; /* Màu nền */
+            color: white; /* Màu chữ */
+            border-radius: 5px; /* Bo góc */
+            cursor: pointer; /* Đổi con trỏ chuột */
+        }
+
+        /* Định dạng cho nút button khi được hover */
+        button:hover {
+            background-color: #0056b3; /* Màu nền hover */
+        }
+
+        /* Định dạng cho nút button khi được nhấn */
+        button:active {
+            background-color: #003d80; /* Màu nền khi nhấn */
+        }
+
+        /* Định dạng cho nút button khi bị vô hiệu hóa */
+        button:disabled {
+            opacity: 0.5; /* Độ mờ */
+            cursor: not-allowed; /* Không cho phép nhấp chuột */
+        }
+      /* Định dạng cho nút choose file */
+      #originalInput {
+            font-size: 16px; /* Kích thước font chữ */
+            height: 25px; /* Chiều cao */
+            padding: 10px;
+            
+        }
+    .feature label{
+            text-align: left;
+            font-size: 15px;
+            padding: 5px 10px;
+      }
+</style>
+</head>
+<body>
+    <div class="button-container1">
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+<!-- Home Jumbotron ================================================== -->
+<div class="container1">
+    <div class="source-lang" style="text-align: center; font-size: 25PX; font-weight: bold;">TẬP NÓI</div>
+ </div>
+<div class="container">
+    <div class="feature">
+        <h2>Âm thanh gốc</h2>
+        <a href="danhsachamthanhgoc.html" class="button">Xem danh sách</a>
+    </div>
+    <div class="feature">
+        <h2>Bản ghi âm</h2>
+           <div class="audio-wrapper">
+            <h3>Audio ghi âm của bạn</h3>
+            <audio controls id="recordedAudio">
+                <source src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div id="controls">
+            <button id="startButton">Bắt đầu ghi âm</button>
+            <button id="stopButton" disabled>Dừng ghi âm</button>
+     </div>
+    </div>
+    <div class="feature">
+        <h2>So sánh giọng nói</h2>
+        <div id="originalAudio">
+            <label for="originalInput"; style="font-weight: bold; color: #D86419; font-size: 18px;">
+                Chọn từ cần luyện nói:
+            </label>
+            <input type="file" id="originalInput" accept="audio/*">
+        </div>
+        <div id="controls">
+            <button id="compareButton" disabled>So sánh âm thanh gốc</button>
+        </div>
+        <div id="recordedAudioWrapper" style="display: none;">
+            <h3>Recorded Audio:</h3>
+            <audio controls id="recordedAudio"></audio>
+        </div>
+        <div id="comparisonResult" style="display: none;">
+            <h3>Kết quả so sánh:</h3>
+            <div id="comparisonResultText"></div>
+        </div>
+    </div>
+</div>
+<script>
+    // Đoạn mã JavaScript cho phẩn nút back
+    function goBack() {
+            // Quay lại khi click nút "Back"
+            window.location.href = 'luyentapkiemtra.html';
+        }
+    //Đoạn mã js cho phần âm thanh
+    // JavaScript
+const startButton = document.getElementById('startButton');
+const stopButton = document.getElementById('stopButton');
+const compareButton = document.getElementById('compareButton');
+const originalInput = document.getElementById('originalInput');
+const recordedAudio = document.getElementById('recordedAudio');
+const comparisonResultText = document.getElementById('comparisonResultText');
+
+let mediaRecorder;
+let chunks = [];
+let originalAudioBuffer;
+let recordedAudioBuffer;
+
+// Sự kiện khi nút "Bắt đầu ghi âm" được nhấn
+startButton.addEventListener('click', startRecording);
+
+// Sự kiện khi nút "Dừng ghi âm" được nhấn
+stopButton.addEventListener('click', stopRecording);
+
+// Sự kiện khi nút "So sánh với Âm thanh gốc" được nhấn
+compareButton.addEventListener('click', compareAudio);
+
+// Sự kiện khi tệp âm thanh gốc được chọn
+originalInput.addEventListener('change', loadOriginalAudio);
+
+// Hàm bắt đầu ghi âm
+function startRecording() {
+    navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(function(stream) {
+            mediaRecorder = new MediaRecorder(stream);
+            mediaRecorder.ondataavailable = function(e) {
+                chunks.push(e.data);
+            };
+            mediaRecorder.onstop = function() {
+                const blob = new Blob(chunks, { 'type': 'audio/wav' });
+                chunks = [];
+                recordedAudio.src = URL.createObjectURL(blob);
+                recordedAudio.controls = true;
+                recordedAudio.play();
+                processRecordedAudio(blob);
+            };
+            mediaRecorder.start();
+            startButton.disabled = true;
+            stopButton.disabled = false;
+            compareButton.disabled = true;
+        })
+        .catch(function(err) {
+            console.error('Không thể truy cập microphone', err);
+        });
+}
+
+// Hàm dừng ghi âm
+function stopRecording() {
+    if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+        startButton.disabled = false;
+        stopButton.disabled = true;
+        compareButton.disabled = false;
+    }
+}
+
+// Hàm tải tệp âm thanh gốc
+function loadOriginalAudio(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        audioContext.decodeAudioData(e.target.result, function(buffer) {
+            originalAudioBuffer = buffer;
+            compareButton.disabled = false;
+        });
+    };
+    reader.readAsArrayBuffer(file);
+}
+
+// Hàm xử lý âm thanh ghi âm
+function processRecordedAudio(blob) {
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        audioContext.decodeAudioData(e.target.result, function(buffer) {
+            recordedAudioBuffer = buffer;
+        });
+    };
+    reader.readAsArrayBuffer(blob);
+}
+
+// Hàm so sánh âm thanh
+function compareAudio() {
+    if (originalAudioBuffer && recordedAudioBuffer) {
+        const minLength = Math.min(originalAudioBuffer.length, recordedAudioBuffer.length);
+        let sumDifference = 0;
+        for (let i = 0; i < minLength; i++) {
+            sumDifference += Math.abs(originalAudioBuffer[i] - recordedAudioBuffer[i]);
+        }
+        const meanDifference = sumDifference / minLength;
+        const similarityPercentage = ((1 - meanDifference) * 100).toFixed(2);
+
+        if (similarityPercentage < 10) {
+            comparisonResultText.innerText = "Giọng đọc của bạn chưa tốt";
+        } else {
+            comparisonResultText.innerText = "Giọng đọc của bạn tốt";
+        }
+        document.getElementById('comparisonResult').style.display = 'block';
+    } else {
+        alert('Vui lòng chọn cả tệp âm thanh gốc và tệp âm thanh ghi âm trước khi so sánh.');
+    }
+}
+
+</script>
+
+</body>
+</html>
