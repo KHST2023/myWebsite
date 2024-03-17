@@ -25,6 +25,13 @@ button.back-button{
             border: none;
             cursor: pointer;
         }
+.main-title {
+    font-size: 14px; /* Cỡ chữ cho tiêu đề chính */
+}
+
+.sub-title {
+    font-size: 14px; /* Cỡ chữ cho tiêu đề phụ */
+}
 </style>
 </head>
 <body>
@@ -43,199 +50,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mảng chứa các mảng con chứa title, title1 và file của âm thanh gốc
     const audioFilesData = [
     [
-    "Địa điểm",
-    "ទីកន្លែង",
-    "./audio/tudien1/diadiem.mp3"
-  ],
-  [
-    "KHU TƯỞNG NIỆM CHỊ ÚT TỊCH ",
-    "តំបន់រំលឹកវិញ្ញាណក្ខន្ធបងស្រី់អ៊ុកតឹត",
-    "./audio/tudien1/khutuongniemchiuttich.mp3"
-  ],
-  [
-    "Gia đình",
-    "គ្រួសារ",
-    "./audio/tudien1/giadinh.mp3"
-  ],
-  [
-    "Nghề nghiệp",
-    "អាជីព",
-    "./audio/tudien1/nghenghiep.mp3"
-  ],
-  [
-    "Nhạc cụ truyền thống dân tộc",
-    "ឧបករណ៍ភ្លេងប្រពៃណីជនជាតិ",
-    "./audio/tudien1/nhaccutruyenthongdantoc.mp3"
-  ],
-  [
-    "Quê hương",
-    "ស្រុកកំណើត",
-    "./audio/tudien1/quehuong.mp3"
-  ],
-  [
-    "Màu sắc",
-    "ពណ៌",
-    "./audio/tudien1/mausac.mp3"
-  ],
-  [
-    "Cơ thể người",
-    "រាងកាយ​មនុស្ស",
-    "./audio/tudien1/cothenguoi.mp3"
-  ],
-  [
-    "Đồ vật",
-    "របស់របរ",
-    "./audio/tudien1/dovat.mp3"
-  ],
-  [
-    "Phòng khách/bếp",
-    "បន្ទប់ទទួលភ្ញៀវ/​ ផ្ទះបាយ",
-    "./audio/tudien1/ophongkhach.mp3"
-  ],
-  [
-    "Thiên nhiên",
-    "ធម្មជាតិ",
-    "./audio/tudien1/thiennhien.mp3"
-  ],
-  [
-    "Động vật",
-    "សត្វធាតុ",
-    "./audio/tudien1/dongvat.mp3"
-  ],
-  [
-    "Biển báo giao thông",
-    "ផ្លាកសញ្ញាចរាចរណ៍",
-    "./audio/tudien1/bienbaogiaothong.mp3"
-  ],
-  [
-    "Hoạt động hằng ngày",
-    "សកម្មភាព​ប្រចាំថ្ងៃ",
-    "./audio/tudien1/hoatdonghangngay.mp3"
-  ],
-  [
-    "Thời gian",
-    "ពេលវេលា",
-    "./audio/tudien1/thoigian.mp3"
-  ],
-  [
-    "học cơ bản",
-    "រៀនកំរិតមូលដ្ឋាន",
-    "./audio/tudien1/hoccoban.mp3"
-  ],
-  [
-    "học nâng cao theo chủ đề",
-    "រៀនកម្រិតខ្ពស់តាមប្រធានបទ",
-    "./audio/tudien1/hocnangcaotheochude.mp3"
-  ],
-  [
-    "luyện tập - kiểm tra",
-    "ហឹ្វកហាត់ - ពិនិត្យ",
-    "./audio/tudien1/luyentapk-kiemtra.mp3"
-  ],
-  [
-    "từ điển",
-    "វចនានុក្រម",
-    "./audio/tudien1/tudien.mp3"
-  ],
-  [
-    "tham quan trải nghiệm",
-    "ទស្សនកិច្ចសិក្សា",
-    "./audio/tudien1/thamquantrainghiem.mp3"
-  ],
-  [
-    "DI SẢN VĂN HÓA ",
-    "បេតិកភណ្ឌវប្បធម៌",
-    "./audio/tudien1/disanvanhoa.mp3"
-  ],
-  [
-    "DÂN TỘC KHMER",
-    "ជនជាតិខ្មែរ",
-    "./audio/tudien1/dantockhmer.mp3"
-  ],
-  [
-    "Di sản văn hóa dân tộc ខ្មែរ",
-    "សម្បត្តិវប្បធម៌ជនជាតិខ្មែរ",
-    "./audio/tudien1/disanvanhoadantockhmer.mp3"
-  ],
-  [
-    "Luyện tập kiểm tra theo chủ đề",
-    "ហ្វឹកហាត់ពិនិត្យតាមប្រធានបទ",
-    "./audio/tudien1/luyentapkiemtrathechude.mp3"
-  ],
-  [
-    "Hệ thống học chữ Khmer",
-    "ប្រព័ន្ធរៀនអក្សរខ្មែរ",
-    "./audio/tudien1/hethonghocchukhmer.mp3"
-  ],
-  [
-    "Số, nguyên âm",
-    "លេខ, ស្រៈ",
-    "./audio/tudien1/so-nguyenam.mp3"
-  ],
-  [
-    "phụ âm",
-    "ព្យញ្ជនៈ",
-    "./audio/tudien1/phuam.mp3"
-  ],
-  [
-    "thực vật",
-    "រុក្ខជាតិ",
-    "./audio/tudien1/dongvat.mp3"
-  ],
-  [
-    "đồ vật trong nhà",
-    "របស់របរក្នុងផ្ទះ",
-    "./audio/tudien1/dovattrongnha.mp3"
-  ],
-  [
-    "Danh mục các di tích lịch sử tỉnh Trà Vinh",
-    "បញ្ជីកេរដំណែលប្រវត្តិសាស្ត្រខេត្តត្រាវិញ",
-    "./audio/tudien1/danhmucdtlstravinh.mp3"
-  ],
-  [
-    "Di tích lịch sử",
-    "កេរដំណែលប្រវត្តិ​សា​ស្រ្ត",
-    "./audio/tudien1/ditichlichsu.mp3"
-  ],
-  [
-    "Đền thờ Chủ tịch Hồ Chí Minh",
-    "បូជណីយដ្ឋានប្រធានហូជីមិញ",
-    "./audio/tudien1/denthohcm.mp3"
-  ],
-  [
-    "BẢO TÀNG VĂN HÓA DÂN TỘC KHMER",
-    "សារមន្ទីរវប្បធម៌ជនជាតិខ្មែរ",
-    "./audio/tudien1/baotangvhkhmer.mp3"
-  ],
-  [
-    "tiếng việt",
-    "ភាសាវៀតណាម",
-    "./audio/tudien1/tiengviet.mp3"
-  ],
-  [
-    "Học phương pháp tương tác, trải nghiệm",
-    "រៀនតាមវិធីសាស្រ្តអន្តរកម្ម និងបទពិសោធន៍",
-    "./audio/tudien1/hocpptttn.mp3"
-  ],
-  [
-    "Hệ thống kiểm tra",
-    "បែបបទពិនិត្យ",
-    "./audio/tudien1/hethongkt.mp3"
-  ],
-  [
-    "Hệ thống luyện tập",
-    "បែបបទហឹ្វកហាត់",
-    "./audio/tudien1/hethongkiemtra.mp3"
-  ],
-  [
-    "chùa ",
+    "Chùa ",
     "វត្តអារាម",
     "./audio/tudien1/chua.mp3"
   ],
   [
     "Trường học",
     "សាលារៀន",
-    "./audio/tudien1/truonghoc.mp3"
+    "./audio/tudien1/truonghoc.m4a"
   ],
   [
     "Sở thú",
@@ -253,11 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
     "./audio/tudien1/danhlamthangcanh.mp3"
   ],
   [
-    "Chùa",
-    "វត្តអារាម",
-    "./audio/tudien1/chua.mp3"
-  ],
-  [
     "Di tích lịch sử",
     "កេរដំណែល​ប្រវត្តិ​សា​ស្រ្ត",
     "./audio/tudien1/ditichlichsu.mp3"
@@ -268,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     "./audio/tudien1/cotco.mp3"
   ],
   [
-    "băng đá",
+    "Băng đá",
     "កៅអីថ្ម",
     "./audio/tudien1/bangda.mp3"
   ],
@@ -461,6 +278,191 @@ document.addEventListener('DOMContentLoaded', function() {
     "Lễ hội Đom Lơng Néak Tà",
     "បុណ្យដំឡើងអ្នកតា",
     "./audio/tudien1/lehoidomlongneakta.mp3"
+  ],
+    [
+    "Địa điểm",
+    "ទីកន្លែង",
+    "./audio/tudien1/diadiem.mp3"
+  ],
+  [
+    "KHU TƯỞNG NIỆM CHỊ ÚT TỊCH ",
+    "តំបន់រំលឹកវិញ្ញាណក្ខន្ធបងស្រី់អ៊ុកតឹត",
+    "./audio/tudien1/khutuongniemchiuttich.mp3"
+  ],
+  [
+    "Gia đình",
+    "គ្រួសារ",
+    "./audio/tudien1/giadinh.mp3"
+  ],
+  [
+    "Nghề nghiệp",
+    "អាជីព",
+    "./audio/tudien1/nghenghiep.mp3"
+  ],
+  [
+    "Nhạc cụ truyền thống dân tộc",
+    "ឧបករណ៍ភ្លេងប្រពៃណីជនជាតិ",
+    "./audio/tudien1/nhaccutruyenthongdantoc.mp3"
+  ],
+  [
+    "Quê hương",
+    "ស្រុកកំណើត",
+    "./audio/tudien1/quehuong.mp3"
+  ],
+  [
+    "Màu sắc",
+    "ពណ៌",
+    "./audio/tudien1/mausac.mp3"
+  ],
+  [
+    "Cơ thể người",
+    "រាងកាយ​មនុស្ស",
+    "./audio/tudien1/cothenguoi.mp3"
+  ],
+  [
+    "Đồ vật",
+    "របស់របរ",
+    "./audio/tudien1/dovat.mp3"
+  ],
+  [
+    "Phòng khách/bếp",
+    "បន្ទប់ទទួលភ្ញៀវ/​ ផ្ទះបាយ",
+    "./audio/tudien1/ophongkhach.mp3"
+  ],
+  [
+    "Thiên nhiên",
+    "ធម្មជាតិ",
+    "./audio/tudien1/thiennhien.mp3"
+  ],
+  [
+    "Động vật",
+    "សត្វធាតុ",
+    "./audio/tudien1/dongvat.mp3"
+  ],
+  [
+    "Biển báo giao thông",
+    "ផ្លាកសញ្ញាចរាចរណ៍",
+    "./audio/tudien1/bienbaogiaothong.mp3"
+  ],
+  [
+    "Hoạt động hằng ngày",
+    "សកម្មភាព​ប្រចាំថ្ងៃ",
+    "./audio/tudien1/hoatdonghangngay.mp3"
+  ],
+  [
+    "Thời gian",
+    "ពេលវេលា",
+    "./audio/tudien1/thoigian.mp3"
+  ],
+  [
+    "học cơ bản",
+    "រៀនកំរិតមូលដ្ឋាន",
+    "./audio/tudien1/hoccoban.mp3"
+  ],
+  [
+    "học nâng cao theo chủ đề",
+    "រៀនកម្រិតខ្ពស់តាមប្រធានបទ",
+    "./audio/tudien1/hocnangcaotheochude.mp3"
+  ],
+  [
+    "luyện tập - kiểm tra",
+    "ហឹ្វកហាត់ - ពិនិត្យ",
+    "./audio/tudien1/luyentapk-kiemtra.mp3"
+  ],
+  [
+    "từ điển",
+    "វចនានុក្រម",
+    "./audio/tudien1/tudien.mp3"
+  ],
+  [
+    "tham quan trải nghiệm",
+    "ទស្សនកិច្ចសិក្សា",
+    "./audio/tudien1/thamquantrainghiem.mp3"
+  ],
+  [
+    "DI SẢN VĂN HÓA ",
+    "បេតិកភណ្ឌវប្បធម៌",
+    "./audio/tudien1/disanvanhoa.mp3"
+  ],
+  [
+    "DÂN TỘC KHMER",
+    "ជនជាតិខ្មែរ",
+    "./audio/tudien1/dantockhmer.mp3"
+  ],
+  [
+    "Di sản văn hóa dân tộc ខ្មែរ",
+    "សម្បត្តិវប្បធម៌ជនជាតិខ្មែរ",
+    "./audio/tudien1/disanvanhoadantockhmer.mp3"
+  ],
+  [
+    "Luyện tập kiểm tra theo chủ đề",
+    "ហ្វឹកហាត់ពិនិត្យតាមប្រធានបទ",
+    "./audio/tudien1/luyentapkiemtrathechude.mp3"
+  ],
+  [
+    "Hệ thống học chữ Khmer",
+    "ប្រព័ន្ធរៀនអក្សរខ្មែរ",
+    "./audio/tudien1/hethonghocchukhmer.mp3"
+  ],
+  [
+    "Số, nguyên âm",
+    "លេខ, ស្រៈ",
+    "./audio/tudien1/so-nguyenam.mp3"
+  ],
+  [
+    "phụ âm",
+    "ព្យញ្ជនៈ",
+    "./audio/tudien1/phuam.mp3"
+  ],
+  [
+    "thực vật",
+    "រុក្ខជាតិ",
+    "./audio/tudien1/dongvat.mp3"
+  ],
+  [
+    "đồ vật trong nhà",
+    "របស់របរក្នុងផ្ទះ",
+    "./audio/tudien1/dovattrongnha.mp3"
+  ],
+  [
+    "Danh mục các di tích lịch sử tỉnh Trà Vinh",
+    "បញ្ជីកេរដំណែលប្រវត្តិសាស្ត្រខេត្តត្រាវិញ",
+    "./audio/tudien1/danhmucdtlstravinh.mp3"
+  ],
+  [
+    "Di tích lịch sử",
+    "កេរដំណែលប្រវត្តិ​សា​ស្រ្ត",
+    "./audio/tudien1/ditichlichsu.mp3"
+  ],
+  [
+    "Đền thờ Chủ tịch Hồ Chí Minh",
+    "បូជណីយដ្ឋានប្រធានហូជីមិញ",
+    "./audio/tudien1/denthohcm.mp3"
+  ],
+  [
+    "BẢO TÀNG VĂN HÓA DÂN TỘC KHMER",
+    "សារមន្ទីរវប្បធម៌ជនជាតិខ្មែរ",
+    "./audio/tudien1/baotangvhkhmer.mp3"
+  ],
+  [
+    "tiếng việt",
+    "ភាសាវៀតណាម",
+    "./audio/tudien1/tiengviet.mp3"
+  ],
+  [
+    "Học phương pháp tương tác, trải nghiệm",
+    "រៀនតាមវិធីសាស្រ្តអន្តរកម្ម និងបទពិសោធន៍",
+    "./audio/tudien1/hocpptttn.mp3"
+  ],
+  [
+    "Hệ thống kiểm tra",
+    "បែបបទពិនិត្យ",
+    "./audio/tudien1/hethongkt.mp3"
+  ],
+  [
+    "Hệ thống luyện tập",
+    "បែបបទហឹ្វកហាត់",
+    "./audio/tudien1/hethongkiemtra.mp3"
   ],
   [
     "sảnh chào",
@@ -1050,11 +1052,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Tạo thẻ tiêu đề h3 cho tiêu đề chính
         const titleElement = document.createElement('h3');
+        titleElement.classList.add('main-title'); // Thêm class cho tiêu đề chính
         titleElement.textContent = item[0];
         itemContainer.appendChild(titleElement);
 
         // Tạo thẻ tiêu đề h3 cho tiêu đề phụ
         const titleElement1 = document.createElement('h3');
+        titleElement1.classList.add('sub-title'); // Thêm class cho tiêu đề phụ
         titleElement1.textContent = item[1];
         itemContainer.appendChild(titleElement1);
 
