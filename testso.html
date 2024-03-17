@@ -12,7 +12,7 @@
             height: 100vh; /* Chiều cao là 100% của chiều cao của màn hình (viewport height) */
             border: none;
         }
-        .back-button {
+        .back-button, .LT-button {
             padding: 8px 16px;
             background-color: #D86419;
             color: #fff;
@@ -25,15 +25,20 @@
   </style>
 </head>
 <body>
-  <button class="back-button" onclick="goBack()">Back</button> 
+  <button class="back-button" onclick="goBack()">Back</button>
+  <button class="LT-button" onclick="goLTKT()">Luyện tập kiểm tra</button> 
 	<iframe src="https://wordwall.net/vi/embed/26b4b92437734c3abfeb82cdeafd5ed9?themeId=1&templateId=5&fontStackId=0"
 			 width="500" height="380" frameborder="0" allowfullscreen>
 	</iframe>
 </body>
 <script>
   function goBack() {
-      // Quay lại trang chủ khi click nút "Back"
+      // Quay lại số khi click nút "Back"
       window.location.href = 'hoccoban1.html';
+  }
+ function goLTKT() {
+      // Quay lại trang luyện tập kểm tra khi click nút "Luyện tập kiểm tra"
+      window.location.href = 'luyentapkiemtra.html';
   }
 </script>
 </html>
