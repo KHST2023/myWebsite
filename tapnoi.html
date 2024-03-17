@@ -5,17 +5,16 @@
  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Trang nội dung tập nói</title>
 <style>
-    body {
+   body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
     }
 
     .container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-        padding: 20px;
+        display: flex;
+        flex-direction: column; /* Hiển thị thành một cột */
+        align-items: center; /* Canh giữa các phần tử */
     }
     /*Định dạng hàng tập nói, nút back*/
     .container1 {
@@ -54,6 +53,8 @@
         border: 1px solid #ccc;
         border-radius: 5px;
         background-color: #f9f9f9;
+        margin-bottom: 20px; /* Khoảng cách giữa các phần tử */
+        max-width: 90%; /* Chiều rộng tối đa của container */
     }
     .feature h2 {
         margin-top: 0;
@@ -61,7 +62,14 @@
     .feature a.button{
         padding: 10px 0px;
     }
-
+    #controls {
+        display: flex;
+        justify-content: center; /* Canh giữa các nút */
+        margin-top: 10px; /* Khoảng cách giữa các nút và phần tử trên */
+    }
+    #comparisonResult {
+        margin-top: 15px; /* Khoảng cách giữa phần kết quả so sánh và các phần tử trên */
+    }
     .button {
         display: block;
         width: 100%;
@@ -113,9 +121,11 @@
             
         }
     .feature label{
-            text-align: left;
-            font-size: 15px;
-            padding: 5px 10px;
+        font-weight: bold;
+        color: #D86419;
+        font-size: 18px;
+        display: block; /* Hiển thị thành một dòng */
+        margin-bottom: 10px; /* Khoảng cách giữa các label và input */
       }
 </style>
 </head>
