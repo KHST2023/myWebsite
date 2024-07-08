@@ -48,9 +48,10 @@
     ================================================== -->
         <div id="banner">
             <img src="assets/images/banner1.png"/>
-        
 		</div>
-    
+    	 <div class="button-container">
+        	<button class="home-button" onclick="goHome()">Home</button>
+	    </div>
         <iframe width="960" height="540" data-original-width="1920" data-original-height="1080" 
             src="https://www.thinglink.com/view/scene/1777383542003597989" type="text/html" 
             style="border: none;" webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no">
@@ -138,6 +139,12 @@
     </footer>
     <!-- End Footer
     ================================================== -->
+	<script>
+        function goHome() {
+            // Quay lại trang chủ khi click nút "Back"
+            window.location.href = 'hocnangcaotheochude.html';
+        }
+        </script>
     </div>
 </body>
 </html>
